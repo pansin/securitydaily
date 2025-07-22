@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安每日网络安全快报</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+      
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      
+      body {
+          font-family: 'Noto Sans SC', 'Inter', sans-serif;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          min-height: 100vh;
+          padding: 20px;
+      }
+      
+      .poster {
+          max-width: 1200px;
+          margin: 0 auto;
+          background: white;
+          border-radius: 20px;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+          overflow: hidden;
+      }
+      
+      .header {
+          background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+          color: white;
+          padding: 30px;
+          text-align: center;
+          position: relative;
+      }
+      
+      .header::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+          opacity: 0.3;
+      }
+      
+      .brand {
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 10px;
+          position: relative;
+          z-index: 1;
+      }
+      
+      .brand .en {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.2rem;
+          font-weight: 500;
+          opacity: 0.9;
+          display: block;
+          margin-top: 5px;
+      }
+      
+      .subtitle {
+          font-size: 1.1rem;
+          opacity: 0.9;
+          position: relative;
+          z-index: 1;
+      }
+      
+      .date-info {
+          position: absolute;
+          top: 20px;
+          right: 30px;
+          text-align: right;
+          z-index: 1;
+      }
+      
+      .date {
+          font-size: 1.2rem;
+          font-weight: 600;
+      }
+      
+      .issue {
+          font-size: 0.9rem;
+          opacity: 0.8;
+          margin-top: 5px;
+      }
+      
+      .content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
+          min-height: 1200px;
+      }
+      
+      .section {
+          padding: 40px 30px;
+          position: relative;
+      }
+      
+      .risks-section {
+          background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+          color: white;
+      }
+      
+      .innovations-section {
+          background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+          color: white;
+      }
+      
+      .section-title {
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 30px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+      }
+      
+      .section-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+      }
+      
+      .news-item {
+          background: rgba(255,255,255,0.1);
+          border-radius: 12px;
+          padding: 18px;
+          margin-bottom: 16px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255,255,255,0.2);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .news-item:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+      
+      .news-number {
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          background: rgba(255,255,255,0.3);
+          border-radius: 50%;
+          text-align: center;
+          line-height: 25px;
+          font-weight: 600;
+          font-size: 0.9rem;
+          margin-right: 12px;
+      }
+      
+      .news-title {
+          font-size: 1.05rem;
+          font-weight: 600;
+          margin-bottom: 8px;
+          line-height: 1.4;
+      }
+      
+      .news-summary {
+          font-size: 0.85rem;
+          opacity: 0.9;
+          line-height: 1.4;
+      }
+      
+      .footer {
+          background: #2c3e50;
+          color: white;
+          padding: 20px 30px;
+          text-align: center;
+          font-size: 0.9rem;
+      }
+      
+      .footer-links {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          margin-bottom: 15px;
+      }
+      
+      .footer-link {
+          color: #ecf0f1;
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
+      
+      .footer-link:hover {
+          color: #3498db;
+      }
+      
+      @media (max-width: 768px) {
+          .content {
+              grid-template-columns: 1fr;
+          }
+          
+          .brand {
+              font-size: 2rem;
+          }
+          
+          .date-info {
+              position: static;
+              margin-top: 20px;
+          }
+          
+          .section {
+              padding: 30px 20px;
+          }
+      }
+  </style>
+</head>
+<body>
+  <div class="poster">
+      <header class="header">
+          <div class="date-info">
+              <div class="date">2025.07.14</div>
+              <div class="issue">第004期</div>
+          </div>
+          <h1 class="brand">
+              海之安每日网络安全快报
+              <span class="en">Hai Zhi An Daily Cybersecurity Report</span>
+          </h1>
+          <p class="subtitle">新旧风险交织 & 监管创新并行 | Traditional & Emerging Risks Intertwined</p>
+      </header>
+      
+      <div class="content">
+          <section class="section risks-section">
+              <h2 class="section-title">
+                  <span class="section-icon">⚠️</span>
+                  风险事件 Risks & Incidents
+              </h2>
+              
+              <div class="news-item">
+                  <div class="news-number">1</div>
+                  <h3 class="news-title">医院勒索攻击源头查明</h3>
+                  <p class="news-summary">华中某省中心医院勒索攻击事件溯源完成，确认为伪装"卫健委通知"的钓鱼邮件导致。暴露关键行业员工安全意识薄弱，透明溯源重要性凸显。</p>
+              </div>
+              
+              <div class="news-item">
+                  <div class="news-number">2</div>
+                  <h3 class="news-title">航旅"里程银行"钓鱼攻击</h3>
+                  <p class="news-summary">暑期出行高峰期，攻击者创建虚假"里程银行"、"积分中心"网站，通过短信邮件诱骗用户登录，窃取会员凭证盗刷积分。精准社工攻击升级。</p>
+              </div>
+              
+              <div class="news-item">
+                  <div class="news-number">3</div>
+                  <h3 class="news-title">开发者社区"CodeHub"遭拖库</h3>
+                  <p class="news-summary">知名代码分享社区遭攻击，用户数据库被完整下载，API密钥泄露风险极高。可能导致云服务、第三方应用访问权限被获取，构成供应链安全风险。</p>
+              </div>
+              
+              <div class="news-item">
+                  <div class="news-number">4</div>
+                  <h3 class="news-title">车联网V2X通信协议风险报告</h3>
+                  <p class="news-summary">国家级实验室首次发布V2X协议安全风险报告，发现多个漏洞可被利用伪造车辆身份、广播虚假路况，智能网联汽车安全焦点延伸至通信层面。</p>
+              </div>
+              
+              <div class="news-item">
+                  <div class="news-number">5</div>
+                  <h3 class="news-title">AI语音合成绕过声纹识别</h3>
+                  <p class="news-summary">研究团队演示生成式AI合成语音可绕过部分声纹识别系统，生成具有特定生物特征的"深度伪造"声纹，对金融安防领域构成新挑战。</p>
+              </div>
+              
+              <div class="news-item">
+                  <div class="news-number">6</div>
+                  <h3 class="news-title">SaaS平台通用漏洞影响多厂商</h3>
+                  <p class="news-summary">多家SaaS供应商使用存在漏洞的通用身份认证模块，导致XSS和权限提升风险。一旦攻击可能导致多家企业客户数据同时泄露，成为企业安全新短板。</p>
+              </div>
+          </section>
+          
+          <section class="section innovations-section">
+              <h2 class="section-title">
+                  <span class="section-icon">🚀</span>
+                  创新政策 Industry Innovations & Policy
+              </h2>
+              
+              <div class="news-item">
+                  <div class="news-number">7</div>
+                  <h3 class="news-title">App个人信息保护国家标准发布</h3>
+                  <p class="news-summary">强制性国标明确App超范围索权、频繁骚扰等行为界定标准，对"最小必要"原则给出量化指标。2026年1月实施，推动App合规化进程。</p>
+              </div>
+              
+              <div class="news-item">
+                  <div class="news-number">8</div>
+                  <h3 class="news-title">中国移动奇安信共建5G原生安全</h3>
+                  <p class="news-summary">双方签署战略合作协议，共建"5G原生安全中台"，将安全能力融入5G网络切片、边缘计算架构，为垂直行业提供一体化安全方案。</p>
+              </div>
+              
+              <div class="news-item">
+                  <div class="news-number">9</div>
+                  <h3 class="news-title">百度开源"鹰眼"威胁情报平台</h3>
+                  <p class="news-summary">百度安全团队开源威胁情报分析平台，集成NLP和图计算技术，自动分析安全报告生成威胁知识图谱，赋能中小企业降低分析门槛。</p>
+              </div>
+              
+              <div class="news-item">
+                  <div class="news-number">10</div>
+                  <h3 class="news-title">首个AI模型安全保险产品面世</h3>
+                  <p class="news-summary">中国人保推出国内首款AI模型安全保险，承保数据投毒、后门攻击等造成的损失，覆盖模型失效业务中断风险，保险范围向新兴技术延伸。</p>
+              </div>
+          </section>
+      </div>
+      
+      <footer class="footer">
+          <div class="footer-links">
+              <a href="#" class="footer-link">官方网站</a>
+              <a href="#" class="footer-link">订阅服务</a>
+              <a href="#" class="footer-link">联系我们</a>
+              <a href="#" class="footer-link">意见反馈</a>
+          </div>
+          <p>&copy; 2025 海之安网络安全. 保持警惕，守护安全 | Stay Alert, Stay Secure</p>
+      </footer>
+  </div>
+</body>
+</html>

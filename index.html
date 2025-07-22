@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海之安网络安全快报 - 新闻索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #1e3c72;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .update-time {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .latest-news {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .latest-news h2 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .latest-news h2::before {
+            content: '🔥';
+            font-size: 1.5rem;
+        }
+        
+        .news-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .news-card:hover {
+            border-color: #1e3c72;
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .news-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .news-summary {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .category-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .category-title {
+            color: #1e3c72;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .news-link {
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .news-link:hover {
+            background: #e3f2fd;
+            border-left-color: #1e3c72;
+            transform: translateX(5px);
+        }
+        
+        .news-link-title {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .news-link-date {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>海之安网络安全快报</h1>
+            <div class="subtitle">网络安全新闻索引 · 实时更新</div>
+            <div class="update-time">最后更新: 2025年07月22日 12:32</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="latest-news">
+                <h2>今日要闻</h2>
+                <div class="news-card" onclick="window.open('news20250721.html', '_blank')">
+                    <div class="news-title">海之安安全每日快报 - 2025-07-21 - 第1期</div>
+                    <div class="news-date">2025年07月21日</div>
+                    <div class="news-summary">2025年7月21日，中国网络安全态势呈现出“关键民生领域风险凸显，AI安全攻防进入深水区”的特点。从城市供水系统遭勒索攻击，到针对AI防御系统的新型攻击手法，网络威胁正以前所未有的深度和广度渗透到社会运行的各个层面。与此同时，国家监管部门正加速出台针对大模型等新技术的安全规范，产业界也在云原生安全、汽车数据安全等领域积极布局，共同应对挑战。...</div>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="category-section">
+                    <div class="category-title">📅 本周新闻</div>
+                    <a href="news20250721.html" class="news-link" target="_blank">
+                        <div class="news-link-title">海之安安全每日快报 - 2025-07-21 - 第1期</div>
+                        <div class="news-link-date">2025年07月21日</div>
+                    </a>
+                    <a href="news20250716.html" class="news-link" target="_blank">
+                        <div class="news-link-title">海之安每日网络安全快报 - 2025年7月16日</div>
+                        <div class="news-link-date">2025年07月16日</div>
+                    </a>
+                    <a href="news20250715.html" class="news-link" target="_blank">
+                        <div class="news-link-title">海之安每日网络安全快报</div>
+                        <div class="news-link-date">2025年07月15日</div>
+                    </a>
+                </div>
+                <div class="category-section">
+                    <div class="category-title">📆 本月新闻</div>
+                    <a href="news20250713.html" class="news-link" target="_blank">
+                        <div class="news-link-title">海之安每日网络安全快报</div>
+                        <div class="news-link-date">2025年07月13日</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 海之安网络安全. 保持警惕，守护安全</p>
+            <p>共收录 0 篇安全快报</p>
+        </div>
+    </div>
+    
+    <script>
+        // 自动刷新页面（每5分钟）
+        setTimeout(function() {
+            location.reload();
+        }, 300000);
+    </script>
+</body>
+</html>

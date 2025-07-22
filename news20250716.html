@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安每日网络安全快报 - 2025年7月16日</title>
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      
+      body {
+          font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+          background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+          min-height: 100vh;
+          padding: 20px;
+      }
+      
+      .poster {
+          max-width: 800px;
+          margin: 0 auto;
+          background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+          position: relative;
+      }
+      
+      .poster::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" patternUnits="userSpaceOnUse" width="20" height="20"><path d="M0 10h5v-5h5v5h5v5h-5v5h-5v-5h-5z" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>') repeat;
+          pointer-events: none;
+      }
+      
+      .header {
+          background: linear-gradient(90deg, #ff4757 0%, #ff6b7a 100%);
+          padding: 25px 30px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+      }
+      
+      .header::before {
+          content: '🛡️';
+          position: absolute;
+          left: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 32px;
+          opacity: 0.8;
+      }
+      
+      .header h1 {
+          color: white;
+          font-size: 28px;
+          font-weight: bold;
+          margin-bottom: 8px;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      .header .date {
+          color: #ffe8e8;
+          font-size: 16px;
+          font-weight: 500;
+      }
+      
+      .summary {
+          background: rgba(255,255,255,0.05);
+          margin: 20px;
+          padding: 20px;
+          border-radius: 12px;
+          border-left: 4px solid #3742fa;
+      }
+      
+      .summary h3 {
+          color: #70a1ff;
+          font-size: 16px;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+      }
+      
+      .summary h3::before {
+          content: '📊';
+          margin-right: 8px;
+      }
+      
+      .summary p {
+          color: #ddd;
+          line-height: 1.6;
+          font-size: 14px;
+      }
+      
+      .section {
+          margin: 20px;
+          background: rgba(255,255,255,0.03);
+          border-radius: 15px;
+          overflow: hidden;
+          border: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      .section-header {
+          padding: 20px 25px;
+          font-size: 20px;
+          font-weight: bold;
+          color: white;
+          display: flex;
+          align-items: center;
+      }
+      
+      .section-header.critical {
+          background: linear-gradient(90deg, #ff4757 0%, #ff6b7a 100%);
+      }
+      
+      .section-header.warning {
+          background: linear-gradient(90deg, #ffa502 0%, #ffb142 100%);
+      }
+      
+      .section-header.positive {
+          background: linear-gradient(90deg, #2ed573 0%, #7bed9f 100%);
+      }
+      
+      .section-header::before {
+          font-size: 24px;
+          margin-right: 12px;
+      }
+      
+      .section-header.critical::before { content: '🚨'; }
+      .section-header.warning::before { content: '⚠️'; }
+      .section-header.positive::before { content: '🚀'; }
+      
+      .news-item {
+          padding: 20px 25px;
+          border-bottom: 1px solid rgba(255,255,255,0.05);
+          transition: background 0.3s ease;
+      }
+      
+      .news-item:hover {
+          background: rgba(255,255,255,0.02);
+      }
+      
+      .news-item:last-child {
+          border-bottom: none;
+      }
+      
+      .news-title {
+          color: #70a1ff;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 8px;
+          display: flex;
+          align-items: flex-start;
+      }
+      
+      .news-title::before {
+          content: '▶';
+          color: #ff6b7a;
+          margin-right: 8px;
+          margin-top: 2px;
+          font-size: 12px;
+      }
+      
+      .news-content {
+          color: #ccc;
+          font-size: 14px;
+          line-height: 1.5;
+          margin-left: 16px;
+      }
+      
+      .footer {
+          background: rgba(0,0,0,0.3);
+          padding: 20px;
+          text-align: center;
+          color: #888;
+          font-size: 12px;
+      }
+      
+      .stats {
+          display: flex;
+          justify-content: space-around;
+          margin: 20px;
+          padding: 20px;
+          background: rgba(255,255,255,0.05);
+          border-radius: 12px;
+      }
+      
+      .stat-item {
+          text-align: center;
+      }
+      
+      .stat-number {
+          font-size: 24px;
+          font-weight: bold;
+          color: #ff6b7a;
+      }
+      
+      .stat-label {
+          font-size: 12px;
+          color: #aaa;
+          margin-top: 4px;
+      }
+  </style>
+</head>
+<body>
+  <div class="poster">
+      <div class="header">
+          <h1>海之安每日网络安全快报</h1>
+          <div class="date">2025年7月16日 星期三</div>
+      </div>
+      
+      <div class="summary">
+          <h3>今日摘要</h3>
+          <p>2025年7月16日，中国的网络安全态势呈现出"物理世界与数字世界加速融合"的特点。智能电表、车联网等领域的安全风险首次成为公众关注焦点，显示出网络攻击的潜在影响正从虚拟空间向现实生活蔓延。同时，针对求职者、开发者等特定群体的精准攻击事件频发，凸显了数据安全防护的紧迫性。</p>
+      </div>
+      
+      <div class="stats">
+          <div class="stat-item">
+              <div class="stat-number">10</div>
+              <div class="stat-label">重要事件</div>
+          </div>
+          <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">焦点事件</div>
+          </div>
+          <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">风险预警</div>
+          </div>
+          <div class="stat-item">
+              <div class="stat-number">4</div>
+              <div class="stat-label">产业动态</div>
+          </div>
+      </div>
+      
+      <div class="section">
+          <div class="section-header critical">
+              焦点安全事件
+          </div>
+          <div class="news-item">
+              <div class="news-title">国内知名招聘平台"英才招聘网"遭攻击，大量求职者简历信息面临泄露风险</div>
+              <div class="news-content">数据库遭恶意攻击，包含用户姓名、联系方式、求职经历等敏感信息可能泄露，对求职者个人隐私构成严重威胁。</div>
+          </div>
+          <div class="news-item">
+              <div class="news-title">安徽合肥市住房公积金管理中心遭勒索软件攻击，业务办理受阻</div>
+              <div class="news-content">部分业务服务器遭勒索软件攻击，线上查询、贷款审批等业务暂时中断，凸显政府机构网络安全防护能力亟待加强。</div>
+          </div>
+          <div class="news-item">
+              <div class="news-title">针对"CodeHub.cn"泄露事件的二次钓鱼攻击出现</div>
+              <div class="news-content">攻击者利用泄露的用户邮箱列表发送钓鱼邮件，引导用户进入假冒网站窃取密码，典型的二次收割手法。</div>
+          </div>
+      </div>
+      
+      <div class="section">
+          <div class="section-header warning">
+              重大风险与预警
+          </div>
+          <div class="news-item">
+              <div class="news-title">"长城实验室"报告：国内某主流品牌智能电表存在远程控制漏洞</div>
+              <div class="news-content">高危固件漏洞可被利用远程篡改电表读数，甚至控制通断，对国家电力网络稳定构成潜在威胁。</div>
+          </div>
+          <div class="news-item">
+              <div class="news-title">清华大学研究：大型语言模型（LLM）存在"训练数据提取"风险</div>
+              <div class="news-content">通过特定查询可提取模型训练阶段的原始敏感数据，对AI训练数据的安全和隐私保护提出新挑战。</div>
+          </div>
+          <div class="news-item">
+              <div class="news-title">云市场第三方应用成供应链攻击新入口</div>
+              <div class="news-content">云服务商应用市场中的第三方插件存在安全漏洞，可能成为攻击者进入企业核心系统的后门。</div>
+          </div>
+      </div>
+      
+      <div class="section">
+          <div class="section-header positive">
+              产业创新与政策
+          </div>
+          <div class="news-item">
+              <div class="news-title">工信部就《车联网数据安全管理办法（试行）》公开征求意见</div>
+              <div class="news-content">首个车联网数据安全专门管理规定，强调"车内处理"、"默认不收集"原则，为智能汽车产业提供法规保障。</div>
+          </div>
+          <div class="news-item">
+              <div class="news-title">百度发布"文心安全大模型"，推出面向分析师的AI安全副驾</div>
+              <div class="news-content">基于文心大模型4.5训练，可自动完成威胁分析、溯源报告等工作，将安全专家响应效率提升5-10倍。</div>
+          </div>
+          <div class="news-item">
+              <div class="news-title">"国家数据安全与隐私计算联盟"在北京成立</div>
+              <div class="news-content">近百家企业、高校和研究机构共同发起，推动隐私计算技术标准制定和应用落地。</div>
+          </div>
+          <div class="news-item">
+              <div class="news-title">市场报告预测：中国安全自动化编排（SOAR）市场将迎爆发式增长</div>
+              <div class="news-content">IDC预测未来三年SOAR市场年复合增长率将超过40%，成为大中型企业刚性需求。</div>
+          </div>
+      </div>
+      
+      <div class="footer">
+          海之安网络安全研究院 | 专业·及时·权威<br>
+          本快报基于公开信息整理分析，仅供参考
+      </div>
+  </div>
+</body>
+</html>
