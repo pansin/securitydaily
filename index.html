@@ -33,6 +33,13 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+        
         .header h1 {
             color: #1e3c72;
             font-size: 2.5rem;
@@ -167,10 +174,31 @@
         .footer {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
             color: #666;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .footer-links {
+            margin-bottom: 15px;
+        }
+        
+        .footer-link {
+            color: #1e3c72;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #3b82f6;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            margin-top: 10px;
         }
         
         @media (max-width: 768px) {
@@ -187,9 +215,25 @@
 <body>
     <div class="container">
         <div class="header">
+            <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle cx="40" cy="60" r="25" fill="url(#logoGradient)" opacity="0.8"/>
+                <circle cx="25" cy="35" r="15" fill="url(#logoGradient)" opacity="0.9"/>
+                <circle cx="55" cy="35" r="12" fill="url(#logoGradient)" opacity="0.7"/>
+                <circle cx="35" cy="75" r="10" fill="url(#logoGradient)" opacity="0.6"/>
+                <circle cx="60" cy="75" r="8" fill="url(#logoGradient)" opacity="0.8"/>
+                <text x="90" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e3c72">ocean security</text>
+                <text x="90" y="70" font-family="Arial, sans-serif" font-size="12" fill="#666">海之安，数字安全专家</text>
+            </svg>
             <h1>海之安网络安全快报</h1>
             <div class="subtitle">网络安全新闻索引 · 实时更新</div>
-            <div class="update-time">最后更新: 2025年07月23日 11:19</div>
+            <div class="update-time">最后更新: 2025年07月23日 11:26</div>
         </div>
         
         <div class="main-content">
@@ -233,8 +277,13 @@
         </div>
         
         <div class="footer">
-            <p>&copy; 2025 海之安网络安全. 保持警惕，守护安全</p>
-            <p>共收录 5 篇安全快报</p>
+            <div class="footer-links">
+                <a href="https://www.oceansecurity.cn" class="footer-link" target="_blank">官方网站</a>
+                <a href="https://www.oceansecurity.cn/about" class="footer-link" target="_blank">关于我们</a>
+                <a href="https://www.oceansecurity.cn/contact" class="footer-link" target="_blank">联系我们</a>
+            </div>
+            <p>&copy; 2025 海之安（中国）科技有限公司. 保持警惕，守护安全</p>
+            <p class="copyright">共收录 5 篇安全快报 | 官网：<a href="https://www.oceansecurity.cn" target="_blank" style="color: #1e3c72;">www.oceansecurity.cn</a></p>
         </div>
     </div>
     
