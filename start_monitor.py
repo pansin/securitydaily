@@ -87,8 +87,9 @@ def categorize_news_by_date(news_list):
 
 def generate_index():
     """生成index.html文件"""
-    # 获取所有news开头的HTML文件
-    news_files = glob.glob('news*.html')
+    # 获取所有news开头的HTML文件，但排除模板文件
+    all_news_files = glob.glob('news*.html')
+    news_files = [f for f in all_news_files if re.search(r'news\d{8}\.html', f)]
     
     if not news_files:
         print("未找到新闻文件")
