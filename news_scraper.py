@@ -105,8 +105,8 @@ class SecurityNewsScraper:
                 elif hasattr(entry, 'updated_parsed'):
                     pub_date = datetime(*entry.updated_parsed[:6]).date()
                 
-                # 只处理今天的新闻
-                if pub_date and pub_date == self.today:
+                # 处理最近3天的新闻
+                if pub_date and (self.today - pub_date).days <= 3:
                     news_item = {
                         'title': entry.title,
                         'link': entry.link,
