@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>海之安安全每日快报 - 2025-07-25 - 第4期</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>海之安安全每日快报 - 2025-07-25 - 第1期</title>
   
     <style>
       * {
@@ -190,23 +190,161 @@
       .icon-risk::before { content: '⚠️'; }
       .icon-innovation::before { content: '🚀'; }
       
+      /* 移动端响应式样式 */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+          font-size: 14px;
+        }
+        
+        .container {
+          max-width: 100%;
+          border-radius: 8px;
+          margin: 0;
+        }
+        
+        .header {
+          padding: 20px 15px;
+        }
+        
+        .logo {
+          width: 80px;
+          margin-bottom: 15px;
+        }
+        
+        .title {
+          font-size: 24px;
+          margin-bottom: 12px;
+        }
+        
+        .subtitle {
+          font-size: 14px;
+        }
+        
+        .content {
+          padding: 20px 15px;
+        }
+        
+        .summary-section {
+          padding: 15px;
+          margin-bottom: 20px;
+        }
+        
+        .summary-title {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+        
+        .summary-content {
+          font-size: 14px;
+          line-height: 1.6;
+        }
+        
+        .category-section {
+          margin-bottom: 25px;
+        }
+        
+        .category-header {
+          padding: 15px;
+        }
+        
+        .category-title {
+          font-size: 18px;
+          gap: 8px;
+        }
+        
+        .category-news {
+          padding: 15px;
+        }
+        
+        .news-item {
+          padding: 15px;
+          margin-bottom: 15px;
+        }
+        
+        .news-title {
+          font-size: 16px;
+          margin-bottom: 10px;
+          line-height: 1.3;
+        }
+        
+        .news-analysis {
+          font-size: 13px;
+          line-height: 1.5;
+        }
+        
+        .footer {
+          padding: 15px;
+          font-size: 12px;
+        }
+      }
+      
+      /* 小屏幕优化 */
+      @media (max-width: 480px) {
+        body {
+          padding: 5px;
+          font-size: 13px;
+        }
+        
+        .container {
+          border-radius: 4px;
+        }
+        
+        .header {
+          padding: 15px 10px;
+        }
+        
+        .logo {
+          width: 60px;
+        }
+        
+        .title {
+          font-size: 20px;
+        }
+        
+        .content {
+          padding: 15px 10px;
+        }
+        
+        .summary-section,
+        .category-header,
+        .category-news {
+          padding: 12px;
+        }
+        
+        .news-item {
+          padding: 12px;
+        }
+        
+        .news-title {
+          font-size: 15px;
+        }
+        
+        .news-analysis {
+          font-size: 12px;
+        }
+      }
+      
       /* 打印样式 */
       @media print {
         body {
           background: white;
           color: black;
           padding: 0;
+          font-size: 12px;
         }
         
         .container {
           box-shadow: none;
           border: none;
           background: white;
+          max-width: 100%;
         }
         
         .header {
           background: #f8f9fa;
           border-bottom: 2px solid #dee2e6;
+          padding: 20px;
         }
         
         .title {
@@ -235,6 +373,10 @@
         .summary-content {
           color: #374151;
         }
+        
+        .content {
+          padding: 20px;
+        }
       }
     </style>
   
@@ -244,7 +386,7 @@
     <div class="header">
       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAN0CAIAAAArnUa0AAAABmJLR0QA/wD/AP+gvaeTAAAgAElEQVR4nOzdd3zV1f3H8fP93pm9SCAhIey9BBkyFJyoOKt1b3FgW2e1WltrW2urXY627j1Q3AMHiooIsqcgG0IGJO/kru/390f6S0NIcs/33pvkwnk9H/3Dws3Nl+Te7z3vcz7nczTTNAUAAAAAQD16d18AAAAAAKB7EAgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKYCggp2Bj92BMAAAAASUVORK5CYII=" alt="Ocean Security Logo" class="logo">
       <h1 class="title">海之安安全每日快报</h1>
-      <div class="subtitle">2025-07-25 · 第4期</div>
+      <div class="subtitle">2025-07-25 · 第1期</div>
     </div>
     
     <div class="content">
@@ -332,7 +474,7 @@
     
     <div class="footer">
       <p>© 2025 Ocean Security · 海之安安全每日快报</p>
-      <p>Generated on 2025/7/25 10:24:26</p>
+      <p>Generated on 2025/7/25 10:57:25</p>
     </div>
   </div>
 </body>
