@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安安全日报生成器</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Microsoft YaHei', 'SimHei', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 
+                  0 0 0 1px rgba(59, 130, 246, 0.1),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      padding: 40px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #e2e8f0;
+    }
+    
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 8px;
+      color: #e2e8f0;
+      font-family: inherit;
+      font-size: 16px;
+    }
+    
+    textarea {
+      min-height: 300px;
+      resize: vertical;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+    
+    .preview-container {
+      margin-top: 40px;
+      border-top: 1px solid rgba(59, 130, 246, 0.3);
+      padding-top: 20px;
+    }
+    
+    .preview-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #e2e8f0;
+    }
+    
+    #preview-frame {
+      width: 100%;
+      height: 600px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 8px;
+      background: white;
+    }
+    
+    .instructions {
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .instructions h3 {
+      color: #3b82f6;
+      margin-bottom: 10px;
+    }
+    
+    .instructions ul {
+      margin-left: 20px;
+    }
+    
+    .instructions li {
+      margin-bottom: 8px;
+    }
+    
+    .error {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 10px;
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+      
+      .title {
+        font-size: 28px;
+      }
+      
+      .subtitle {
+        font-size: 16px;
+      }
+      
+      #preview-frame {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="./ocean_security_logo.png" alt="Ocean Security Logo" class="logo">
+      <h1 class="title">海之安安全日报生成器</h1>
+      <p class="subtitle">粘贴内容，一键生成精美安全日报</p>
+    </div>
+    
+    <div class="instructions">
+      <h3>使用说明</h3>
+      <ul>
+        <li>在下方文本框中粘贴安全日报的原始内容（Markdown格式）</li>
+        <li>填写日期和期号</li>
+        <li>点击"生成预览"按钮查看效果</li>
+        <li>满意后点击"下载HTML"按钮保存</li>
+      </ul>
+    </div>
+    
+    <div class="form-group">
+      <label for="date">日期</label>
+      <input type="text" id="date" placeholder="例如：2023年7月21日 或 2023-07-21">
+    </div>
+    
+    <div class="form-group">
+      <label for="issue">期号</label>
+      <input type="number" id="issue" placeholder="例如：42">
+    </div>
+    
+    <div class="form-group">
+      <label for="content">安全日报内容（Markdown格式）</label>
+      <textarea id="content" placeholder="在此粘贴安全日报内容..."></textarea>
+      <div id="error-message" class="error"></div>
+    </div>
+    
+    <div class="form-group">
+      <button id="preview-btn" class="button">生成预览</button>
+      <button id="download-btn" class="button" style="margin-left: 10px;">下载HTML</button>
+    </div>
+    
+    <div class="preview-container">
+      <h2 class="preview-title">预览</h2>
+      <iframe id="preview-frame" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <script type="module">
+    import { parseContent } from './osdr-parser.js';
+    import { generateHTMLReport, downloadHTMLReport } from './osdr-generator.js';
+    
+    const dateInput = document.getElementById('date');
+    const issueInput = document.getElementById('issue');
+    const contentInput = document.getElementById('content');
+    const previewBtn = document.getElementById('preview-btn');
+    const downloadBtn = document.getElementById('download-btn');
+    const previewFrame = document.getElementById('preview-frame');
+    const errorMessage = document.getElementById('error-message');
+    
+    // 设置默认日期为今天
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    dateInput.value = `${year}年${month}月${day}日`;
+    
+    // 设置默认期号
+    issueInput.value = "1";
+    
+    let currentReport = null;
+    
+    previewBtn.addEventListener('click', generatePreview);
+    downloadBtn.addEventListener('click', downloadHTML);
+    
+    function generatePreview() {
+      try {
+        errorMessage.style.display = 'none';
+        
+        // 获取用户输入
+        const date = dateInput.value.trim();
+        const issue = parseInt(issueInput.value.trim(), 10);
+        const content = contentInput.value.trim();
+        
+        if (!date) {
+          showError('请输入日期');
+          return;
+        }
+        
+        if (isNaN(issue) || issue <= 0) {
+          showError('请输入有效的期号');
+          return;
+        }
+        
+        if (!content) {
+          showError('请输入安全日报内容');
+          return;
+        }
+        
+        // 解析内容
+        const parsedContent = parseContent(content);
+        
+        // 创建报告对象
+        currentReport = {
+          date: date,
+          issue: issue,
+          summary: parsedContent.summary || '',
+          news: parsedContent.news || []
+        };
+        
+        // 生成HTML
+        const html = generateHTMLReport(currentReport);
+        
+        // 显示预览
+        const blob = new Blob([html], { type: 'text/html' });
+        previewFrame.src = URL.createObjectURL(blob);
+        
+      } catch (error) {
+        console.error('生成预览失败:', error);
+        showError('生成预览失败: ' + error.message);
+      }
+    }
+    
+    function downloadHTML() {
+      try {
+        if (!currentReport) {
+          showError('请先生成预览');
+          return;
+        }
+        
+        downloadHTMLReport(currentReport);
+        
+      } catch (error) {
+        console.error('下载失败:', error);
+        showError('下载失败: ' + error.message);
+      }
+    }
+    
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorMessage.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
