@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安安全每日快报 - 2025-07-25 - 第4期</title>
+  
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Microsoft YaHei', 'SimHei', 'Arial', sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f1f5f9;
+        min-height: 100vh;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 16px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 
+                    0 0 0 1px rgba(59, 130, 246, 0.1),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+      }
+      
+      .header {
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+        border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+        padding: 40px;
+        text-align: center;
+        position: relative;
+      }
+      
+      .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      }
+      
+      .logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 16px;
+        text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+      }
+      
+      .subtitle {
+        font-size: 18px;
+        color: #94a3b8;
+        margin-bottom: 8px;
+      }
+      
+      .content {
+        padding: 40px;
+      }
+      
+      .summary-section {
+        background: rgba(30, 41, 59, 0.8);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 32px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      }
+      
+      .summary-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #3b82f6;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .summary-title::before {
+        content: '📊';
+        font-size: 24px;
+      }
+      
+      .summary-content {
+        color: #cbd5e1;
+        line-height: 1.8;
+        font-size: 16px;
+      }
+      
+      .category-section {
+        margin-bottom: 40px;
+        background: rgba(30, 41, 59, 0.4);
+        border-radius: 12px;
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        overflow: hidden;
+      }
+      
+      .category-header {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+        padding: 20px 24px;
+        border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      }
+      
+      .category-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      
+      .category-news {
+        padding: 24px;
+      }
+      
+      .news-item {
+        background: rgba(51, 65, 85, 0.6);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      
+      .news-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+        border-radius: 2px 0 0 2px;
+      }
+      
+      .news-item:hover {
+        border-color: rgba(59, 130, 246, 0.4);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+      }
+      
+      .news-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #f1f5f9;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+      
+      .news-analysis {
+        color: #cbd5e1;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+      
+      .footer {
+        background: rgba(15, 23, 42, 0.8);
+        border-top: 1px solid rgba(59, 130, 246, 0.3);
+        padding: 24px 40px;
+        text-align: center;
+        color: #64748b;
+        font-size: 14px;
+      }
+      
+      /* 图标样式 */
+      .icon-focus::before { content: '🎯'; }
+      .icon-risk::before { content: '⚠️'; }
+      .icon-innovation::before { content: '🚀'; }
+      
+      /* 打印样式 */
+      @media print {
+        body {
+          background: white;
+          color: black;
+          padding: 0;
+        }
+        
+        .container {
+          box-shadow: none;
+          border: none;
+          background: white;
+        }
+        
+        .header {
+          background: #f8f9fa;
+          border-bottom: 2px solid #dee2e6;
+        }
+        
+        .title {
+          color: #2563eb !important;
+          -webkit-text-fill-color: #2563eb !important;
+        }
+        
+        .summary-section,
+        .category-section,
+        .news-item {
+          background: white;
+          border: 1px solid #dee2e6;
+          color: black;
+        }
+        
+        .summary-title,
+        .category-title {
+          color: #2563eb;
+        }
+        
+        .news-title {
+          color: #1f2937;
+        }
+        
+        .news-analysis,
+        .summary-content {
+          color: #374151;
+        }
+      }
+    </style>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAN0CAIAAAArnUa0AAAABmJLR0QA/wD/AP+gvaeTAAAgAElEQVR4nOzdd3zV1f3H8fP93pm9SCAhIey9BBkyFJyoOKt1b3FgW2e1WltrW2urXY627j1Q3AMHiooIsqcgG0IGJO/kru/390f6S0NIcs/33pvkwnk9H/3Dws3Nl+Te7z3vcz7nczTTNAUAAAAAQD16d18AAAAAAKB7EAgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKSEEAACYEkIAAIApIQQAAJgSQgAAgCkhBAAAmBJCAACAKYCggp2Bj92BMAAAAASUVORK5CYII=" alt="Ocean Security Logo" class="logo">
+      <h1 class="title">海之安安全每日快报</h1>
+      <div class="subtitle">2025-07-25 · 第4期</div>
+    </div>
+    
+    <div class="content">
+      
+        <div class="summary-section">
+          <h2 class="summary-title">今日摘要</h2>
+          <div class="summary-content">2025年7月25日，中国网络安全领域的核心议题体现为“后果显现”与“规则深化”。一方面，此前发生的勒索攻击事件开始出现实际的数据泄露后果，对受害企业造成二次伤害；同时，网络风险正向智慧农业等新兴实体领域蔓延。另一方面，国家监管机构正以前所未有的力度推动App隐私合规与金融开放API的安全标准化，产业界也在XDR、后量子密码等前沿技术上取得新进展，共同塑造着未来安全的新格局。</div>
+        </div>
+      
+      
+      
+        <div class="category-section">
+          <div class="category-header">
+            <h2 class="category-title icon-focus">焦点安全事件</h2>
+          </div>
+          <div class="category-news">
+            
+        <div class="news-item">
+          <div class="news-title">北京某律所勒索攻击事件升级：攻击团伙开始在暗网泄露案件资料</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 针对本周初国内某大型律师事务所遭勒索软件攻击事件，今日事态出现重大升级。由于该律所拒绝支付赎金，攻击团伙已开始在其暗网泄露网站上分批公布所窃取的案件卷宗，内容涉及多家知名企业的商业诉讼和并购合同。此次事件是“双重勒索”攻击的典型恶性后果，不仅对律所自身信誉造成毁灭性打击，更严重损害了其客户的商业利益和隐私，凸显了专业服务行业数据安全防线一旦被破的严重连锁反应。</div>
+        </div>
+      
+        <div class="news-item">
+          <div class="news-title">国内半导体设计行业遭精准鱼叉攻击，旨在窃取芯片设计图纸</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 多家网络安全公司今日联合发布警报，称一个代号为“芯片窃贼（ChipThief）”的APT组织正在对我国多家半导体设计公司的工程师发起大规模、高度定制化的鱼叉式网络钓鱼攻击。攻击者伪装成EDA工具厂商或合作伙伴，发送携带恶意载荷的技术文档，试图植入后门以窃取芯片设计的知识产权（IP）。在当前国际科技竞争背景下，此类针对核心技术领域的网络间谍活动对我国科技自主创新构成了直接威胁。</div>
+        </div>
+      
+        <div class="news-item">
+          <div class="news-title">某头部云服务商对象存储（OSS）服务出现区域性中断，疑为内部安全配置错误</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 今日下午，国内某头部云服务商的对象存储服务（OSS）在中国华东区域出现约一小时的服务不可用，导致大量依赖该服务存储静态资源的网站、App和小程序无法加载图片和文件。尽管官方公告称正在紧急排查，但有内部消息透露，事故可能由一名工程师在执行安全策略变更时出现重大配置错误导致。此次事件再次表明，大型云平台的安全不仅面临外部攻击，其内部运维的复杂性和“人”的因素同样是巨大的风险点。
+
+---</div>
+        </div>
+      
+        <div class="news-item">
+          <div class="news-title">国家网信办通报App专项治理行动结果，下架105款严重违规App</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 国家互联网信息办公室（CAC）今日通报了“清朗·2025”App个人信息保护专项治理行动的阶段性成果。行动中，监管部门对上千款主流App进行了技术检测，并对其中105款存在“超范围收集个人信息”、“强制索取非必要权限”、“后台自启动”等严重问题的App予以下架处置，并对相关运营企业进行约谈和罚款。此次大规模执法行动表明，我国对App隐私合规的监管正从“发文指导”转向“严厉执法”的常态化阶段。</div>
+        </div>
+      
+        <div class="news-item">
+          <div class="news-title">深信服发布国内首个融合OT安全能力的XDR平台</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 国内网络安全厂商深信服今日正式发布其新一代扩展威胁检测与响应（XDR）平台。与传统XDR不同，该平台首次深度融合了运营技术（OT）环境的安全数据源，能够关联分析来自企业IT网络和工业生产网的威胁告警，实现对IT/OT融合场景下复杂攻击链的统一检测和联动响应。这标志着国内安全厂商在应对工业互联网安全挑战上迈出了重要一步。</div>
+        </div>
+      
+        <div class="news-item">
+          <div class="news-title">中国人民银行发布《开放银行业务应用编程接口（API）安全技术规范》</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 为规范和保障开放银行业务的健康发展，中国人民银行今日正式发布了JR/T 0223-2025《开放银行业务应用编程接口安全技术规范》金融行业标准。该《规范》对开放银行场景下的API接口设计、身份认证、访问控制、数据加密、交易监控等方面提出了详尽的安全要求。标准的出台，为商业银行与第三方科技公司之间的数据共享和业务合作提供了统一、权威的安全基线，将有力促进金融科技生态的安全创新。</div>
+        </div>
+      
+        <div class="news-item">
+          <div class="news-title">上海交大团队在“格密码”后量子密码算法上取得理论突破</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 从正在举行的国际密码学会年会上获悉，上海交通大学密码与计算机安全实验室（LoCCS）的一个研究团队，在基于格（Lattice-based）的后量子密码（PQC）算法上取得重要理论突破。他们提出的一种新签名方案，在同等安全强度下，其密钥尺寸和签名效率均优于当前美国国家标准与技术研究院（NIST）正在标准化的国际算法。这一成果展示了我国在应对“量子霸权”威胁的基础密码学研究上已具备国际前沿竞争力。</div>
+        </div>
+      
+          </div>
+        </div>
+      
+        <div class="category-section">
+          <div class="category-header">
+            <h2 class="category-title icon-risk">重大风险与预警</h2>
+          </div>
+          <div class="category-news">
+            
+        <div class="news-item">
+          <div class="news-title">农业物联网（IoT）设备成网络攻击新目标，或威胁粮食安全</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 中国农业科学院信息研究所今日发布安全预警，指出智慧农业中广泛应用的土壤墒情监测器、智能灌溉系统、植保无人机等物联网设备普遍存在安全漏洞和弱口令问题。报告模拟了攻击者如何通过入侵这些设备，进行篡改气象数据、扰乱灌溉施肥、传播错误农情等操作，从而影响作物生长，对局部地区的粮食生产构成潜在威胁。这标志着网络安全风险正从城市向农业领域加速延伸。</div>
+        </div>
+      
+        <div class="news-item">
+          <div class="news-title">AI模型“数据投毒”风险研究：可导致内容审核系统失灵</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 一篇来自复旦大学网络空间安全学院的预印本论文在学术界引起关注。研究团队通过一种新型的“数据投毒”攻击，成功污染了某主流图像识别大模型的训练数据集。经过污染训练后，该模型会将部分正常的宣传海报或新闻图片错误识别为违规内容，同时对某些真正的违规图片“视而不见”。这项研究揭示了AI内容审核系统面临的深层安全风险，攻击者可利用此方法进行隐蔽的舆论操控或信息污染。</div>
+        </div>
+      
+        <div class="news-item">
+          <div class="news-title">离职员工“数据报复”成企业内部威胁新高发点</div>
+          <div class="news-analysis"><strong>分析与影响：</strong> 近期一份针对国内科技企业的内部威胁报告指出，由心怀不满的离职员工发起的“数据报复”或“数据窃取”事件呈上升趋势。这些员工利用离职前仍然拥有的系统访问权限，恶意删除核心数据、窃取商业机密或客户资料。报告强调，众多企业在员工离职流程（Off-boarding）中对权限回收和行为审计的疏忽，是造成此类风险的主要原因。
+
+---</div>
+        </div>
+      
+          </div>
+        </div>
+      
+    </div>
+    
+    <div class="footer">
+      <p>© 2025 Ocean Security · 海之安安全每日快报</p>
+      <p>Generated on 2025/7/25 10:24:26</p>
+    </div>
+  </div>
+</body>
+</html>

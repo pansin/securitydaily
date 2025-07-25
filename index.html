@@ -33,13 +33,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
-        .logo {
-            width: 200px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-        }
-        
         .header h1 {
             color: #1e3c72;
             font-size: 2.5rem;
@@ -174,31 +167,10 @@
         .footer {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            padding: 25px;
+            padding: 20px;
             text-align: center;
             color: #666;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .footer-links {
-            margin-bottom: 15px;
-        }
-        
-        .footer-link {
-            color: #1e3c72;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: #3b82f6;
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-            margin-top: 10px;
         }
         
         @media (max-width: 768px) {
@@ -215,40 +187,28 @@
 <body>
     <div class="container">
         <div class="header">
-            <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
-                        <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <circle cx="40" cy="60" r="25" fill="url(#logoGradient)" opacity="0.8"/>
-                <circle cx="25" cy="35" r="15" fill="url(#logoGradient)" opacity="0.9"/>
-                <circle cx="55" cy="35" r="12" fill="url(#logoGradient)" opacity="0.7"/>
-                <circle cx="35" cy="75" r="10" fill="url(#logoGradient)" opacity="0.6"/>
-                <circle cx="60" cy="75" r="8" fill="url(#logoGradient)" opacity="0.8"/>
-                <text x="90" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e3c72">ocean security</text>
-                <text x="90" y="70" font-family="Arial, sans-serif" font-size="12" fill="#666">海之安，数字安全专家</text>
-            </svg>
             <h1>海之安网络安全快报</h1>
             <div class="subtitle">网络安全新闻索引 · 实时更新</div>
-            <div class="update-time">最后更新: 2025年07月24日 10:45</div>
+            <div class="update-time">最后更新: 2025年07月25日 10:27</div>
         </div>
         
         <div class="main-content">
             <div class="latest-news">
                 <h2>今日要闻</h2>
-                <div class="news-card" onclick="window.open('news20250724.html', '_blank')">
-                    <div class="news-title">海之安安全每日快报 - 2025-07-24 - 第3期</div>
-                    <div class="news-date">2025年07月24日</div>
-                    <div class="news-summary">2025年7月24日，中国网络安全领域的核心议题围绕**“数字政府服务的脆弱性”**与**“人工智能引入的伴生风险”**展开。浙江省“一网通办”平台的数据安全事件为全国数字政府建设敲响警钟，而AI在软件开发和身份认证中引入的新型风险，则预示着安全攻防对抗正进入更深层次的智能化阶段。在产业方面，国家级云服务安全标准的出台以及行业联盟的建立，显示出中国正加速构建精细化、标准化的安全治理体系。...</div>
+                <div class="news-card" onclick="window.open('news20250724bak.html', '_blank')">
+                    <div class="news-title">海之安安全每日快报 - 2025-07-24 - 第37期</div>
+                    <div class="news-date">未知日期</div>
+                    <div class="news-summary">今日网络安全领域重点关注：【1】思科 (Cisco) 警告：最高危ISE远程代码执行漏洞已被...；【2】CISA警告：“Interlock”勒索病毒采用双重勒索手段...；【3】Coyote恶意软件滥用Windows可访问性框架进行数据窃......</div>
                 </div>
             </div>
             
             <div class="sidebar">
                 <div class="category-section">
                     <div class="category-title">📅 本周新闻</div>
+                    <a href="news20250724.html" class="news-link" target="_blank">
+                        <div class="news-link-title">海之安安全每日快报 - 2025-07-24 - 第3期</div>
+                        <div class="news-link-date">2025年07月24日</div>
+                    </a>
                     <a href="news20250723.html" class="news-link" target="_blank">
                         <div class="news-link-title">海之安安全每日快报 - 2025-07-23 - 第2期</div>
                         <div class="news-link-date">2025年07月23日</div>
@@ -281,13 +241,8 @@
         </div>
         
         <div class="footer">
-            <div class="footer-links">
-                <a href="https://www.oceansecurity.cn" class="footer-link" target="_blank">官方网站</a>
-                <a href="https://www.oceansecurity.cn/about" class="footer-link" target="_blank">关于我们</a>
-                <a href="https://www.oceansecurity.cn/contact" class="footer-link" target="_blank">联系我们</a>
-            </div>
-            <p>&copy; 2025 海之安（中国）科技有限公司. 保持警惕，守护安全</p>
-            <p class="copyright">共收录 7 篇安全快报 | 官网：<a href="https://www.oceansecurity.cn" target="_blank" style="color: #1e3c72;">www.oceansecurity.cn</a></p>
+            <p>&copy; 2025 海之安网络安全. 保持警惕，守护安全</p>
+            <p>共收录 0 篇安全快报</p>
         </div>
     </div>
     
