@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安安全每日快报 - 2025-07-29 - 第24期</title>
+  
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Microsoft YaHei', 'SimHei', 'Arial', sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f1f5f9;
+        min-height: 100vh;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 16px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 
+                    0 0 0 1px rgba(59, 130, 246, 0.1),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+      }
+      
+      .header {
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+        border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+        padding: 40px;
+        text-align: center;
+        position: relative;
+      }
+      
+      .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      }
+      
+      .logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 16px;
+        text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+      }
+      
+      .subtitle {
+        font-size: 18px;
+        color: #94a3b8;
+        margin-bottom: 8px;
+      }
+      
+      .content {
+        padding: 40px;
+      }
+      
+      .summary-section {
+        background: rgba(30, 41, 59, 0.8);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 32px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      }
+      
+      .summary-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #3b82f6;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .summary-title::before {
+        content: '📊';
+        font-size: 24px;
+      }
+      
+      .summary-content {
+        color: #cbd5e1;
+        line-height: 1.8;
+        font-size: 16px;
+      }
+      
+      .category-section {
+        margin-bottom: 40px;
+        background: rgba(30, 41, 59, 0.4);
+        border-radius: 12px;
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        overflow: hidden;
+      }
+      
+      .category-header {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+        padding: 20px 24px;
+        border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      }
+      
+      .category-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      
+      .category-news {
+        padding: 24px;
+      }
+      
+      .news-item {
+        background: rgba(51, 65, 85, 0.6);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      
+      .news-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+        border-radius: 2px 0 0 2px;
+      }
+      
+      .news-item:hover {
+        border-color: rgba(59, 130, 246, 0.4);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+      }
+      
+      .news-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #f1f5f9;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+      
+      .news-analysis {
+        color: #cbd5e1;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+      
+      .footer {
+        background: rgba(15, 23, 42, 0.8);
+        border-top: 1px solid rgba(59, 130, 246, 0.3);
+        padding: 24px 40px;
+        text-align: center;
+        color: #64748b;
+        font-size: 14px;
+      }
+      
+      /* 图标样式 */
+      .icon-focus::before { content: '🎯'; }
+      .icon-risk::before { content: '⚠️'; }
+      .icon-innovation::before { content: '🚀'; }
+      
+      /* 打印样式 */
+      @media print {
+        body {
+          background: white;
+          color: black;
+          padding: 0;
+        }
+        
+        .container {
+          box-shadow: none;
+          border: none;
+          background: white;
+        }
+        
+        .header {
+          background: #f8f9fa;
+          border-bottom: 2px solid #dee2e6;
+        }
+        
+        .title {
+          color: #2563eb !important;
+          -webkit-text-fill-color: #2563eb !important;
+        }
+        
+        .summary-section,
+        .category-section,
+        .news-item {
+          background: white;
+          border: 1px solid #dee2e6;
+          color: black;
+        }
+        
+        .summary-title,
+        .category-title {
+          color: #2563eb;
+        }
+        
+        .news-title {
+          color: #1f2937;
+        }
+        
+        .news-analysis,
+        .summary-content {
+          color: #374151;
+        }
+      }
+    </style>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAN0CAIAAAArnUa0AAAABmJLR0QA/wD/AP+gvaeTAAAgAElEQVR4nOzdd3zV1f3H8fP93pm9SCAhIey9BBkyFJyoOKt1b3FgW2e1WltrW2urXY627j1Q3AMHiooIsqcgG0IGJO/kru/390f6S0NIcs/33pvkwnk9H/3Dws3Nl+Te7z3vcz7nczTTNAUAAAAAQD16d18AAAAAAKB7EAgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAAUBSBEAAAAAAURSAEAAAAAEURCAEAAABAUQRCAAAAAFAUgRAAAAAAFEUgBAAAAABFEQgBAAAAQFEEQgAAAABQFIEQAAAAABRFIAQAAAAARREIAQAAAEBRBEIAAAAA......" alt="Ocean Security Logo" class="logo">
+      <h1 class="title">海之安安全每日快报</h1>
+      <div class="subtitle">2025-07-29 · 第24期</div>
+    </div>
+    
+    <div class="content">
+      
+        <div class="summary-section">
+          <h2 class="summary-title">今日摘要</h2>
+          <div class="summary-content">今日网络安全领域重点关注：【1】GitHub Action “tj-actions/bran...；【2】国内首个！360终端安全智能体支持解密全球第三大勒索家族Ph...；【3】Salesforce 修复了 Tableau Server ...</div>
+        </div>
+      
+        <div class="category-section">
+          <div class="category-header">
+            <h2 class="category-title icon-focus">今日安全新闻</h2>
+          </div>
+          <div class="category-news">
+        <div class="news-item">
+          <div class="news-title">GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏洞（CVE-2025-54416）</div>
+          <div class="news-analysis"><strong>来源：</strong>安全客 | <strong>分析：</strong>暂无详细摘要内容</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种</div>
+          <div class="news-analysis"><strong>来源：</strong>安全客 | <strong>分析：</strong>暂无详细摘要内容</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和数据泄露</div>
+          <div class="news-analysis"><strong>来源：</strong>安全客 | <strong>分析：</strong>暂无详细摘要内容</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram</div>
+          <div class="news-analysis"><strong>来源：</strong>安全客 | <strong>分析：</strong>暂无详细摘要内容</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击</div>
+          <div class="news-analysis"><strong>来源：</strong>安全客 | <strong>分析：</strong>暂无详细摘要内容</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件</div>
+          <div class="news-analysis"><strong>来源：</strong>安全客 | <strong>分析：</strong>暂无详细摘要内容</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">钓鱼攻击新变种：“同形异字”绕过防御，AI助推风险升级</div>
+          <div class="news-analysis"><strong>来源：</strong>安全客 | <strong>分析：</strong>暂无详细摘要内容</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">CERT 警告 Lakeside SysTrack 存在高危提权漏洞（CVE-2025-6241）</div>
+          <div class="news-analysis"><strong>来源：</strong>安全客 | <strong>分析：</strong>暂无详细摘要内容</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">俄罗斯航空系统遭黑客攻击致航班大面积取消，克里姆林宫称网络安全威胁严峻</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>亲乌黑客摧毁俄航7000台服务器致航班瘫痪，克宫警告关键设施遭战略打击。</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Python tarfile模块漏洞可致恶意压缩包引发拒绝服务攻击</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>Python tarfile漏洞（CVE-2025-8194）可致恶意压缩包引发无限循环DoS攻击。</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Splunk的安装和基本使用</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>Splunk的安装和基本使用一、简介Splunk 是一个功能极其强大的数据平台，核心能力是将机器生成的数据（任何格式、任何来源）转化为有价值的洞察。它不仅仅是日志管理工具，更是一个通用的数据分析、监控、安全和自动化平台。splunk的一个可扩展且可靠的数据平台，用于调查、监控、分析和处理您的数据Splunk 使客户能够实现其安全运营的现代化，在混合、多云环境中提供更强大、统一的安全态势。结果是：更</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">对目标服务器所存在DedeCMS漏洞进行漏洞利用</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>对目标服务器所存在DedeCMS漏洞进行漏洞利用【实验目的】通过前台密码重置、后台账号密码修改，使网站后台可拥有admin权限并可任意上传自定义php文件，了解并掌握Dede CMS的相关漏洞【知识点</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">macOS "Sploitlight"漏洞曝光：攻击者可窃取Apple Intelligence缓存数据</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>macOS Sploitlight漏洞可窃取Apple Intelligence缓存数据，绕过隐私防护。</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">W5-SOAR基本使用</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>W5-SOAR基本使用一、简介W5 是一个面向企业安全与运维设计的 低代码 自动化平台，可以让团队降低 人工成本，提升 工作效率。可以把代码 图形化、可视化、可编排。让不同的系统，不同的组件通过 APP 进行封装形成平台能力，通过剧本画出你想要的逻辑过程，利用多种 Trigger 去实现自动化执行。W5 适应面非常广泛，可用于多个方向，例：Devops、安全运营、自动化渗透、工作流程 等二、W5</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">新型信息窃取木马SHUYAL攻击19款主流浏览器窃取登录凭证</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>新型木马SHUYAL攻击19款浏览器窃密，禁用任务管理器隐蔽作案。</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">FreeBuf早报 | 新型AI生成Linux恶意软件Koske现身；亚马逊开发者工具遭恶意代码污染</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>AI生成Linux恶意软件Koske利用图像隐藏挖矿代码，威胁加密货币安全。</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">SSTI 安全实战手册：原理、利用路径与修复措施全解析</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>本文系统解析了SSTI漏洞的成因、模板引擎利用路径、命令执行方式、WAF绕过技巧，并给出修复与防护建议，助力构建安全模板体系。</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">ArmouryLoader加载器的全面分析——典型加载器家族系列分析五</div>
+          <div class="news-analysis"><strong>来源：</strong>FreeBuf | <strong>分析：</strong>随着网络攻击技术的不断演变，恶意代码加载器逐渐成为恶意代码执行的关键组成部分。</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">技嘉主板易受UEFI恶意软件绕过安全启动攻击</div>
+          <div class="news-analysis"><strong>来源：</strong>嘶吼 | <strong>分析：</strong>最新发现，数十款技嘉主板型号运行在易受安全问题影响的UEFI固件上，这些安全问题允许植入对操作系统不可见的引导恶意软件，该恶意软件可在重新安装系统后仍然存在。这些漏洞可能允许具有本地或远程管理员权限的攻击者在系统管理模式（SMM）中执行任意代码，SMM 是一个与操作系统（OS）隔离的环境，并且在机器上具有更多权限。在操作系统以下运行的机制具有低级硬件访问权限，并在系统启动时初始化。因此，这些环境中的恶意软件可以绕过系统上的传统安全防御。UEFI，或统一可扩展固件接口，由于具有安全启动功能，固件更加安全，该功能通过加密验证确保设备在启动时使用的是安全和受信任的代码。因此，像引导程序（BlackL...</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！</div>
+          <div class="news-analysis"><strong>来源：</strong>嘶吼 | <strong>分析：</strong>全球“AI+安全”领域规格最高、规模最大、影响力最深远的盛会——第十三届互联网安全大会（简称ISC.AI 2025）将于8月6日-7日在北京国家会议中心震撼启幕！本届大会以划时代的“ALL IN AGENT”为主题，汇聚全球顶尖智慧，深度聚焦智能体时代数字安全与人工智能的前沿动态，以创新动能激活数字未来，以生态合力开启智能体时代全球发展新纪元！本届大会由中国互联网协会、中国人工智能学会、中国软件行业协会、东方企业创新发展中心、360互联网安全中心、ISC.AI大会组委会主办，中国计算机学会计算机安全专业委员会、中国人工智能学会人工智能与安全专业委员会、北京信息化和工业化融合服务联盟、中关村数智...</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同</div>
+          <div class="news-analysis"><strong>来源：</strong>嘶吼 | <strong>分析：</strong>在数字化深度重塑世界的今天，网络空间已成为国家竞争、企业生存的战略新疆域。从关键基础设施遭袭到供应链攻击蔓延，单一的技术防御或决策判断已难以应对复杂风险。在此背景下，丈八网安推出的网络靶场与网络兵棋推演系统，共同构建了“技术－策略”双螺旋驱动的防御体系——前者锻造一线攻防硬实力，后者锤炼战术决策软实力，二者协同构成网络安全防御的闭环生态。一、定位：从“技术执行”到“战术判断”网络安全防御的成败，既取决于“一线能不能防住”，更取决于“全局该不该这么防”。丈八网安的两款产品，正是瞄准这两个核心环节精准定位，形成防御能力的上下联动。网络靶场是一线技术人员的“实战训练场”，它的核心价值，是为技术人员提...</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">【附下载】重庆信通设计院：2025公共政务数据 安全交换 技术规范现状探究</div>
+          <div class="news-analysis"><strong>来源：</strong>嘶吼 | <strong>分析：</strong>本 期 摘 要公共政务数据 安全共享交换技术体系框架公共政务数据 安全交换技术规范20+垂直领域数据 安全交换规范示例40+公共政务数据 安全交换相关标准规范现状相关资料获取文末评论留言公共政务数据安全交换技术体系框架（点击图片可放大）该技术体系核心：数据安全防护共享业务安全监管及运营区块链服务为核心依托共享数据安全基础设施：密码服务信任服务等数据安全防护技术包含三个方面：数据安全利用与管控敏感数据识别与利用安全策略控制针对数据共享交换的安全需求，运用数据加密、数据水印、数据脱敏、数据访问审计等技术，结合数据标签服务、敏感数据分级分类及数据管控策略配置等，实现数据的安全可控。共享业务安全监管及...</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">第三届“天网杯”网络安全大赛正式启动</div>
+          <div class="news-analysis"><strong>来源：</strong>嘶吼 | <strong>分析：</strong>7月25日，第三届“天网杯”网络安全大赛正式启动。本次大赛由天津市人民政府主办，国家计算机病毒应急处理中心及多家国家级科研机构和天津市相关委办局共同承办，360数字安全集团、先进计算与关键软件（信创）海河实验室、中汽智联技术有限公司、天津市网络与数据安全生态协会、大数据协同安全技术国家工程研究中心、ISC平台、南京赛宁信息技术有限公司等单位联合支持。本届大赛以“筑牢数字安全屏障，护航国家发展大局”为核心目标，聚焦网络安全、数字安全和人工智能安全等前沿技术领域，设置关键产品漏洞挖掘挑战赛、人工智能安全挑战赛和智能网联汽车安全挑战赛三大赛道。通过举办大赛，推动数字浪潮下网络安全技术实现系统性突破。...</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">来啦！XCon2025大会日程热力解锁！惊喜票价燃动启售~~</div>
+          <div class="news-analysis"><strong>来源：</strong>嘶吼 | <strong>分析：</strong>XCon2025安全焦点信息安全技术峰会将于8月22日，在北京民航国际会议中心燃动启幕当AI重构攻防战场，我们执技术之刃重划安全边界！这一次，我们将再度集结全球网络安全技术大脑重新定义AI时代下的安全范式向你汇报这一年优秀的安全技术人他们的思考、实践与创新重新解构安全的定义，从容拥抱与AI共生的未来大会完整日程正式解锁，邀你一同共赴盛宴！五大主题专区·高频共振【经典深度场】10场纯享型技术演讲·400分钟全程干货在线领略网安前沿技术应用实践，把握AI时代技术脉搏从痛点直击到创新突破邀你沉浸技术饕餮【新锐无界场】再次携手国内超活跃青年技术社区HackingGroup感受网安新锐力量的活力与脑洞轻...</div>
+        </div>
+          </div>
+        </div>
+      
+    </div>
+    
+    <div class="footer">
+      <p>© 2025 Ocean Security · 海之安安全每日快报</p>
+      <p>Generated on 2025/07/29 18:52:48</p>
+    </div>
+  </div>
+</body>
+</html>

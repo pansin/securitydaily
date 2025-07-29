@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安网络安全日报 - 2025年07月29日</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Microsoft YaHei', 'SimHei', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+    }
+    
+    .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    
+    .content {
+      padding: 40px;
+    }
+    
+    .summary-section {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .summary-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .summary-title::before {
+      content: '📊';
+      font-size: 24px;
+    }
+    
+    .summary-content {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    
+    .category-section {
+      margin-bottom: 40px;
+      background: rgba(30, 41, 59, 0.4);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      overflow: hidden;
+    }
+    
+    .category-header {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .category-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .category-news {
+      padding: 24px;
+    }
+    
+    .news-item {
+      background: rgba(51, 65, 85, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .news-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+      border-radius: 2px 0 0 2px;
+    }
+    
+    .news-item:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    }
+    
+    .news-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    
+    .news-analysis {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    
+    .footer {
+      background: rgba(15, 23, 42, 0.8);
+      border-top: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 24px 40px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+    
+    .icon-focus::before { content: '🎯'; }
+    .icon-risk::before { content: '⚠️'; }
+    .icon-innovation::before { content: '🚀'; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle cx="40" cy="60" r="25" fill="url(#logoGradient)" opacity="0.8"/>
+        <circle cx="25" cy="35" r="15" fill="url(#logoGradient)" opacity="0.9"/>
+        <circle cx="55" cy="35" r="12" fill="url(#logoGradient)" opacity="0.7"/>
+        <circle cx="35" cy="75" r="10" fill="url(#logoGradient)" opacity="0.6"/>
+        <circle cx="60" cy="75" r="8" fill="url(#logoGradient)" opacity="0.8"/>
+        <text x="90" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3b82f6">ocean security</text>
+        <text x="90" y="70" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">海之安，数字安全专家</text>
+      </svg>
+      <h1 class="title">海之安网络安全日报</h1>
+      <div class="subtitle">2025年07月29日 · AI智能生成</div>
+    </div>
+    
+    <div class="content">
+      <div class="summary-section">
+        <h2 class="summary-title">今日摘要</h2>
+        <div class="summary-content">今日网络安全态势呈现多样化威胁特点。技嘉主板易受UEFI恶意软件攻击，GitHub存在关键命令注入漏洞。ISC.AI前瞻智能体时代，360终端安全智能体支持解密勒索家族Phobos。Salesforce修复Tableau Server严重漏洞，SHUYAL木马盗取浏览器凭据，Chaos勒索病毒启动语音欺诈，Scattered Spider劫持VMware ESXi部署勒索软件。钓鱼攻击新变种“同形异字”绕过防御，AI助推风险升级。网络安全形势严峻，需加强防护。</div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-focus">焦点安全事件</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-title">技嘉主板易受UEFI恶意软件绕过安全启动攻击</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-risk">漏洞与威胁</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-title">GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏洞（CVE-2025-54416）</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和数据泄露</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-innovation">产业动态</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-title">SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">钓鱼攻击新变种：“同形异字”绕过防御，AI助推风险升级</div>
+            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>© 2025 海之安（中国）科技有限公司 | 基于智谱GLM AI生成</p>
+      <p>共分析 10 条安全新闻 | 官网：<a href="https://www.oceansecurity.cn" style="color: #3b82f6;">www.oceansecurity.cn</a></p>
+    </div>
+  </div>
+</body>
+</html>
