@@ -108,16 +108,40 @@ class GLMNewsGenerator:
             logger.error(f"GLM API调用异常: {e}")
             return ""
     
-    def fetch_article_content(self, url: str, max_length: int = 2000) -> str:
+    def fetch_article_content(self, url: str, max_length: int = 3000) -> Dict:
         """
-        抓取文章完整内容
+        使用增强型爬虫抓取文章完整内容
         
         Args:
             url: 文章链接
             max_length: 最大内容长度
             
         Returns:
-            文章内容
+            包含完整文章信息的字典
+        """
+        try:
+            from enhanced_crawler import EnhancedNewsCrawler
+            
+            crawler = EnhancedNewsCrawler()
+            result = crawler.extract_article_content(url, max_length)
+            
+            if result['success']:
+                logger.info(f"成功提取文章内容: {result['title'][:50]}... ({result['char_count']}字符)")
+                return result
+            else:
+                logger.warning(f"增强爬虫提取失败，使用备用方法: {url}")
+                return self._fallback_content_extraction(url, max_length)
+                
+        except ImportError:
+            logger.warning("增强爬虫模块未找到，使用备用方法")
+            return self._fallback_content_extraction(url, max_length)
+        except Exception as e:
+            logger.warning(f"增强爬虫提取失败: {e}，使用备用方法")
+            return self._fallback_content_extraction(url, max_length)
+    
+    def _fallback_content_extraction(self, url: str, max_length: int = 3000) -> Dict:
+        """
+        备用内容提取方法
         """
         try:
             headers = {
@@ -161,11 +185,34 @@ class GLMNewsGenerator:
                 if len(content) > max_length:
                     content = content[:max_length] + "..."
             
-            return content
+            # 提取标题
+            title = ""
+            title_tag = soup.find('title')
+            if title_tag:
+                title = title_tag.get_text(strip=True)
+            
+            return {
+                'title': title,
+                'content': content,
+                'summary': content[:200] + "..." if len(content) > 200 else content,
+                'char_count': len(content),
+                'word_count': len(content.split()),
+                'success': True,
+                'url': url
+            }
             
         except Exception as e:
-            logger.warning(f"抓取文章内容失败 {url}: {e}")
-            return ""
+            logger.warning(f"备用方法也失败 {url}: {e}")
+            return {
+                'title': '',
+                'content': '',
+                'summary': '',
+                'char_count': 0,
+                'word_count': 0,
+                'success': False,
+                'url': url,
+                'error': str(e)
+            }
     
     def fetch_security_news(self, days_back: int = 1) -> List[Dict]:
         """
@@ -219,23 +266,37 @@ class GLMNewsGenerator:
                         
                         if is_security_related:
                             # 获取文章完整内容
-                            full_content = ""
+                            article_data = {'content': '', 'title': entry.title, 'summary': ''}
+                            
                             if hasattr(entry, 'content') and entry.content:
                                 # RSS中包含内容
-                                full_content = entry.content[0].value if isinstance(entry.content, list) else str(entry.content)
+                                rss_content = entry.content[0].value if isinstance(entry.content, list) else str(entry.content)
                                 # 清理HTML标签
-                                soup = BeautifulSoup(full_content, 'html.parser')
-                                full_content = soup.get_text(strip=True)
+                                soup = BeautifulSoup(rss_content, 'html.parser')
+                                article_data['content'] = soup.get_text(strip=True)
+                                article_data['summary'] = article_data['content'][:200] + "..." if len(article_data['content']) > 200 else article_data['content']
                             elif entry.link:
-                                # 抓取完整文章内容
-                                logger.info(f"正在抓取文章内容: {entry.title[:50]}...")
-                                full_content = self.fetch_article_content(entry.link)
+                                # 使用增强型爬虫抓取完整文章内容
+                                logger.info(f"正在使用增强爬虫抓取: {entry.title[:50]}...")
+                                article_data = self.fetch_article_content(entry.link)
+                                
+                                # 如果增强爬虫获取的标题更好，使用它
+                                if article_data.get('title') and len(article_data['title']) > len(entry.title):
+                                    entry.title = article_data['title']
+                            
+                            # 使用RSS摘要作为备选
+                            if not article_data.get('summary'):
+                                article_data['summary'] = getattr(entry, 'summary', '')
                             
                             news_item = {
                                 'title': entry.title,
                                 'link': entry.link,
-                                'summary': getattr(entry, 'summary', ''),
-                                'content': full_content,
+                                'summary': article_data.get('summary', ''),
+                                'content': article_data.get('content', ''),
+                                'enhanced_content': article_data.get('success', False),  # 标记是否使用了增强抓取
+                                'char_count': article_data.get('char_count', 0),
+                                'word_count': article_data.get('word_count', 0),
+                                'metadata': article_data.get('metadata', {}),
                                 'published_date': pub_date,
                                 'source': source['name'],
                                 'weight': source['weight'],
@@ -356,19 +417,36 @@ class GLMNewsGenerator:
         logger.info("正在使用GLM精选全球重要安全新闻...")
         selected_news = self.select_top_news(news_list)
         
-        # 构建精选新闻的详细信息
+        # 构建精选新闻的详细信息 - 利用增强爬虫获取的丰富内容
         news_details = []
         for i, news in enumerate(selected_news):
             content_preview = ""
-            if news.get('content'):
-                content_preview = news['content'][:400] + "..." if len(news['content']) > 400 else news['content']
+            
+            # 优先使用增强爬虫获取的完整内容
+            if news.get('enhanced_content') and news.get('content'):
+                content_preview = news['content'][:500] + "..." if len(news['content']) > 500 else news['content']
+                content_quality = "增强内容"
             elif news.get('summary'):
                 content_preview = news['summary']
+                content_quality = "RSS摘要"
+            else:
+                content_preview = "内容获取失败"
+                content_quality = "无内容"
             
             news_detail = f"{i+1}. 【{news['source']} - {news.get('region', 'Unknown')}】{news['title']}\n"
+            news_detail += f"   内容质量: {content_quality} ({news.get('char_count', 0)}字符)\n"
             if content_preview:
-                news_detail += f"   内容: {content_preview}\n"
+                news_detail += f"   详细内容: {content_preview}\n"
             news_detail += f"   语言: {news.get('language', 'unknown')}\n"
+            
+            # 如果有元数据，也包含进来
+            if news.get('metadata'):
+                metadata = news['metadata']
+                if metadata.get('author'):
+                    news_detail += f"   作者: {metadata['author']}\n"
+                if metadata.get('publish_time'):
+                    news_detail += f"   发布时间: {metadata['publish_time']}\n"
+            
             news_details.append(news_detail)
         
         news_text = "\n".join(news_details)
@@ -391,11 +469,17 @@ class GLMNewsGenerator:
             logger.warning(f"分类结果解析失败: {e}，使用默认分类")
             categories = self._default_categorize_news_four_dimensions(selected_news)
         
+        # 统计增强内容的效果
+        enhanced_count = sum(1 for news in selected_news if news.get('enhanced_content', False))
+        total_chars = sum(news.get('char_count', 0) for news in selected_news)
+        
         return {
             "summary": summary,
             "categories": categories,
             "total_news": len(selected_news),
             "original_count": len(news_list),
+            "enhanced_count": enhanced_count,
+            "total_chars": total_chars,
             "sources": list(set([news['source'] for news in selected_news])),
             "regions": list(set([news.get('region', 'Unknown') for news in selected_news])),
             "languages": list(set([news.get('language', 'unknown') for news in selected_news]))
@@ -764,6 +848,76 @@ class GLMNewsGenerator:
       border: 1px solid rgba(59, 130, 246, 0.2);
     }}
     
+    .enhancement-info {{
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(34, 197, 94, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }}
+    
+    .enhancement-info h3 {{
+      color: #22c55e;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }}
+    
+    .enhancement-stats {{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }}
+    
+    .enhancement-item {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }}
+    
+    .enhancement-item:last-child {{
+      border-bottom: none;
+    }}
+    
+    .enhancement-label {{
+      color: #94a3b8;
+      font-size: 14px;
+    }}
+    
+    .enhancement-value {{
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 14px;
+    }}
+    
+    .content-quality-badge {{
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }}
+    
+    .quality-enhanced {{
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }}
+    
+    .quality-rss {{
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }}
+    
+    .quality-failed {{
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }}
+    
     .news-header {{
       margin-bottom: 12px;
     }}
@@ -904,10 +1058,12 @@ class GLMNewsGenerator:
       </div>
 """
         
-        # 添加统计信息
+        # 添加统计信息 - 包含增强爬虫的效果统计
         sources = analysis_result.get('sources', [])
         regions = analysis_result.get('regions', [])
         languages = analysis_result.get('languages', [])
+        enhanced_count = analysis_result.get('enhanced_count', 0)
+        total_chars = analysis_result.get('total_chars', 0)
         
         html_template += f"""
       <div class="stats-section">
@@ -918,14 +1074,14 @@ class GLMNewsGenerator:
             <div class="stat-detail">从{analysis_result.get('original_count', 0)}条中精选</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">{len(sources)}</div>
-            <div class="stat-label">全球来源</div>
-            <div class="stat-detail">权威媒体</div>
+            <div class="stat-number">{enhanced_count}</div>
+            <div class="stat-label">增强内容</div>
+            <div class="stat-detail">深度抓取成功</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">{len(regions)}</div>
-            <div class="stat-label">覆盖地区</div>
-            <div class="stat-detail">国际视野</div>
+            <div class="stat-number">{total_chars:,}</div>
+            <div class="stat-label">内容字符</div>
+            <div class="stat-detail">丰富可读</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">4</div>
@@ -933,8 +1089,25 @@ class GLMNewsGenerator:
             <div class="stat-detail">风险·事件·舆情·趋势</div>
           </div>
         </div>
+        <div class="enhancement-info">
+          <h3>🚀 内容增强效果</h3>
+          <div class="enhancement-stats">
+            <div class="enhancement-item">
+              <span class="enhancement-label">深度抓取成功率:</span>
+              <span class="enhancement-value">{(enhanced_count/analysis_result.get('total_news', 1)*100):.1f}%</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">平均内容长度:</span>
+              <span class="enhancement-value">{total_chars//analysis_result.get('total_news', 1):,}字符</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">内容质量:</span>
+              <span class="enhancement-value">{'优秀' if enhanced_count > 5 else '良好' if enhanced_count > 2 else '一般'}</span>
+            </div>
+          </div>
+        </div>
         <div class="source-list">
-          <h3>📰 新闻来源</h3>
+          <h3>📰 全球新闻来源</h3>
           <div class="source-tags">
 """
         
@@ -983,9 +1156,18 @@ class GLMNewsGenerator:
                             key_points_html += f"<li>{point}</li>"
                         key_points_html += "</ul>"
                     
+                    # 添加内容质量标识
+                    quality_badge = ""
+                    if hasattr(item, 'enhanced_content') and item.get('enhanced_content'):
+                        quality_badge = '<span class="content-quality-badge quality-enhanced">深度内容</span>'
+                    elif item.get('char_count', 0) > 500:
+                        quality_badge = '<span class="content-quality-badge quality-rss">RSS内容</span>'
+                    else:
+                        quality_badge = '<span class="content-quality-badge quality-failed">简要内容</span>'
+                    
                     html_template += f"""          <div class="news-item">
             <div class="news-header">
-              <div class="news-title">{item['title']}</div>
+              <div class="news-title">{item['title']}{quality_badge}</div>
               <div class="news-meta">
                 <span class="news-source">{item.get('source', '未知来源')}</span>
                 <span class="region-badge">{item.get('region', 'Unknown')}</span>

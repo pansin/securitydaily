@@ -252,6 +252,76 @@
       border: 1px solid rgba(59, 130, 246, 0.2);
     }
     
+    .enhancement-info {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(34, 197, 94, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    
+    .enhancement-info h3 {
+      color: #22c55e;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .enhancement-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .enhancement-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+    
+    .enhancement-item:last-child {
+      border-bottom: none;
+    }
+    
+    .enhancement-label {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .enhancement-value {
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .content-quality-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    
+    .quality-enhanced {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .quality-rss {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .quality-failed {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
     .news-header {
       margin-bottom: 12px;
     }
@@ -390,7 +460,19 @@
         <h2 class="summary-title">今日摘要</h2>
         <div class="summary-content">今日全球网络安全态势摘要：
 
-全球网络安全风险持续上升，多个重大事件凸显了安全威胁的复杂性。技术漏洞如GitHub Action命令注入漏洞（CVE-2025-54416）和Salesforce Tableau Server漏洞（CVE-2025-52446等）暴露了自动化工具和商业智能平台的安全风险。新型恶意软件如SHUYAL和Chaos勒索软件的兴起，表明攻击者正不断寻找新的攻击手段。此外，勒索软件家族Phobos的解密支持表明网络安全防御正面临新的挑战。全球范围内，针对关键基础设施的勒索软件攻击，如Scattered Spider劫持VMware ESXi，进一步加剧了网络安全形势的严峻性。网络安全领域正迈向全面拥抱智能体时代，如ISC.AI 2025主题前瞻所示，网络安全能力进化体系将面临更多挑战。</div>
+1. 技嘉主板存在UEFI恶意软件绕过安全启动攻击，影响数十款主板型号，可能导致系统启动时植入不可见恶意软件，需及时更新固件。
+
+2. GitHub Action "tj-actions/branch-names" 存在命令注入漏洞，影响超5000个公共仓库，可执行任意命令，存在安全风险。
+
+3. 360终端安全智能体支持解密全球第三大勒索家族Phobos及其变种，为政企机构提供免费解密协助。
+
+4. Salesforce修复Tableau Server 8个严重漏洞，包括RCE、SSRF和数据泄露，需尽快更新至最新版本。
+
+5. 新型信息窃取器SHUYAL盗取浏览器凭据、系统数据，通过Telegram回传，需加强浏览器和系统安全防护。
+
+6. 新兴勒索软件Chaos采用语音欺诈和双重勒索攻击，需提高警惕，加强防范。
+
+7. Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件，需加强虚拟化基础设施安全防护。</div>
       </div>
 
       <div class="stats-section">
@@ -401,14 +483,14 @@
             <div class="stat-detail">从15条中精选</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label">全球来源</div>
-            <div class="stat-detail">权威媒体</div>
+            <div class="stat-number">9</div>
+            <div class="stat-label">增强内容</div>
+            <div class="stat-detail">深度抓取成功</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">1</div>
-            <div class="stat-label">覆盖地区</div>
-            <div class="stat-detail">国际视野</div>
+            <div class="stat-number">12,333</div>
+            <div class="stat-label">内容字符</div>
+            <div class="stat-detail">丰富可读</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">4</div>
@@ -416,10 +498,27 @@
             <div class="stat-detail">风险·事件·舆情·趋势</div>
           </div>
         </div>
+        <div class="enhancement-info">
+          <h3>🚀 内容增强效果</h3>
+          <div class="enhancement-stats">
+            <div class="enhancement-item">
+              <span class="enhancement-label">深度抓取成功率:</span>
+              <span class="enhancement-value">90.0%</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">平均内容长度:</span>
+              <span class="enhancement-value">1,233字符</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">内容质量:</span>
+              <span class="enhancement-value">优秀</span>
+            </div>
+          </div>
+        </div>
         <div class="source-list">
-          <h3>📰 新闻来源</h3>
+          <h3>📰 全球新闻来源</h3>
           <div class="source-tags">
-<span class="source-tag">FreeBuf</span><span class="source-tag">嘶吼</span><span class="source-tag">安全客</span>
+<span class="source-tag">嘶吼</span><span class="source-tag">安全客</span><span class="source-tag">FreeBuf</span>
           </div>
         </div>
       </div>
@@ -431,7 +530,7 @@
         <div class="category-news">
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] 如何从私人 GitHub 仓库转储完整源代码</div>
+              <div class="news-title">[国际] 如何从私人 GitHub 仓库转储完整源代码<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">FreeBuf</span>
                 <span class="region-badge">Unknown</span>
@@ -445,7 +544,7 @@
           </div>
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] 技嘉主板易受UEFI恶意软件绕过安全启动攻击</div>
+              <div class="news-title">[国际] 技嘉主板易受UEFI恶意软件绕过安全启动攻击<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">嘶吼</span>
                 <span class="region-badge">Unknown</span>
@@ -453,13 +552,14 @@
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>技嘉主板易受UEFI恶意软件绕过安全启动攻击胡金鱼新闻7小时 前发布6755收藏导语：...
+              <strong>内容要素：</strong>最新发现，数十款技嘉主板型号运行在易受安全问题影响的UEFI固件上，这些安全问题允许植入对操作系统不可见的引导恶意软件，该恶意软件可在重新安装系统后仍然存在。
+这些漏洞可能允许具有本地或远程管理员权限的攻击者在系统管理模式（SMM）中执行任意代码，SMM 是一个与操作系统（OS）隔离的环境，并且在机...
             </div>
             <ul class='key-points'><li>来源：嘶吼</li><li>地区：Unknown</li><li>详细分析请查看原文</li></ul>
           </div>
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！</div>
+              <div class="news-title">[国际] ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">嘶吼</span>
                 <span class="region-badge">Unknown</span>
@@ -467,13 +567,15 @@
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！企业资讯行业8小时 前发布5565收藏导语：...
+              <strong>内容要素：</strong>全球“AI+安全”领域规格最高、规模最大、影响力最深远的盛会——第十三届互联网安全大会（简称ISC.AI 2025）将于8月6日-7日在北京国家会议中心震撼启幕！
+本届大会以划时代的“ALL IN AGENT”为主题
+，汇聚全球顶尖智慧，深度聚焦智能体时代数字安全与人工智能的前沿动态，以创新动能激活...
             </div>
             <ul class='key-points'><li>来源：嘶吼</li><li>地区：Unknown</li><li>详细分析请查看原文</li></ul>
           </div>
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] 双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同</div>
+              <div class="news-title">[国际] 双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">嘶吼</span>
                 <span class="region-badge">Unknown</span>
@@ -481,13 +583,13 @@
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同企业资讯行业9小时 前发布4976收藏导语：...
+              <strong>内容要素：</strong>在数字化深度重塑世界的今天，网络空间已成为国家竞争、企业生存的战略新疆域。从关键基础设施遭袭到供应链攻击蔓延，单一的技术防御或决策判断已难以应对复杂风险。在此背景下，丈八网安推出的网络靶场与网络兵棋推演系统，共同构建了“技术－策略”双螺旋驱动的防御体系——前者锻造一线攻防硬实力，后者锤炼战术决策软实...
             </div>
             <ul class='key-points'><li>来源：嘶吼</li><li>地区：Unknown</li><li>详细分析请查看原文</li></ul>
           </div>
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏洞（CVE-2025-54416）</div>
+              <div class="news-title">[国际] GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏洞（CVE-2025-54416）<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">安全客</span>
                 <span class="region-badge">Unknown</span>
@@ -495,13 +597,14 @@
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>在广泛使用的 GitHub Action “tj-actions/branch-names” 中发现了一个关键的命令注入漏洞，影响了超过 5,000 个公共仓库。该漏洞被分配为 CVE-2025-54416，CVSS 得分为 9.1，允许在下游工作流中执行任意命令，从而使大量自动化流水线面临风险。“...
+              <strong>内容要素：</strong>在广泛使用的 GitHub Action “tj-actions/branch-names” 中发现了一个关键的命令注入漏洞，影响了超过 5,000 个公共仓库。该漏洞被分配为 CVE-2025-54416，CVSS 得分为 9.1，允许在下游工作流中执行任意命令，从而使大量自动化流水线面临风险。
+...
             </div>
             <ul class='key-points'><li>来源：安全客</li><li>地区：Unknown</li><li>详细分析请查看原文</li></ul>
           </div>
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] 国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种</div>
+              <div class="news-title">[国际] 国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种-安全KER - 安全资讯平台<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">安全客</span>
                 <span class="region-badge">Unknown</span>
@@ -515,7 +618,7 @@
           </div>
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和数据泄露</div>
+              <div class="news-title">[国际] Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和数据泄露<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">安全客</span>
                 <span class="region-badge">Unknown</span>
@@ -523,13 +626,14 @@
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>Salesforce发布了一项安全公告，解决了影响多个版本Tableau Server（广泛使用的数据可视化和商业智能平台）的8个严重漏洞。这些漏洞已在2025年6月26日的维护版本中披露并修复，涉及的漏洞包括可能导致远程代码执行（RCE）、生产数据库暴露和服务器端请求伪造（SSRF）等问题。CVE...
+              <strong>内容要素：</strong>Salesforce发布了一项安全公告，解决了影响多个版本Tableau Server（广泛使用的数据可视化和商业智能平台）的8个严重漏洞。这些漏洞已在2025年6月26日的维护版本中披露并修复，涉及的漏洞包括可能导致远程代码执行（RCE）、生产数据库暴露和服务器端请求伪造（SSRF）等问题。
+CV...
             </div>
             <ul class='key-points'><li>来源：安全客</li><li>地区：Unknown</li><li>详细分析请查看原文</li></ul>
           </div>
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击</div>
+              <div class="news-title">[国际] Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">安全客</span>
                 <span class="region-badge">Unknown</span>
@@ -537,13 +641,18 @@
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>Cisco Talos Incident Response（Talos IR）发现了一种名为Chaos的新型勒索软件即服务（RaaS）运营活动，该活动正在全球范围内开展大型猎杀和双重勒索攻击。尽管Chaos与之前的恶意软件家族同名，Talos明确表示：“Talos认为新的Chaos勒索软件与以前的C...
+              <strong>内容要素：</strong>Cisco Talos Incident Response（Talos IR）发现了一种名为
+Chaos的新型勒索软件即服务（RaaS）
+运营活动，该活动正在全球范围内开展
+大型猎杀和双重勒索攻击
+。尽管Chaos与之前的恶意软件家族同名，Talos明确表示：
+“Talos认为新的Chaos勒索软件...
             </div>
             <ul class='key-points'><li>来源：安全客</li><li>地区：Unknown</li><li>详细分析请查看原文</li></ul>
           </div>
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件</div>
+              <div class="news-title">[国际] Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">安全客</span>
                 <span class="region-badge">Unknown</span>
@@ -551,7 +660,8 @@
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>谷歌指出：“针对vSphere基础设施的勒索病毒攻击，包括ESXi主机和vCenter Server，因其能立即并广泛地瘫痪基础设施，构成独特而严重的风险。”“如果不主动采取这些推荐的缓解措施来应对这些相互关联的风险，组织将暴露于针对性攻击之下，这些攻击能迅速摧毁整个虚拟化基础设施，导致运营中断和财...
+              <strong>内容要素：</strong>谷歌指出：“针对vSphere基础设施的勒索病毒攻击，包括ESXi主机和vCenter Server，因其能立即并广泛地瘫痪基础设施，构成独特而严重的风险。”
+“如果不主动采取这些推荐的缓解措施来应对这些相互关联的风险，组织将暴露于针对性攻击之下，这些攻击能迅速摧毁整个虚拟化基础设施，导致运营中断和...
             </div>
             <ul class='key-points'><li>来源：安全客</li><li>地区：Unknown</li><li>详细分析请查看原文</li></ul>
           </div>
@@ -565,7 +675,7 @@
         <div class="category-news">
           <div class="news-item">
             <div class="news-header">
-              <div class="news-title">[国际] SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram</div>
+              <div class="news-title">[国际] SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">安全客</span>
                 <span class="region-badge">Unknown</span>
@@ -573,7 +683,8 @@
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>在一次深入的技术调查中，Hybrid Analysis揭露了一种强大的新型信息窃取者——SHUYAL，这是一个之前未曾记录过的恶意软件家族，结合了广泛的凭证收集、系统侦察和隐蔽的外泄行为。通过SHUYAL，网络犯罪分子获得了一款可以利用被窃取的浏览器凭证、系统元数据、截图甚至剪贴板内容的工具——所有...
+              <strong>内容要素：</strong>在一次深入的技术调查中，Hybrid Analysis揭露了一种强大的新型信息窃取者——SHUYAL，这是一个之前未曾记录过的恶意软件家族，结合了广泛的凭证收集、系统侦察和隐蔽的外泄行为。
+通过SHUYAL，网络犯罪分子获得了一款可以利用被窃取的浏览器凭证、系统元数据、截图甚至剪贴板内容的工具——所...
             </div>
             <ul class='key-points'><li>来源：安全客</li><li>地区：Unknown</li><li>详细分析请查看原文</li></ul>
           </div>
