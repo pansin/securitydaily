@@ -22,6 +22,7 @@ try:
 except ImportError:
     # 如果配置文件不存在，使用默认配置
     NEWS_SOURCES = [
+        # 中文安全媒体
         {
             'name': '安全客',
             'rss_url': 'https://api.anquanke.com/data/v1/rss',
@@ -39,6 +40,25 @@ except ImportError:
             'rss_url': 'https://www.4hou.com/feed',
             'enabled': True,
             'weight': 1.0
+        },
+        # 国际主流安全媒体（选择性启用，避免请求过多）
+        {
+            'name': 'The Hacker News',
+            'rss_url': 'https://feeds.feedburner.com/TheHackersNews',
+            'enabled': True,
+            'weight': 1.1
+        },
+        {
+            'name': 'Bleeping Computer',
+            'rss_url': 'https://www.bleepingcomputer.com/feed/',
+            'enabled': True,
+            'weight': 1.0
+        },
+        {
+            'name': 'Krebs on Security',
+            'rss_url': 'https://krebsonsecurity.com/feed/',
+            'enabled': True,
+            'weight': 1.2
         }
     ]
     SECURITY_KEYWORDS = [

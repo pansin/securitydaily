@@ -180,9 +180,98 @@
       font-size: 14px;
     }
     
+    .stats-section {
+      margin-bottom: 32px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .stat-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: #94a3b8;
+    }
+    
+    .news-header {
+      margin-bottom: 12px;
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+    
+    .news-source {
+      color: #94a3b8;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .severity-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .severity-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .severity-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .severity-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .severity-info {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .icon-critical::before { content: '🚨'; }
     .icon-focus::before { content: '🎯'; }
     .icon-risk::before { content: '⚠️'; }
     .icon-innovation::before { content: '🚀'; }
+    .icon-policy::before { content: '📋'; }
   </style>
 </head>
 <body>
@@ -211,69 +300,200 @@
     <div class="content">
       <div class="summary-section">
         <h2 class="summary-title">今日摘要</h2>
-        <div class="summary-content">今日网络安全态势呈现多样化威胁特点。技嘉主板易受UEFI恶意软件攻击，GitHub存在关键命令注入漏洞。ISC.AI前瞻智能体时代，360终端安全智能体支持解密勒索家族Phobos。Salesforce修复Tableau Server严重漏洞，SHUYAL木马盗取浏览器凭据，Chaos勒索病毒启动语音欺诈，Scattered Spider劫持VMware ESXi部署勒索软件。钓鱼攻击新变种“同形异字”绕过防御，AI助推风险升级。网络安全形势严峻，需加强防护。</div>
+        <div class="summary-content">今日全球网络安全态势呈现以下特点：智能体技术成为发展趋势，恶意软件家族多样化，攻击手段不断升级。重点威胁包括UEFI恶意软件、勒索软件、信息窃取等。攻击事件如技嘉主板安全漏洞、Salesforce Tableau Server漏洞等。技术发展方面，GitHub Action漏洞、Python tarfile模块漏洞等需关注。国际视野下，俄罗斯航空系统遭黑客攻击，网络安全威胁严峻。专业深度方面，建议关注丈八网络靶场与兵棋推演系统的战略协同，以及360终端安全智能体在勒索软件解密方面的突破。</div>
       </div>
 
-      <div class="category-section">
-        <div class="category-header">
-          <h2 class="category-title icon-focus">焦点安全事件</h2>
-        </div>
-        <div class="category-news">
-          <div class="news-item">
-            <div class="news-title">技嘉主板易受UEFI恶意软件绕过安全启动攻击</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">15</div>
+            <div class="stat-label">全球安全新闻</div>
           </div>
-          <div class="news-item">
-            <div class="news-title">ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">新闻来源</div>
           </div>
-          <div class="news-item">
-            <div class="news-title">双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">覆盖地区</div>
           </div>
-        </div>
-      </div>
-
-      <div class="category-section">
-        <div class="category-header">
-          <h2 class="category-title icon-risk">漏洞与威胁</h2>
-        </div>
-        <div class="category-news">
-          <div class="news-item">
-            <div class="news-title">GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏洞（CVE-2025-54416）</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
-          </div>
-          <div class="news-item">
-            <div class="news-title">国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
-          </div>
-          <div class="news-item">
-            <div class="news-title">Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和数据泄露</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">威胁分类</div>
           </div>
         </div>
       </div>
 
       <div class="category-section">
         <div class="category-header">
-          <h2 class="category-title icon-innovation">产业动态</h2>
+          <h2 class="category-title icon-critical">重大安全事件</h2>
         </div>
         <div class="category-news">
           <div class="news-item">
-            <div class="news-title">SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+            <div class="news-header">
+              <div class="news-title">如何从私人 GitHub 仓库转储完整源代码</div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：FreeBuf | 通过IP访问发现暴露的.git目录，导致源代码和敏感信息泄露，严重威胁企业安全。</div>
           </div>
           <div class="news-item">
-            <div class="news-title">Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+            <div class="news-header">
+              <div class="news-title">技嘉主板易受UEFI恶意软件绕过安全启动攻击</div>
+              <div class="news-meta">
+                <span class="news-source">嘶吼</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：嘶吼 | <p>最新发现，数十款技嘉主板型号运行在易受安全问题影响的UEFI固件上，这些安全问题允许植入对操作系统不可见的引导恶意软件，该恶意软件可在重新安装系统后仍然存在。</p><p>这些漏洞可能允许具有本...</div>
           </div>
           <div class="news-item">
-            <div class="news-title">Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+            <div class="news-header">
+              <div class="news-title">ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！</div>
+              <div class="news-meta">
+                <span class="news-source">嘶吼</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：嘶吼 | <p>全球“AI+安全”领域规格最高、规模最大、影响力最深远的盛会——第十三届互联网安全大会（简称ISC.AI 2025）将于8月6日-7日在北京国家会议中心震撼启幕！<strong>本届大会以划时代...</div>
           </div>
           <div class="news-item">
-            <div class="news-title">钓鱼攻击新变种：“同形异字”绕过防御，AI助推风险升级</div>
-            <div class="news-analysis"><strong>AI分析：</strong>暂无详细分析</div>
+            <div class="news-header">
+              <div class="news-title">双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同</div>
+              <div class="news-meta">
+                <span class="news-source">嘶吼</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：嘶吼 | <p>在数字化深度重塑世界的今天，网络空间已成为国家竞争、企业生存的战略新疆域。从关键基础设施遭袭到供应链攻击蔓延，单一的技术防御或决策判断已难以应对复杂风险。在此背景下，丈八网安推出的网络靶场与网络...</div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏洞（CVE-2025-54416）</div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：安全客 | </div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种</div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：安全客 | </div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和数据泄露</div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：安全客 | </div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击</div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：安全客 | </div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件</div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：安全客 | </div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">钓鱼攻击新变种：“同形异字”绕过防御，AI助推风险升级</div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：安全客 | </div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">俄罗斯航空系统遭黑客攻击致航班大面积取消，克里姆林宫称网络安全威胁严峻</div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：FreeBuf | 亲乌黑客摧毁俄航7000台服务器致航班瘫痪，克宫警告关键设施遭战略打击。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Python tarfile模块漏洞可致恶意压缩包引发拒绝服务攻击</div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：FreeBuf | Python tarfile漏洞（CVE-2025-8194）可致恶意压缩包引发无限循环DoS攻击。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-risk">漏洞与威胁情报</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">CERT 警告 Lakeside SysTrack 存在高危提权漏洞（CVE-2025-6241）</div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：安全客 | </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-innovation">技术与产业动态</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram</div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：安全客 | </div>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">webshell免杀技术强特征+加密</div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="severity-badge severity-medium">中危</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>来源：FreeBuf | 免杀问题基础知识知识点。</div>
           </div>
         </div>
       </div>
@@ -281,7 +501,7 @@
     
     <div class="footer">
       <p>© 2025 海之安（中国）科技有限公司 | 基于智谱GLM AI生成</p>
-      <p>共分析 10 条安全新闻 | 官网：<a href="https://www.oceansecurity.cn" style="color: #3b82f6;">www.oceansecurity.cn</a></p>
+      <p>共分析 15 条安全新闻 | 官网：<a href="https://www.oceansecurity.cn" style="color: #3b82f6;">www.oceansecurity.cn</a></p>
     </div>
   </div>
 </body>

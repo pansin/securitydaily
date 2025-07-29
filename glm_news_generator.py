@@ -108,6 +108,65 @@ class GLMNewsGenerator:
             logger.error(f"GLM API调用异常: {e}")
             return ""
     
+    def fetch_article_content(self, url: str, max_length: int = 2000) -> str:
+        """
+        抓取文章完整内容
+        
+        Args:
+            url: 文章链接
+            max_length: 最大内容长度
+            
+        Returns:
+            文章内容
+        """
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            }
+            
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # 移除不需要的标签
+            for tag in soup(['script', 'style', 'nav', 'header', 'footer', 'aside', 'advertisement']):
+                tag.decompose()
+            
+            # 尝试找到主要内容区域
+            content_selectors = [
+                'article', '.article-content', '.post-content', '.entry-content',
+                '.content', '.main-content', '.article-body', '.post-body',
+                '[role="main"]', '.story-body', '.article-text'
+            ]
+            
+            content = ""
+            for selector in content_selectors:
+                elements = soup.select(selector)
+                if elements:
+                    content = elements[0].get_text(strip=True)
+                    break
+            
+            # 如果没有找到特定的内容区域，使用整个body
+            if not content:
+                body = soup.find('body')
+                if body:
+                    content = body.get_text(strip=True)
+            
+            # 清理和截断内容
+            if content:
+                # 移除多余的空白字符
+                content = ' '.join(content.split())
+                # 截断到指定长度
+                if len(content) > max_length:
+                    content = content[:max_length] + "..."
+            
+            return content
+            
+        except Exception as e:
+            logger.warning(f"抓取文章内容失败 {url}: {e}")
+            return ""
+    
     def fetch_security_news(self, days_back: int = 1) -> List[Dict]:
         """
         抓取网络安全新闻
@@ -128,18 +187,24 @@ class GLMNewsGenerator:
                 continue
                 
             try:
-                logger.info(f"正在抓取 {source['name']} 的RSS源...")
+                logger.info(f"正在抓取 {source['name']} ({source.get('region', 'Unknown')}) 的RSS源...")
+                
+                # 设置请求头
+                headers = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                }
                 
                 # 获取RSS内容
-                feed = feedparser.parse(source['rss_url'])
+                response = requests.get(source['rss_url'], headers=headers, timeout=15)
+                feed = feedparser.parse(response.content)
                 source_news = []
                 
                 for entry in feed.entries:
                     # 解析发布时间
                     pub_date = None
-                    if hasattr(entry, 'published_parsed'):
+                    if hasattr(entry, 'published_parsed') and entry.published_parsed:
                         pub_date = datetime(*entry.published_parsed[:6]).date()
-                    elif hasattr(entry, 'updated_parsed'):
+                    elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
                         pub_date = datetime(*entry.updated_parsed[:6]).date()
                     
                     # 检查是否为目标日期的新闻（允许3天内的新闻）
@@ -148,14 +213,34 @@ class GLMNewsGenerator:
                         title = entry.title.lower()
                         summary = getattr(entry, 'summary', '').lower()
                         
-                        if any(keyword in title or keyword in summary for keyword in self.security_keywords):
+                        # 扩展关键词匹配逻辑
+                        is_security_related = any(keyword.lower() in title or keyword.lower() in summary 
+                                                for keyword in self.security_keywords)
+                        
+                        if is_security_related:
+                            # 获取文章完整内容
+                            full_content = ""
+                            if hasattr(entry, 'content') and entry.content:
+                                # RSS中包含内容
+                                full_content = entry.content[0].value if isinstance(entry.content, list) else str(entry.content)
+                                # 清理HTML标签
+                                soup = BeautifulSoup(full_content, 'html.parser')
+                                full_content = soup.get_text(strip=True)
+                            elif entry.link:
+                                # 抓取完整文章内容
+                                logger.info(f"正在抓取文章内容: {entry.title[:50]}...")
+                                full_content = self.fetch_article_content(entry.link)
+                            
                             news_item = {
                                 'title': entry.title,
                                 'link': entry.link,
                                 'summary': getattr(entry, 'summary', ''),
+                                'content': full_content,
                                 'published_date': pub_date,
                                 'source': source['name'],
-                                'weight': source['weight']
+                                'weight': source['weight'],
+                                'language': source.get('language', 'en'),
+                                'region': source.get('region', 'Unknown')
                             }
                             source_news.append(news_item)
                 
@@ -163,7 +248,7 @@ class GLMNewsGenerator:
                 all_news.extend(source_news)
                 
                 # 避免请求过于频繁
-                time.sleep(1)
+                time.sleep(2)
                 
             except Exception as e:
                 logger.error(f"抓取 {source['name']} 失败: {e}")
@@ -174,15 +259,17 @@ class GLMNewsGenerator:
         seen_titles = set()
         
         for news in all_news:
-            if news['title'] not in seen_titles:
+            # 使用标题的前50个字符进行去重，避免完全相同的标题
+            title_key = news['title'][:50].lower()
+            if title_key not in seen_titles:
                 unique_news.append(news)
-                seen_titles.add(news['title'])
+                seen_titles.add(title_key)
         
-        # 按权重和时间排序，取前10条
+        # 按权重和时间排序，取前15条（增加数量以获得更好的选择）
         unique_news.sort(key=lambda x: (x['weight'], x['published_date']), reverse=True)
         
         logger.info(f"总共获取到 {len(unique_news)} 条不重复的安全新闻")
-        return unique_news[:10]
+        return unique_news[:15]
     
     def generate_news_analysis(self, news_list: List[Dict]) -> Dict:
         """
@@ -197,48 +284,75 @@ class GLMNewsGenerator:
         if not news_list:
             return {"summary": "今日暂无网络安全新闻", "categories": {}}
         
-        # 构建新闻标题列表
-        news_titles = [f"{i+1}. {news['title']}" for i, news in enumerate(news_list)]
-        news_text = "\n".join(news_titles)
+        # 构建包含内容的新闻信息
+        news_details = []
+        for i, news in enumerate(news_list):
+            content_preview = ""
+            if news.get('content'):
+                # 取内容的前300字符作为预览
+                content_preview = news['content'][:300] + "..." if len(news['content']) > 300 else news['content']
+            elif news.get('summary'):
+                content_preview = news['summary']
+            
+            news_detail = f"{i+1}. 【{news['source']}】{news['title']}\n"
+            if content_preview:
+                news_detail += f"   内容摘要: {content_preview}\n"
+            news_details.append(news_detail)
+        
+        news_text = "\n".join(news_details)
         
         # 生成今日摘要
         summary_prompt = f"""
-请基于以下网络安全新闻标题，生成一份专业的今日摘要（200字以内）：
+请基于以下全球网络安全新闻信息，生成一份专业的今日全球安全态势摘要（250字以内）：
 
 {news_text}
 
 要求：
-1. 总结今日网络安全态势的主要特点
-2. 突出重点威胁和趋势
-3. 语言专业、简洁
-4. 体现时效性和权威性
+1. 总结全球网络安全态势的主要特点和趋势
+2. 突出重点威胁、攻击事件和技术发展
+3. 体现国际视野和专业深度
+4. 语言专业、权威、简洁
+5. 必须使用中文回答
 """
         
         summary = self.call_glm_api(summary_prompt)
         
-        # 对新闻进行分类分析
+        # 对新闻进行智能分类分析
         category_prompt = f"""
-请将以下网络安全新闻按照威胁类型进行分类，并为每条新闻生成50字以内的专业分析：
+请将以下全球网络安全新闻按照威胁类型进行智能分类，并为每条新闻生成80字以内的专业深度分析：
 
 {news_text}
 
 请按以下格式输出JSON：
 {{
-    "焦点安全事件": [
-        {{"title": "新闻标题", "analysis": "专业分析内容"}}
+    "重大安全事件": [
+        {{"title": "新闻标题", "analysis": "深度分析内容", "source": "新闻来源", "severity": "威胁等级"}}
     ],
-    "漏洞与威胁": [
-        {{"title": "新闻标题", "analysis": "专业分析内容"}}
+    "漏洞与威胁情报": [
+        {{"title": "新闻标题", "analysis": "深度分析内容", "source": "新闻来源", "severity": "威胁等级"}}
     ],
-    "产业动态": [
-        {{"title": "新闻标题", "analysis": "专业分析内容"}}
+    "技术与产业动态": [
+        {{"title": "新闻标题", "analysis": "深度分析内容", "source": "新闻来源", "severity": "威胁等级"}}
+    ],
+    "政策与合规": [
+        {{"title": "新闻标题", "analysis": "深度分析内容", "source": "新闻来源", "severity": "威胁等级"}}
     ]
 }}
 
 分类标准：
-- 焦点安全事件：重大安全事件、攻击事件、数据泄露等
-- 漏洞与威胁：新发现的漏洞、威胁分析、攻击技术等
-- 产业动态：安全产品发布、政策法规、行业发展等
+- 重大安全事件：数据泄露、网络攻击、安全事故等
+- 漏洞与威胁情报：CVE漏洞、恶意软件、攻击技术、威胁分析等
+- 技术与产业动态：安全产品、技术创新、行业发展、投资并购等
+- 政策与合规：法律法规、政策标准、合规要求等
+
+威胁等级：高危、中危、低危、信息
+
+要求：
+1. 分析要深入专业，体现技术深度
+2. 突出新闻的重要性、影响范围和应对建议
+3. 威胁等级评估要准确
+4. 必须使用中文回答
+5. 确保JSON格式正确
 """
         
         category_result = self.call_glm_api(category_prompt)
@@ -247,20 +361,58 @@ class GLMNewsGenerator:
         categories = {}
         try:
             categories = json.loads(category_result)
-        except:
-            logger.warning("分类结果解析失败，使用默认分类")
-            # 默认分类
-            categories = {
-                "焦点安全事件": [{"title": news['title'], "analysis": "暂无详细分析"} for news in news_list[:3]],
-                "漏洞与威胁": [{"title": news['title'], "analysis": "暂无详细分析"} for news in news_list[3:6]],
-                "产业动态": [{"title": news['title'], "analysis": "暂无详细分析"} for news in news_list[6:]]
-            }
+        except Exception as e:
+            logger.warning(f"分类结果解析失败: {e}，使用默认分类")
+            # 默认分类逻辑
+            categories = self._default_categorize_news(news_list)
         
         return {
             "summary": summary,
             "categories": categories,
-            "total_news": len(news_list)
+            "total_news": len(news_list),
+            "sources": list(set([news['source'] for news in news_list])),
+            "regions": list(set([news.get('region', 'Unknown') for news in news_list]))
         }
+    
+    def _default_categorize_news(self, news_list: List[Dict]) -> Dict:
+        """
+        默认新闻分类逻辑（当AI分类失败时使用）
+        """
+        categories = {
+            "重大安全事件": [],
+            "漏洞与威胁情报": [],
+            "技术与产业动态": [],
+            "政策与合规": []
+        }
+        
+        # 基于关键词的简单分类
+        for news in news_list:
+            title_lower = news['title'].lower()
+            content_lower = (news.get('content', '') + news.get('summary', '')).lower()
+            
+            analysis = f"来源：{news['source']} | " + (news.get('summary', '暂无详细摘要')[:100] + "..." if len(news.get('summary', '')) > 100 else news.get('summary', '暂无详细摘要'))
+            
+            item = {
+                "title": news['title'],
+                "analysis": analysis,
+                "source": news['source'],
+                "severity": "中危"
+            }
+            
+            # 简单的关键词分类
+            if any(keyword in title_lower or keyword in content_lower for keyword in 
+                   ['breach', 'attack', 'hack', '攻击', '泄露', '入侵', '勒索']):
+                categories["重大安全事件"].append(item)
+            elif any(keyword in title_lower or keyword in content_lower for keyword in 
+                     ['vulnerability', 'cve', 'exploit', '漏洞', '威胁', 'malware']):
+                categories["漏洞与威胁情报"].append(item)
+            elif any(keyword in title_lower or keyword in content_lower for keyword in 
+                     ['policy', 'regulation', 'compliance', '政策', '法规', '合规']):
+                categories["政策与合规"].append(item)
+            else:
+                categories["技术与产业动态"].append(item)
+        
+        return categories
     
     def generate_html_report(self, analysis_result: Dict, date_str: str) -> str:
         """
@@ -457,9 +609,98 @@ class GLMNewsGenerator:
       font-size: 14px;
     }}
     
+    .stats-section {{
+      margin-bottom: 32px;
+    }}
+    
+    .stats-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }}
+    
+    .stat-card {{
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }}
+    
+    .stat-card:hover {{
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }}
+    
+    .stat-number {{
+      font-size: 32px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 8px;
+    }}
+    
+    .stat-label {{
+      font-size: 14px;
+      color: #94a3b8;
+    }}
+    
+    .news-header {{
+      margin-bottom: 12px;
+    }}
+    
+    .news-meta {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 12px;
+    }}
+    
+    .news-source {{
+      color: #94a3b8;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }}
+    
+    .severity-badge {{
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }}
+    
+    .severity-high {{
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }}
+    
+    .severity-medium {{
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }}
+    
+    .severity-low {{
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }}
+    
+    .severity-info {{
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }}
+    
+    .icon-critical::before {{ content: '🚨'; }}
     .icon-focus::before {{ content: '🎯'; }}
     .icon-risk::before {{ content: '⚠️'; }}
     .icon-innovation::before {{ content: '🚀'; }}
+    .icon-policy::before {{ content: '📋'; }}
   </style>
 </head>
 <body>
@@ -492,11 +733,39 @@ class GLMNewsGenerator:
       </div>
 """
         
+        # 添加统计信息
+        sources = analysis_result.get('sources', [])
+        regions = analysis_result.get('regions', [])
+        
+        html_template += f"""
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">{analysis_result.get('total_news', 0)}</div>
+            <div class="stat-label">全球安全新闻</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">{len(sources)}</div>
+            <div class="stat-label">新闻来源</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">{len(regions)}</div>
+            <div class="stat-label">覆盖地区</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">{len(analysis_result.get('categories', {}))}</div>
+            <div class="stat-label">威胁分类</div>
+          </div>
+        </div>
+      </div>
+"""
+        
         # 添加分类新闻
         icon_map = {
-            "焦点安全事件": "icon-focus",
-            "漏洞与威胁": "icon-risk", 
-            "产业动态": "icon-innovation"
+            "重大安全事件": "icon-critical",
+            "漏洞与威胁情报": "icon-risk", 
+            "技术与产业动态": "icon-innovation",
+            "政策与合规": "icon-policy"
         }
         
         for category, news_items in analysis_result.get('categories', {}).items():
@@ -511,9 +780,23 @@ class GLMNewsGenerator:
 """
                 
                 for item in news_items:
+                    severity = item.get('severity', '中危')
+                    severity_class = {
+                        '高危': 'severity-high',
+                        '中危': 'severity-medium', 
+                        '低危': 'severity-low',
+                        '信息': 'severity-info'
+                    }.get(severity, 'severity-medium')
+                    
                     html_template += f"""          <div class="news-item">
-            <div class="news-title">{item['title']}</div>
-            <div class="news-analysis"><strong>AI分析：</strong>{item['analysis']}</div>
+            <div class="news-header">
+              <div class="news-title">{item['title']}</div>
+              <div class="news-meta">
+                <span class="news-source">{item.get('source', '未知来源')}</span>
+                <span class="severity-badge {severity_class}">{severity}</span>
+              </div>
+            </div>
+            <div class="news-analysis"><strong>AI深度分析：</strong>{item['analysis']}</div>
           </div>
 """
                 
