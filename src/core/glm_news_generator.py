@@ -124,7 +124,7 @@ class GLMNewsGenerator:
     
     def call_glm_api(self, prompt: str, model: str = "glm-4-flash") -> str:
         """
-        调用智谱GLM API
+        调用智谱GLM API（使用增强版客户端）
         
         Args:
             prompt: 输入提示词
@@ -133,36 +133,27 @@ class GLMNewsGenerator:
         Returns:
             生成的文本内容
         """
-        try:
-            payload = {
-                "model": model,
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                "temperature": 0.7,
-                "max_tokens": 2000
+        # 使用增强版GLM客户端
+        if not hasattr(self, '_enhanced_client'):
+            from utils.enhanced_glm_client import create_enhanced_glm_client
+            self._enhanced_client = create_enhanced_glm_client(self.api_key)
+        
+        messages = [
+            {
+                "role": "user",
+                "content": prompt
             }
-            
-            response = requests.post(
-                self.base_url,
-                headers=self.headers,
-                json=payload,
-                timeout=30
-            )
-            
-            if response.status_code == 200:
-                result = response.json()
-                return result['choices'][0]['message']['content']
-            else:
-                logger.error(f"GLM API调用失败: {response.status_code} - {response.text}")
-                return ""
-                
-        except Exception as e:
-            logger.error(f"GLM API调用异常: {e}")
-            return ""
+        ]
+        
+        result = self._enhanced_client.call_api(
+            messages=messages,
+            model=model,
+            temperature=0.7,
+            max_tokens=2000,
+            retry_count=3
+        )
+        
+        return result or ""
     
     def fetch_article_content(self, url: str, max_length: int = 3000) -> Dict:
         """
@@ -442,18 +433,18 @@ class GLMNewsGenerator:
             import os
             sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
             from config.glm_config import PROMPT_TEMPLATES
-        select_prompt = PROMPT_TEMPLATES['select_top_news'].format(news_text=news_text)
+        # 使用增强版GLM客户端进行新闻精选
+        if not hasattr(self, '_enhanced_client'):
+            from utils.enhanced_glm_client import create_enhanced_glm_client
+            self._enhanced_client = create_enhanced_glm_client(self.api_key)
         
-        select_result = self.call_glm_api(select_prompt)
+        selected_news_data = self._enhanced_client.select_top_news(news_text)
         
         # 解析精选结果
         selected_indices = []
         try:
-            result_data = json.loads(select_result)
-            selected_news = result_data.get('selected_news', [])
-            
             # 根据标题匹配找到对应的新闻索引
-            for selected in selected_news:
+            for selected in selected_news_data:
                 selected_title = selected['title']
                 for i, news in enumerate(news_list):
                     if selected_title in news['title'] or news['title'] in selected_title:
@@ -530,30 +521,23 @@ class GLMNewsGenerator:
         
         news_text = "\n".join(news_details)
         
+        # 使用增强版GLM客户端生成摘要和分类
+        if not hasattr(self, '_enhanced_client'):
+            from utils.enhanced_glm_client import create_enhanced_glm_client
+            self._enhanced_client = create_enhanced_glm_client(self.api_key)
+        
         # 生成全球安全态势摘要
-        try:
-            from config.glm_config import PROMPT_TEMPLATES
-        except ImportError:
-            # 备用导入路径
-            import sys
-            import os
-            sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
-            from config.glm_config import PROMPT_TEMPLATES
-        summary_prompt = PROMPT_TEMPLATES['summary'].format(news_text=news_text)
-        summary = self.call_glm_api(summary_prompt)
+        summary = self._enhanced_client.generate_summary(news_text)
         
         # 按四个维度分类并生成完整要素总结
-        category_prompt = PROMPT_TEMPLATES['categorize_and_summarize'].format(news_text=news_text)
-        category_result = self.call_glm_api(category_prompt)
+        categories = self._enhanced_client.categorize_and_summarize(news_text)
         
-        # 解析分类结果
-        categories = {}
-        try:
-            categories = json.loads(category_result)
-            logger.info("成功使用GLM进行四维度新闻分类和要素总结")
-        except Exception as e:
-            logger.warning(f"分类结果解析失败: {e}，使用默认分类")
+        # 如果分类结果为空，使用默认分类
+        if not categories or not any(categories.values()):
+            logger.warning("GLM分类结果为空，使用默认分类")
             categories = self._default_categorize_news_four_dimensions(selected_news)
+        else:
+            logger.info("成功使用GLM进行四维度新闻分类和要素总结")
         
         # 统计增强内容的效果
         enhanced_count = sum(1 for news in selected_news if news.get('enhanced_content', False))
@@ -688,13 +672,19 @@ class GLMNewsGenerator:
         
         # 导入样式保护模块
         try:
-            from style_protection import get_mobile_responsive_css, ensure_mobile_responsive
+            from src.utils.style_protection import get_mobile_responsive_css, ensure_mobile_responsive
             mobile_css = get_mobile_responsive_css()
             logger.info("✅ 成功加载移动端样式保护模块")
         except ImportError:
-            # 如果导入失败，使用内置的移动端样式
-            mobile_css = self._get_fallback_mobile_css()
-            logger.warning("⚠️ 样式保护模块未找到，使用内置备用样式")
+            try:
+                # 尝试相对导入
+                from utils.style_protection import get_mobile_responsive_css, ensure_mobile_responsive
+                mobile_css = get_mobile_responsive_css()
+                logger.info("✅ 成功加载移动端样式保护模块")
+            except ImportError:
+                # 如果导入失败，使用内置的移动端样式
+                mobile_css = self._get_fallback_mobile_css()
+                logger.warning("⚠️ 样式保护模块未找到，使用内置备用样式")
         
         html_template = f"""<!DOCTYPE html>
 <html lang="zh-CN">

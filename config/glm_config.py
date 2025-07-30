@@ -146,15 +146,20 @@ PROMPT_TEMPLATES = {
 4. 覆盖不同地区和类型
 5. 平衡中英文新闻源
 
+翻译要求：
+- 英文标题必须翻译成中文
+- 技术术语统一翻译：Zero-Day→零日漏洞，Vulnerability→漏洞，Ransomware→勒索软件
+- 公司产品名保留英文但加中文说明
+
 请按以下格式输出JSON：
 {{
     "selected_news": [
         {{
-            "title": "新闻标题",
+            "title": "中文新闻标题（如果原文是英文则翻译）",
             "source": "新闻来源",
             "region": "地区",
             "importance": "重要性评分(1-10)",
-            "reason": "入选理由"
+            "reason": "中文入选理由"
         }}
     ]
 }}
@@ -162,8 +167,9 @@ PROMPT_TEMPLATES = {
 要求：
 1. 必须精选10篇新闻
 2. 确保全球视野，包含国际新闻
-3. 使用中文回答
-4. 确保JSON格式正确
+3. 所有输出必须使用中文
+4. 英文新闻标题必须翻译成中文
+5. 确保JSON格式正确
 """,
 
     'summary': """
@@ -176,7 +182,9 @@ PROMPT_TEMPLATES = {
 2. 突出重点威胁、事件和趋势
 3. 语言专业、权威、简洁
 4. 体现国际视野和时效性
-5. 使用中文回答
+5. 必须使用中文回答，所有英文内容都要翻译成中文
+6. 英文专业术语要提供中文翻译，如"Zero-Day"翻译为"零日漏洞"
+7. 英文公司名、产品名保留原文但加中文说明，如"Microsoft SharePoint(微软SharePoint)"
 """,
     
     'categorize_and_summarize': """
@@ -184,15 +192,22 @@ PROMPT_TEMPLATES = {
 
 {news_text}
 
+重要翻译要求：
+1. 所有英文内容必须翻译成中文
+2. 新闻标题必须翻译成中文，如"Microsoft SharePoint Zero-Day"翻译为"微软SharePoint零日漏洞"
+3. 技术术语翻译：Zero-Day→零日漏洞，Vulnerability→漏洞，Exploit→利用，Ransomware→勒索软件
+4. 公司产品名保留英文但加中文说明：Microsoft SharePoint(微软SharePoint)
+5. 内容总结必须用中文描述，不能出现英文句子
+
 请按以下格式输出JSON：
 {{
     "安全风险": [
         {{
-            "title": "新闻标题",
+            "title": "中文新闻标题",
             "source": "新闻来源",
             "region": "地区",
-            "summary": "包含时间、地点、人物、事件、原因、影响的完整总结（150字以内）",
-            "key_points": ["关键点1", "关键点2", "关键点3"],
+            "summary": "包含时间、地点、人物、事件、原因、影响的完整中文总结（150字以内）",
+            "key_points": ["中文关键点1", "中文关键点2", "中文关键点3"],
             "impact_level": "影响等级（高/中/低）"
         }}
     ],
@@ -213,6 +228,41 @@ PROMPT_TEMPLATES = {
 3. 总结要专业、准确、完整
 4. 确保全球视野，不仅限于中国新闻
 5. 确保JSON格式正确
+""",
+
+    'translate_and_analyze': """
+请将以下英文网络安全新闻翻译成中文并进行专业分析：
+
+标题：{title}
+内容：{content}
+来源：{source}
+
+请按以下格式输出JSON：
+{{
+    "chinese_title": "中文标题",
+    "summary": "中文内容摘要（200字以内）",
+    "key_points": [
+        "关键点1（中文）",
+        "关键点2（中文）",
+        "关键点3（中文）"
+    ],
+    "impact_analysis": "影响分析（中文）",
+    "threat_level": "威胁等级（高危/中危/低危）"
+}}
+
+翻译要求：
+1. 标题必须翻译成准确的中文
+2. 技术术语统一翻译：
+   - Zero-Day → 零日漏洞
+   - Vulnerability → 漏洞  
+   - Exploit → 利用
+   - Ransomware → 勒索软件
+   - Malware → 恶意软件
+   - Phishing → 钓鱼攻击
+   - APT → 高级持续性威胁
+3. 公司产品名保留英文但加中文说明
+4. 所有分析内容必须用中文表述
+5. 确保专业性和准确性
 """
 }
 

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 海之安网络安全快报</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            color: #1e3c72;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .nav {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .nav a {
+            color: #1e3c72;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #2a5298;
+        }
+
+        .nav a.active {
+            color: #2a5298;
+            font-weight: 700;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #1e3c72;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #1e3c72;
+            width: 30px;
+        }
+
+        .contact-details h3 {
+            color: #2a5298;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: #666;
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1e3c72;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .map-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-section h2 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2rem;
+            border: 2px dashed #1e3c72;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: #1e3c72;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .footer p {
+            color: #666;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>联系我们</h1>
+            <div class="subtitle">海之安（中国）科技有限公司</div>
+        </div>
+
+        <div class="nav">
+            <a href="index.html">首页</a>
+            <a href="about.html">关于我们</a>
+            <a href="contact.html" class="active">联系我们</a>
+            <a href="https://www.oceansecurity.cn" target="_blank">官方网站</a>
+        </div>
+
+        <div class="main-content">
+            <div class="contact-info">
+                <h2>📞 联系方式</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🏢</div>
+                    <div class="contact-details">
+                        <h3>公司地址</h3>
+                        <p>中国北京市海淀区中关村软件园</p>
+                        <p>海之安科技大厦 8层</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h3>电子邮箱</h3>
+                        <p>info@oceansecurity.cn</p>
+                        <p>support@oceansecurity.cn</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-details">
+                        <h3>联系电话</h3>
+                        <p>总机：+86 010-8888-9999</p>
+                        <p>客服：+86 400-888-9999</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-details">
+                        <h3>官方网站</h3>
+                        <p>www.oceansecurity.cn</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-details">
+                        <h3>工作时间</h3>
+                        <p>周一至周五：9:00 - 18:00</p>
+                        <p>7×24小时在线客服</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-details">
+                        <h3>社交媒体</h3>
+                        <p>微信公众号：海之安安全</p>
+                        <p>新浪微博：@海之安科技</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>📝 在线留言</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">姓名 *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">邮箱 *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">电话</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">公司/组织</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">咨询类型</label>
+                        <select id="subject" name="subject">
+                            <option value="">请选择咨询类型</option>
+                            <option value="product">产品咨询</option>
+                            <option value="service">服务咨询</option>
+                            <option value="cooperation">合作洽谈</option>
+                            <option value="technical">技术支持</option>
+                            <option value="feedback">意见反馈</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">留言内容 *</label>
+                        <textarea id="message" name="message" placeholder="请详细描述您的需求或问题..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">发送留言</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <h2>🗺️ 公司位置</h2>
+            <div class="map-placeholder">
+                <div style="text-align: center;">
+                    <p>📍 北京市海淀区中关村软件园</p>
+                    <p>海之安科技大厦 8层</p>
+                    <p style="margin-top: 10px; color: #999;">地图加载中...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="https://www.oceansecurity.cn" class="footer-link" target="_blank">官方网站</a>
+                <a href="about.html" class="footer-link">关于我们</a>
+                <a href="contact.html" class="footer-link">联系我们</a>
+            </div>
+            <p>&copy; 2025 海之安（中国）科技有限公司. 保持警惕，守护安全</p>
+            <p>官网：<a href="https://www.oceansecurity.cn" target="_blank" style="color: #1e3c72;">www.oceansecurity.cn</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // 简单验证
+            if (!data.name || !data.email || !data.message) {
+                alert('请填写必填项目！');
+                return;
+            }
+            
+            // 模拟提交
+            alert('感谢您的留言！我们会在24小时内回复您。');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
