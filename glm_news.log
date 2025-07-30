@@ -1218,3 +1218,196 @@
 2025-07-30 11:53:18,416 - INFO - 成功使用GLM进行四维度新闻分类和要素总结
 2025-07-30 11:53:18,418 - INFO - ✅ 成功加载移动端样式保护模块
 2025-07-30 11:53:18,421 - INFO - ✅ 成功生成AI智能新闻快报: news20250729.html
+2025-07-30 14:13:00,085 - INFO - ✅ 成功加载新闻源配置: 30 个数据源
+2025-07-30 14:13:00,086 - INFO - 📰 获取到 29 个启用的新闻源
+2025-07-30 14:13:00,087 - INFO - ✅ 从配置文件加载了 29 个新闻源
+2025-07-30 14:13:00,087 - INFO - 开始抓取 2025-07-29 的网络安全新闻...
+2025-07-30 14:13:00,087 - INFO - 正在抓取 安全客 (中国) 的RSS源...
+2025-07-30 14:13:02,340 - INFO - 正在使用增强爬虫抓取: GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏...
+2025-07-30 14:13:02,341 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310613
+2025-07-30 14:13:04,677 - INFO - 成功提取内容: GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏... (1387字符)
+2025-07-30 14:13:04,678 - INFO - 成功提取文章内容: GitHub Action “tj-actions/branch-names” 中存在关键命令注入漏... (1387字符)
+2025-07-30 14:13:04,679 - INFO - 正在使用增强爬虫抓取: 国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种...
+2025-07-30 14:13:04,679 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310633
+2025-07-30 14:13:06,642 - INFO - 成功提取内容: 国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种... (1237字符)
+2025-07-30 14:13:06,642 - INFO - 成功提取文章内容: 国内首个！360终端安全智能体支持解密全球第三大勒索家族Phobos及变种... (1237字符)
+2025-07-30 14:13:06,643 - INFO - 正在使用增强爬虫抓取: Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和...
+2025-07-30 14:13:06,643 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310627
+2025-07-30 14:13:08,430 - INFO - 成功提取内容: Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和... (1111字符)
+2025-07-30 14:13:08,430 - INFO - 成功提取文章内容: Salesforce 修复了 Tableau Server 中 8 个严重漏洞：RCE、SSRF 和... (1111字符)
+2025-07-30 14:13:08,431 - INFO - 正在使用增强爬虫抓取: SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram...
+2025-07-30 14:13:08,431 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310643
+2025-07-30 14:13:10,505 - INFO - 成功提取内容: SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram... (1263字符)
+2025-07-30 14:13:10,506 - INFO - 成功提取文章内容: SHUYAL木马：隐蔽信息窃取器盗取浏览器凭据、系统数据并回传Telegram... (1263字符)
+2025-07-30 14:13:10,507 - INFO - 正在使用增强爬虫抓取: Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击...
+2025-07-30 14:13:10,507 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310647
+2025-07-30 14:13:12,421 - INFO - 成功提取内容: Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击... (1602字符)
+2025-07-30 14:13:12,421 - INFO - 成功提取文章内容: Chaos勒索病毒：新兴的勒索软件即服务（RaaS）团队，启动语音欺诈和双重勒索攻击... (1602字符)
+2025-07-30 14:13:12,424 - INFO - 正在使用增强爬虫抓取: Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件...
+2025-07-30 14:13:12,424 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310652
+2025-07-30 14:13:14,474 - INFO - 成功提取内容: Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件... (156字符)
+2025-07-30 14:13:14,474 - INFO - 成功提取文章内容: Scattered Spider劫持VMware ESXi，向美国关键基础设施部署勒索软件... (156字符)
+2025-07-30 14:13:14,475 - INFO - 正在使用增强爬虫抓取: 钓鱼攻击新变种：“同形异字”绕过防御，AI助推风险升级...
+2025-07-30 14:13:14,475 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310659
+2025-07-30 14:13:16,549 - INFO - 成功提取内容: 钓鱼攻击新变种：“同形异字”绕过防御，AI助推风险升级... (1162字符)
+2025-07-30 14:13:16,549 - INFO - 成功提取文章内容: 钓鱼攻击新变种：“同形异字”绕过防御，AI助推风险升级... (1162字符)
+2025-07-30 14:13:16,550 - INFO - 正在使用增强爬虫抓取: CERT 警告 Lakeside SysTrack 存在高危提权漏洞（CVE-2025-6241）...
+2025-07-30 14:13:16,550 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310614
+2025-07-30 14:13:18,200 - INFO - 成功提取内容: CERT 警告 Lakeside SysTrack 存在高危提权漏洞（CVE-2025-6241）... (1055字符)
+2025-07-30 14:13:18,200 - INFO - 成功提取文章内容: CERT 警告 Lakeside SysTrack 存在高危提权漏洞（CVE-2025-6241）... (1055字符)
+2025-07-30 14:13:18,201 - INFO - 从 安全客 获取到 8 条安全新闻
+2025-07-30 14:13:20,206 - INFO - 正在抓取 FreeBuf (中国) 的RSS源...
+2025-07-30 14:13:22,012 - INFO - 从 FreeBuf 获取到 11 条安全新闻
+2025-07-30 14:13:24,018 - INFO - 正在抓取 嘶吼 (中国) 的RSS源...
+2025-07-30 14:13:27,691 - INFO - 正在使用增强爬虫抓取: 黑客组织Scattered Spider正疯狂攻击VMware ESXi管理程序...
+2025-07-30 14:13:27,692 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/rpxE
+2025-07-30 14:13:30,088 - INFO - 成功提取内容: 黑客组织Scattered Spider正疯狂攻击VMware ESXi管理程序... (1847字符)
+2025-07-30 14:13:30,089 - INFO - 成功提取文章内容: 黑客组织Scattered Spider正疯狂攻击VMware ESXi管理程序... (1847字符)
+2025-07-30 14:13:30,089 - INFO - 正在使用增强爬虫抓取: 技嘉主板易受UEFI恶意软件绕过安全启动攻击...
+2025-07-30 14:13:30,090 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/OGjp
+2025-07-30 14:13:32,518 - INFO - 成功提取内容: 技嘉主板易受UEFI恶意软件绕过安全启动攻击... (1505字符)
+2025-07-30 14:13:32,519 - INFO - 成功提取文章内容: 技嘉主板易受UEFI恶意软件绕过安全启动攻击... (1505字符)
+2025-07-30 14:13:32,520 - INFO - 正在使用增强爬虫抓取: ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！...
+2025-07-30 14:13:32,520 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/GAO7
+2025-07-30 14:13:35,199 - INFO - 成功提取内容: ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！... (1801字符)
+2025-07-30 14:13:35,200 - INFO - 成功提取文章内容: ISC.AI 2025主题前瞻：ALL IN AGENT，全面拥抱智能体时代！... (1801字符)
+2025-07-30 14:13:35,200 - INFO - 正在使用增强爬虫抓取: 双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同...
+2025-07-30 14:13:35,200 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/ArGO
+2025-07-30 14:13:37,242 - INFO - 成功提取内容: 双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同... (2281字符)
+2025-07-30 14:13:37,242 - INFO - 成功提取文章内容: 双螺旋驱动的网安能力进化体系：丈八网络靶场与兵棋推演系统的战略协同... (2281字符)
+2025-07-30 14:13:37,243 - INFO - 正在使用增强爬虫抓取: 【附下载】重庆信通设计院：2025公共政务数据 安全交换 技术规范现状探究...
+2025-07-30 14:13:37,243 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/DxLx
+2025-07-30 14:13:39,101 - INFO - 成功提取内容: 【附下载】重庆信通设计院：2025公共政务数据 安全交换 技术规范现状探究... (2477字符)
+2025-07-30 14:13:39,102 - INFO - 成功提取文章内容: 【附下载】重庆信通设计院：2025公共政务数据 安全交换 技术规范现状探究... (2477字符)
+2025-07-30 14:13:39,102 - INFO - 正在使用增强爬虫抓取: 第三届“天网杯”网络安全大赛正式启动...
+2025-07-30 14:13:39,103 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/zAJY
+2025-07-30 14:13:41,019 - INFO - 成功提取内容: 第三届“天网杯”网络安全大赛正式启动... (634字符)
+2025-07-30 14:13:41,020 - INFO - 成功提取文章内容: 第三届“天网杯”网络安全大赛正式启动... (634字符)
+2025-07-30 14:13:41,022 - INFO - 正在使用增强爬虫抓取: 来啦！XCon2025大会日程热力解锁！惊喜票价燃动启售~~...
+2025-07-30 14:13:41,022 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/wxDR
+2025-07-30 14:13:42,841 - INFO - 成功提取内容: 来啦！XCon2025大会日程热力解锁！惊喜票价燃动启售~~... (853字符)
+2025-07-30 14:13:42,841 - INFO - 成功提取文章内容: 来啦！XCon2025大会日程热力解锁！惊喜票价燃动启售~~... (853字符)
+2025-07-30 14:13:42,842 - INFO - 正在使用增强爬虫抓取: ArmouryLoader加载器的全面分析——典型加载器家族系列分析五...
+2025-07-30 14:13:42,842 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/xyE9
+2025-07-30 14:13:44,859 - INFO - 成功提取内容: ArmouryLoader加载器的全面分析——典型加载器家族系列分析五... (3003字符)
+2025-07-30 14:13:44,859 - INFO - 成功提取文章内容: ArmouryLoader加载器的全面分析——典型加载器家族系列分析五... (3003字符)
+2025-07-30 14:13:44,860 - INFO - 从 嘶吼 获取到 8 条安全新闻
+2025-07-30 14:13:46,865 - INFO - 正在抓取 Krebs on Security (美国) 的RSS源...
+2025-07-30 14:13:48,730 - INFO - 从 Krebs on Security 获取到 0 条安全新闻
+2025-07-30 14:13:50,736 - INFO - 正在抓取 Schneier on Security (美国) 的RSS源...
+2025-07-30 14:13:51,543 - INFO - 从 Schneier on Security 获取到 1 条安全新闻
+2025-07-30 14:13:53,548 - INFO - 正在抓取 The Hacker News (国际) 的RSS源...
+2025-07-30 14:13:54,663 - INFO - 正在使用增强爬虫抓取: Chaos RaaS Emerges After BlackSuit Takedown, Deman...
+2025-07-30 14:13:54,663 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/07/chaos-raas-emerges-after-blacksuit.html
+2025-07-30 14:13:56,121 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-30 14:13:56,151 - INFO - 成功提取内容: 未知标题... (0字符)
+2025-07-30 14:13:56,151 - INFO - 成功提取文章内容: 未知标题... (0字符)
+2025-07-30 14:13:56,152 - INFO - 正在使用增强爬虫抓取: CISA Adds PaperCut NG/MF CSRF Vulnerability to KEV...
+2025-07-30 14:13:56,152 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/07/cisa-adds-papercut-ngmf-csrf.html
+2025-07-30 14:13:57,542 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-30 14:13:57,552 - INFO - 成功提取内容: 未知标题... (3003字符)
+2025-07-30 14:13:57,552 - INFO - 成功提取文章内容: 未知标题... (3003字符)
+2025-07-30 14:13:57,552 - INFO - 正在使用增强爬虫抓取: Email Security Is Stuck in the Antivirus Era: Why ...
+2025-07-30 14:13:57,553 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/07/email-security-is-stuck-in-antivirus.html
+2025-07-30 14:13:58,920 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-30 14:13:58,948 - INFO - 成功提取内容: 未知标题... (0字符)
+2025-07-30 14:13:58,948 - INFO - 成功提取文章内容: 未知标题... (0字符)
+2025-07-30 14:13:58,949 - INFO - 从 The Hacker News 获取到 3 条安全新闻
+2025-07-30 14:14:00,954 - INFO - 正在抓取 Dark Reading (美国) 的RSS源...
+2025-07-30 14:14:02,062 - INFO - 正在使用增强爬虫抓取: Chaos Ransomware Rises as BlackSuit Gang Falls...
+2025-07-30 14:14:02,062 - INFO - 正在抓取文章内容: https://www.darkreading.com/cyberattacks-data-breaches/chaos-ransomware-rises-blacksuit-falls
+2025-07-30 14:14:02,839 - ERROR - 抓取文章内容失败 https://www.darkreading.com/cyberattacks-data-breaches/chaos-ransomware-rises-blacksuit-falls: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/chaos-ransomware-rises-blacksuit-falls
+2025-07-30 14:14:02,839 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/cyberattacks-data-breaches/chaos-ransomware-rises-blacksuit-falls
+2025-07-30 14:14:03,465 - WARNING - 备用方法也失败 https://www.darkreading.com/cyberattacks-data-breaches/chaos-ransomware-rises-blacksuit-falls: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/chaos-ransomware-rises-blacksuit-falls
+2025-07-30 14:14:03,468 - INFO - 正在使用增强爬虫抓取: Ghost Students Drain Money, Resources From Educati...
+2025-07-30 14:14:03,469 - INFO - 正在抓取文章内容: https://www.darkreading.com/cyber-risk/ghost-students-haunt-the-halls-of-education-institutions
+2025-07-30 14:14:04,191 - ERROR - 抓取文章内容失败 https://www.darkreading.com/cyber-risk/ghost-students-haunt-the-halls-of-education-institutions: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyber-risk/ghost-students-haunt-the-halls-of-education-institutions
+2025-07-30 14:14:04,192 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/cyber-risk/ghost-students-haunt-the-halls-of-education-institutions
+2025-07-30 14:14:04,937 - WARNING - 备用方法也失败 https://www.darkreading.com/cyber-risk/ghost-students-haunt-the-halls-of-education-institutions: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyber-risk/ghost-students-haunt-the-halls-of-education-institutions
+2025-07-30 14:14:04,939 - INFO - 正在使用增强爬虫抓取: New Risk Index Helps Organizations Tackle Cloud Se...
+2025-07-30 14:14:04,939 - INFO - 正在抓取文章内容: https://www.darkreading.com/cyber-risk/risk-index-tackle-cloud-security-chaos
+2025-07-30 14:14:05,686 - ERROR - 抓取文章内容失败 https://www.darkreading.com/cyber-risk/risk-index-tackle-cloud-security-chaos: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyber-risk/risk-index-tackle-cloud-security-chaos
+2025-07-30 14:14:05,686 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/cyber-risk/risk-index-tackle-cloud-security-chaos
+2025-07-30 14:14:06,509 - WARNING - 备用方法也失败 https://www.darkreading.com/cyber-risk/risk-index-tackle-cloud-security-chaos: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyber-risk/risk-index-tackle-cloud-security-chaos
+2025-07-30 14:14:06,511 - INFO - 从 Dark Reading 获取到 3 条安全新闻
+2025-07-30 14:14:08,514 - INFO - 正在抓取 Security Week (美国) 的RSS源...
+2025-07-30 14:14:09,655 - INFO - 从 Security Week 获取到 0 条安全新闻
+2025-07-30 14:14:11,659 - INFO - 正在抓取 Threatpost (美国) 的RSS源...
+2025-07-30 14:14:13,239 - INFO - 从 Threatpost 获取到 0 条安全新闻
+2025-07-30 14:14:15,245 - INFO - 正在抓取 SANS Internet Storm Center (美国) 的RSS源...
+2025-07-30 14:14:16,066 - INFO - 从 SANS Internet Storm Center 获取到 1 条安全新闻
+2025-07-30 14:14:18,072 - INFO - 正在抓取 CISA Alerts (美国) 的RSS源...
+2025-07-30 14:14:34,097 - ERROR - 抓取 CISA Alerts 失败: HTTPSConnectionPool(host='www.cisa.gov', port=443): Read timed out. (read timeout=15)
+2025-07-30 14:14:34,098 - INFO - 正在抓取 US-CERT Alerts (美国) 的RSS源...
+2025-07-30 14:14:50,629 - ERROR - 抓取 US-CERT Alerts 失败: HTTPSConnectionPool(host='www.cisa.gov', port=443): Read timed out. (read timeout=15)
+2025-07-30 14:14:50,629 - INFO - 正在抓取 NIST Cybersecurity (美国) 的RSS源...
+2025-07-30 14:14:52,084 - INFO - 从 NIST Cybersecurity 获取到 0 条安全新闻
+2025-07-30 14:14:54,089 - INFO - 正在抓取 ENISA (欧盟) 的RSS源...
+2025-07-30 14:14:56,457 - INFO - 从 ENISA 获取到 0 条安全新闻
+2025-07-30 14:14:58,462 - INFO - 正在抓取 NCSC UK (英国) 的RSS源...
+2025-07-30 14:14:59,594 - INFO - 从 NCSC UK 获取到 0 条安全新闻
+2025-07-30 14:15:01,597 - INFO - 正在抓取 ACSC Australia (澳大利亚) 的RSS源...
+2025-07-30 14:15:18,339 - ERROR - 抓取 ACSC Australia 失败: HTTPSConnectionPool(host='www.cyber.gov.au', port=443): Read timed out. (read timeout=15)
+2025-07-30 14:15:18,341 - INFO - 正在抓取 Bleeping Computer (国际) 的RSS源...
+2025-07-30 14:15:19,047 - INFO - 正在使用增强爬虫抓取: Hackers exploit SAP NetWeaver bug to deploy Linux ...
+2025-07-30 14:15:19,048 - INFO - 正在抓取文章内容: https://www.bleepingcomputer.com/news/security/hackers-exploit-sap-netweaver-bug-to-deploy-linux-auto-color-malware/
+2025-07-30 14:15:20,486 - INFO - 成功提取内容: Hackers exploit SAP NetWeaver bug to deploy Linux ... (3003字符)
+2025-07-30 14:15:20,486 - INFO - 成功提取文章内容: Hackers exploit SAP NetWeaver bug to deploy Linux ... (3003字符)
+2025-07-30 14:15:20,487 - INFO - 正在使用增强爬虫抓取: Exploit available for critical Cisco ISE bug explo...
+2025-07-30 14:15:20,487 - INFO - 正在抓取文章内容: https://www.bleepingcomputer.com/news/security/exploit-available-for-critical-cisco-ise-bug-exploited-in-attacks/
+2025-07-30 14:15:22,849 - INFO - 成功提取内容: Exploit available for critical Cisco ISE bug explo... (3003字符)
+2025-07-30 14:15:22,849 - INFO - 成功提取文章内容: Exploit available for critical Cisco ISE bug explo... (3003字符)
+2025-07-30 14:15:22,850 - INFO - 从 Bleeping Computer 获取到 2 条安全新闻
+2025-07-30 14:15:24,854 - INFO - 正在抓取 Ars Technica Security (美国) 的RSS源...
+2025-07-30 14:15:27,038 - INFO - 从 Ars Technica Security 获取到 0 条安全新闻
+2025-07-30 14:15:29,043 - INFO - 正在抓取 ZDNet Security (国际) 的RSS源...
+2025-07-30 14:15:30,158 - INFO - 正在使用增强爬虫抓取: The Lenovo ThinkBook G6 is a powerhouse for work a...
+2025-07-30 14:15:30,158 - INFO - 正在抓取文章内容: https://www.zdnet.com/article/the-lenovo-thinkbook-g6-is-a-powerhouse-for-work-and-school-and-its-70-off-at-amazon/
+2025-07-30 14:15:31,503 - INFO - 成功提取内容: The Lenovo ThinkBook G6 is a powerhouse for work a... (3003字符)
+2025-07-30 14:15:31,503 - INFO - 成功提取文章内容: The Lenovo ThinkBook G6 is a powerhouse for work a... (3003字符)
+2025-07-30 14:15:31,504 - INFO - 从 ZDNet Security 获取到 1 条安全新闻
+2025-07-30 14:15:33,506 - INFO - 正在抓取 CSO Online (美国) 的RSS源...
+2025-07-30 14:15:35,929 - INFO - 从 CSO Online 获取到 0 条安全新闻
+2025-07-30 14:15:37,934 - INFO - 正在抓取 InfoSecurity Magazine (英国) 的RSS源...
+2025-07-30 14:15:38,810 - INFO - 正在使用增强爬虫抓取: Auto-Color Backdoor Malware Exploits SAP Vulnerabi...
+2025-07-30 14:15:38,811 - INFO - 正在抓取文章内容: https://www.infosecurity-magazine.com/news/auto-color-backdoor-exploits-sap/
+2025-07-30 14:15:40,026 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-30 14:15:40,060 - INFO - 成功提取内容: 未知标题... (0字符)
+2025-07-30 14:15:40,060 - INFO - 成功提取文章内容: 未知标题... (0字符)
+2025-07-30 14:15:40,061 - INFO - 正在使用增强爬虫抓取: US Woman Gets Eight Years for Part in $17m North K...
+2025-07-30 14:15:40,061 - INFO - 正在抓取文章内容: https://www.infosecurity-magazine.com/news/woman-eight-years-17m-north-korean/
+2025-07-30 14:15:41,269 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-30 14:15:41,285 - INFO - 成功提取内容: 未知标题... (0字符)
+2025-07-30 14:15:41,285 - INFO - 成功提取文章内容: 未知标题... (0字符)
+2025-07-30 14:15:41,286 - INFO - 从 InfoSecurity Magazine 获取到 2 条安全新闻
+2025-07-30 14:15:43,291 - INFO - 正在抓取 Security Affairs (意大利) 的RSS源...
+2025-07-30 14:15:46,169 - INFO - 从 Security Affairs 获取到 1 条安全新闻
+2025-07-30 14:15:48,174 - INFO - 正在抓取 Recorded Future (美国) 的RSS源...
+2025-07-30 14:15:49,760 - INFO - 从 Recorded Future 获取到 0 条安全新闻
+2025-07-30 14:15:51,767 - INFO - 正在抓取 FireEye Threat Research (美国) 的RSS源...
+2025-07-30 14:15:52,736 - INFO - 从 FireEye Threat Research 获取到 0 条安全新闻
+2025-07-30 14:15:54,741 - INFO - 正在抓取 Kaspersky Securelist (俄罗斯) 的RSS源...
+2025-07-30 14:15:56,652 - INFO - 从 Kaspersky Securelist 获取到 0 条安全新闻
+2025-07-30 14:15:58,657 - INFO - 正在抓取 Trend Micro Security Intelligence (日本) 的RSS源...
+2025-07-30 14:16:02,039 - INFO - 从 Trend Micro Security Intelligence 获取到 0 条安全新闻
+2025-07-30 14:16:04,040 - INFO - 正在抓取 Microsoft Security Blog (美国) 的RSS源...
+2025-07-30 14:16:15,242 - INFO - 从 Microsoft Security Blog 获取到 1 条安全新闻
+2025-07-30 14:16:17,249 - INFO - 正在抓取 Google Security Blog (美国) 的RSS源...
+2025-07-30 14:16:20,018 - INFO - 从 Google Security Blog 获取到 0 条安全新闻
+2025-07-30 14:16:22,023 - INFO - 正在抓取 Apple Security Updates (美国) 的RSS源...
+2025-07-30 14:16:22,874 - INFO - 从 Apple Security Updates 获取到 0 条安全新闻
+2025-07-30 14:16:24,879 - INFO - 总共获取到 42 条不重复的安全新闻
+2025-07-30 14:16:24,881 - INFO - 正在使用GLM生成新闻分析...
+2025-07-30 14:16:24,881 - INFO - 正在使用GLM精选全球重要安全新闻...
+2025-07-30 14:16:24,885 - INFO - GLM API调用尝试 1/4
+2025-07-30 14:16:52,067 - INFO - GLM API调用成功
+2025-07-30 14:16:52,068 - WARNING - JSON解析失败，尝试提取JSON部分
+2025-07-30 14:16:52,069 - INFO - 成功精选出 10 篇全球安全新闻
+2025-07-30 14:16:52,069 - INFO - GLM API调用尝试 1/4
+2025-07-30 14:16:58,617 - INFO - GLM API调用成功
+2025-07-30 14:16:58,618 - INFO - GLM API调用尝试 1/4
+2025-07-30 14:17:30,379 - INFO - GLM API调用成功
+2025-07-30 14:17:30,381 - WARNING - JSON解析失败，尝试提取JSON部分
+2025-07-30 14:17:30,382 - INFO - 成功使用GLM进行四维度新闻分类和要素总结
+2025-07-30 14:17:30,384 - INFO - ✅ 成功加载移动端样式保护模块
+2025-07-30 14:17:30,386 - INFO - ✅ 成功生成AI智能新闻快报: news20250729.html
