@@ -1,0 +1,272 @@
+/* 
+海之安新闻系统 - 移动端响应式样式
+重要：此文件包含移动端适配的关键样式，请勿删除或修改
+*/
+
+/* 移动端适配样式 - 平板和手机 */
+@media (max-width: 768px) {
+  .container {
+    margin: 0;
+    padding: 10px;
+    border-radius: 0;
+  }
+  
+  .header {
+    padding: 20px 15px;
+    border-radius: 0;
+  }
+  
+  .logo {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .content {
+    padding: 20px 15px;
+  }
+  
+  .summary-section {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .summary-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .summary-content {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .stats-section {
+    margin-bottom: 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .stat-card {
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .stat-number {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+  }
+  
+  .stat-detail {
+    font-size: 10px;
+  }
+  
+  .enhancement-info {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+  }
+  
+  .enhancement-info h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .enhancement-item {
+    padding: 6px 0;
+  }
+  
+  .enhancement-label,
+  .enhancement-value {
+    font-size: 12px;
+  }
+  
+  .source-list {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+  }
+  
+  .source-list h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .source-tag {
+    padding: 4px 8px;
+    font-size: 10px;
+    margin: 2px;
+  }
+  
+  .category-section {
+    margin-bottom: 25px;
+    border-radius: 8px;
+  }
+  
+  .category-header {
+    padding: 15px 20px;
+  }
+  
+  .category-title {
+    font-size: 18px;
+  }
+  
+  .category-news {
+    padding: 15px;
+  }
+  
+  .news-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+  
+  .news-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  
+  .news-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  
+  .news-source,
+  .region-badge,
+  .impact-badge,
+  .content-quality-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+    margin: 2px 4px 2px 0;
+  }
+  
+  .news-summary {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .key-points {
+    margin: 10px 0;
+    padding-left: 15px;
+    font-size: 12px;
+  }
+  
+  .key-points li {
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
+  
+  .footer {
+    padding: 15px;
+    border-radius: 0;
+    font-size: 12px;
+  }
+}
+
+/* 超小屏幕适配 (iPhone SE等) */
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+  
+  .header {
+    padding: 15px 10px;
+  }
+  
+  .logo {
+    width: 120px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .subtitle {
+    font-size: 12px;
+  }
+  
+  .content {
+    padding: 15px 10px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .stat-card {
+    padding: 12px;
+  }
+  
+  .stat-number {
+    font-size: 20px;
+  }
+  
+  .category-title {
+    font-size: 16px;
+  }
+  
+  .news-title {
+    font-size: 14px;
+  }
+  
+  .news-summary {
+    font-size: 12px;
+  }
+}
+
+/* 横屏适配 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .category-section {
+    margin-bottom: 20px;
+  }
+  
+  .news-item {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .news-item {
+    padding: 18px;
+  }
+  
+  .news-title {
+    line-height: 1.4;
+  }
+  
+  .source-tag,
+  .region-badge,
+  .impact-badge,
+  .content-quality-badge {
+    padding: 6px 10px;
+    margin: 4px 6px 4px 0;
+  }
+}

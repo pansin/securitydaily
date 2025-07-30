@@ -1,199 +1,207 @@
-# 海之安网络安全新闻系统
+# 🌊 海之安网络安全新闻系统
 
-基于智谱GLM AI的网络安全新闻自动抓取和生成系统，参考[智谱GLM最佳实践](https://docs.bigmodel.cn/cn/best-practice/creativepractice/aimorningnewspaper)构建。
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-Production-brightgreen.svg)]()
 
-## 🌟 功能特性
+> 全球网络安全资讯聚合平台 | AI驱动的智能新闻生成系统
 
-### 📰 新闻抓取
-- **多源抓取**: 支持安全客、FreeBuf、嘶吼等主流安全媒体RSS源
-- **智能过滤**: 基于关键词自动筛选网络安全相关新闻
-- **去重处理**: 自动去除重复新闻，确保内容质量
+## 🎯 项目简介
 
-### 🤖 AI增强功能
-- **智能摘要**: 使用智谱GLM生成专业的每日安全态势摘要
-- **自动分类**: AI自动将新闻分类为焦点事件、漏洞威胁、产业动态
-- **深度分析**: 为每条新闻生成专业的安全分析和影响评估
+海之安网络安全新闻系统是一个基于AI技术的全球网络安全资讯聚合平台，集成了30个国际权威安全信息源，提供实时的威胁情报分析和安全态势感知。
 
-### 📊 可视化展示
-- **响应式设计**: 适配桌面和移动设备
-- **现代化界面**: 渐变背景、卡片设计、动画效果
-- **智能索引**: 自动生成新闻索引页面，按时间分类展示
+### ✨ 核心特性
+
+- 🌍 **全球覆盖**: 30个国际权威数据源，覆盖15个国家
+- 🤖 **AI驱动**: 基于智谱GLM的智能内容生成和分析
+- 📱 **响应式设计**: 完美适配桌面、平板、手机等所有设备
+- 🔄 **实时更新**: 自动抓取、分析、生成最新安全资讯
+- 🛡️ **威胁情报**: 四维度分析（风险、事件、舆情、趋势）
+- 🎨 **现代化UI**: 科技感十足的深色主题设计
 
 ## 🚀 快速开始
 
 ### 环境要求
+
+- Python 3.8+
+- 智谱GLM API密钥（可选，用于AI增强功能）
+
+### 安装步骤
+
+1. **克隆项目**
 ```bash
-Python 3.7+
-pip install requests feedparser beautifulsoup4 watchdog
+git clone https://github.com/oceansecurity/news-system.git
+cd news-system
 ```
 
-### 基础使用
+2. **安装依赖**
 ```bash
-# 1. 运行新闻抓取器（基础版）
-python3 news_scraper.py
-
-# 2. 生成新闻索引
-python3 start_monitor.py
-
-# 3. 一键运行（推荐）
-python3 run_glm_news.py
+pip install -r requirements.txt
 ```
 
-### AI增强版使用
+3. **配置API密钥**（可选）
+```bash
+export GLM_API_KEY="your_api_key_here"
+```
 
-1. **获取智谱GLM API密钥**
-   - 访问 [智谱AI开放平台](https://open.bigmodel.cn/)
-   - 注册账号并获取API密钥
+4. **运行系统**
+```bash
+python scripts/run_glm_news.py
+```
 
-2. **配置API密钥**
-   ```bash
-   # 方法1: 环境变量
-   export GLM_API_KEY="your_api_key_here"
-   
-   # 方法2: 配置文件
-   # 编辑 glm_config.py，填入API密钥
-   ```
-
-3. **运行AI增强版**
-   ```bash
-   python3 run_glm_news.py
-   ```
+5. **查看结果**
+```bash
+# 打开浏览器访问生成的index.html
+open index.html
+```
 
 ## 📁 项目结构
 
 ```
-securitydaily/
-├── news_scraper.py          # 基础新闻抓取器
-├── glm_news_generator.py    # GLM AI增强版生成器
-├── start_monitor.py         # 索引生成器
-├── news_monitor.py          # 实时监控器
-├── run_glm_news.py         # 一键运行脚本
-├── scraper_config.py       # 抓取器配置
-├── glm_config.py           # GLM配置
-├── index.html              # 新闻索引页面
-├── news*.html              # 生成的新闻文件
-└── README.md               # 说明文档
+oceansecurity-news/
+├── src/                    # 源代码
+│   ├── core/              # 核心业务逻辑
+│   ├── crawlers/          # 爬虫和数据抓取
+│   ├── generators/        # 内容生成器
+│   └── utils/             # 工具和辅助函数
+├── config/                # 配置文件
+├── tests/                 # 测试文件
+├── docs/                  # 文档
+├── assets/                # 静态资源
+├── output/                # 输出文件
+├── scripts/               # 运行脚本
+└── tools/                 # 开发工具
 ```
 
-## 🔧 配置说明
+## 🌍 数据源覆盖
 
-### 新闻源配置
-编辑 `scraper_config.py` 或 `glm_config.py` 中的 `NEWS_SOURCES`：
+### 官方权威源 (5个)
+- **CISA** - 美国网络安全和基础设施安全局
+- **US-CERT** - 美国计算机应急响应小组
+- **NIST** - 美国国家标准与技术研究院
+- **NCSC UK** - 英国国家网络安全中心
+- **ACSC Australia** - 澳大利亚网络安全中心
 
-```python
-NEWS_SOURCES = [
-    {
-        'name': '安全客',
-        'rss_url': 'https://api.anquanke.com/data/v1/rss',
-        'enabled': True,
-        'weight': 1.0
-    },
-    # 添加更多新闻源...
-]
-```
+### 权威媒体源 (16个)
+- **Krebs on Security** - Brian Krebs权威安全博客
+- **Schneier on Security** - Bruce Schneier安全专家博客
+- **The Hacker News** - 全球知名安全新闻平台
+- **Dark Reading** - 企业安全专业媒体
+- 等等...
 
-### 关键词过滤
-修改 `SECURITY_KEYWORDS` 列表来调整新闻筛选条件：
+### 厂商安全源 (6个)
+- Microsoft Security Blog
+- Google Security Blog
+- FireEye Threat Research
+- Kaspersky Securelist
+- 等等...
 
-```python
-SECURITY_KEYWORDS = [
-    '安全', '漏洞', '攻击', '黑客', 
-    'security', 'vulnerability', 'CVE',
-    # 添加更多关键词...
-]
-```
+### 国内优质源 (3个)
+- 安全客、FreeBuf、嘶吼
 
-## 📊 生成的文件
+## 🛠️ 使用指南
 
-### 新闻文件
-- **命名格式**: `news20250729.html`
-- **内容包含**: 
-  - 专业的安全态势摘要
-  - 分类新闻（焦点事件、漏洞威胁、产业动态）
-  - AI生成的专业分析
+### 基础使用
 
-### 索引页面
-- **文件名**: `index.html`
-- **功能**:
-  - 最新新闻展示
-  - 按时间分类的历史新闻
-  - 响应式设计
-  - 企业品牌信息
-
-## 🤖 AI功能详解
-
-### 智能摘要生成
-使用GLM-4模型分析当日新闻标题，生成：
-- 安全态势总体特点
-- 重点威胁和趋势
-- 专业权威的表述
-
-### 自动新闻分类
-AI自动将新闻分为三大类：
-- **🎯 焦点安全事件**: 重大攻击、数据泄露等
-- **⚠️ 漏洞与威胁**: CVE漏洞、威胁分析等  
-- **🚀 产业动态**: 产品发布、政策法规等
-
-### 深度分析
-为每条新闻生成50字专业分析，包括：
-- 威胁等级评估
-- 影响范围分析
-- 技术要点总结
-
-## 🔄 自动化运行
-
-### 定时任务设置
 ```bash
-# 添加到crontab，每天早上8点自动生成新闻
-0 8 * * * cd /path/to/securitydaily && python3 run_glm_news.py
+# 生成今日新闻
+python scripts/run_glm_news.py
+
+# 管理新闻源
+python tools/manage_news_sources.py list
+
+# 测试数据源
+python tests/test_news_sources.py
 ```
 
-### 实时监控
+### 高级功能
+
 ```bash
-# 启动实时文件监控
-python3 news_monitor.py
+# 添加新数据源
+python tools/manage_news_sources.py add
+
+# 移动端测试
+open tests/mobile_test_index.html
+
+# 样式保护检查
+python src/utils/style_protection.py
 ```
 
-## 🎨 界面特性
+## 📊 功能特性
 
-- **现代化设计**: 深色主题，渐变背景
-- **品牌标识**: 海之安logo和企业信息
-- **响应式布局**: 适配各种设备
-- **交互动画**: 悬停效果和过渡动画
-- **智能分类**: 按时间自动组织新闻
+### AI智能分析
+- 🧠 智谱GLM驱动的内容生成
+- 📈 四维度威胁分析（风险、事件、舆情、趋势）
+- 🎯 智能新闻精选和分类
+- 📝 自动摘要生成
 
-## 📈 系统优势
+### 响应式设计
+- 📱 完美移动端适配
+- 🎨 现代化科技美感
+- ⚡ 流畅的交互动画
+- 🌙 深色主题设计
 
-1. **高效自动化**: 全自动抓取、分析、生成
-2. **AI增强**: 智谱GLM提供专业分析
-3. **多源整合**: 整合多个权威安全媒体
-4. **专业输出**: 生成企业级新闻快报
-5. **易于部署**: 简单配置即可运行
+### 数据管理
+- 🔄 自动数据源管理
+- 🛡️ 配置保护机制
+- 💾 自动备份功能
+- 📊 实时统计监控
 
-## 🔗 相关链接
+## 🧪 测试
 
-- [智谱AI开放平台](https://open.bigmodel.cn/)
-- [GLM最佳实践文档](https://docs.bigmodel.cn/cn/best-practice/creativepractice/aimorningnewspaper)
-- [海之安官网](https://www.oceansecurity.cn)
+```bash
+# 运行所有测试
+python -m pytest tests/
 
-## 📝 更新日志
+# 移动端适配测试
+open tests/mobile_test_index.html
 
-### v2.0.0 (2025-07-29)
-- ✨ 集成智谱GLM AI功能
-- 🎨 全新界面设计
-- 📊 智能新闻分类
-- 🤖 AI生成专业分析
+# 数据源连通性测试
+python tests/test_news_sources.py all
+```
 
-### v1.0.0 (2025-07-22)
-- 🚀 基础新闻抓取功能
-- 📰 HTML新闻生成
-- 📋 自动索引生成
-- 🔄 实时监控功能
+## 📚 文档
+
+- [系统架构文档](docs/ENHANCED_NEWS_SYSTEM.md)
+- [移动端适配指南](docs/MOBILE_PROTECTION_README.md)
+- [数据源管理手册](docs/NEWS_SOURCES_README.md)
+- [国际化部署报告](docs/INTERNATIONAL_SOURCES_REPORT.md)
+
+## 🤝 贡献指南
+
+1. Fork 项目
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开 Pull Request
 
 ## 📄 许可证
 
-© 2025 海之安（中国）科技有限公司. 保持警惕，守护安全.
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+
+## 🏢 关于我们
+
+**海之安（中国）科技有限公司**
+
+- 🌐 官网: [www.oceansecurity.cn](https://www.oceansecurity.cn)
+- 📧 邮箱: contact@oceansecurity.cn
+- 🔒 专注: 数字安全解决方案
+
+## 🙏 致谢
+
+感谢以下开源项目和服务：
+
+- [智谱GLM](https://open.bigmodel.cn/) - AI内容生成
+- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) - HTML解析
+- [Requests](https://requests.readthedocs.io/) - HTTP库
+- [Feedparser](https://feedparser.readthedocs.io/) - RSS解析
 
 ---
 
-**海之安，数字安全专家** | [www.oceansecurity.cn](https://www.oceansecurity.cn)
+<div align="center">
+
+**🌊 守护数字安全，共建网络未来 🛡️**
+
+Made with ❤️ by Ocean Security Team
+
+</div>

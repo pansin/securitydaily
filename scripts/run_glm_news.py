@@ -9,12 +9,15 @@ import os
 import sys
 from datetime import datetime
 
+# 添加项目根目录到Python路径
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 def check_glm_api_key():
     """检查GLM API密钥是否可用"""
     api_key = os.getenv('GLM_API_KEY')
     if not api_key:
         try:
-            from glm_config import GLM_CONFIG
+            from config.glm_config import GLM_CONFIG
             api_key = GLM_CONFIG.get('api_key')
         except ImportError:
             pass
@@ -24,11 +27,11 @@ def check_glm_api_key():
 def run_with_glm():
     """使用GLM API运行增强版新闻生成器"""
     try:
-        from glm_news_generator import GLMNewsGenerator
+        from src.core.glm_news_generator import GLMNewsGenerator
         
         api_key = os.getenv('GLM_API_KEY')
         if not api_key:
-            from glm_config import GLM_CONFIG
+            from config.glm_config import GLM_CONFIG
             api_key = GLM_CONFIG.get('api_key')
         
         generator = GLMNewsGenerator(api_key)
@@ -82,10 +85,22 @@ def main():
         success = run_basic_scraper()
     
     if success:
+        # 更新动态主页
+        try:
+            import subprocess
+            result = subprocess.run([sys.executable, 'src/core/generate_index.py'], 
+                                  capture_output=True, text=True, timeout=30)
+            if result.returncode == 0:
+                print("✅ 动态主页已更新")
+            else:
+                print("⚠️ 动态主页更新失败，使用默认版本")
+        except Exception as e:
+            print(f"⚠️ 动态主页生成器执行失败: {e}")
+        
         # 更新索引
         try:
             import subprocess
-            subprocess.run([sys.executable, 'start_monitor.py'], check=True)
+            subprocess.run([sys.executable, 'scripts/start_monitor.py'], check=True)
             print("📋 新闻索引已更新")
         except:
             print("⚠️  新闻索引更新失败，请手动运行 python3 start_monitor.py")

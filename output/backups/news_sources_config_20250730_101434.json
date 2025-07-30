@@ -1,0 +1,354 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-07-30",
+  "description": "海之安新闻系统 - 网络安全信息源配置",
+  "news_sources": [
+    {
+      "name": "安全客",
+      "rss_url": "https://api.anquanke.com/data/v1/rss",
+      "weight": 1.0,
+      "language": "zh",
+      "region": "中国",
+      "category": "综合安全",
+      "enabled": true,
+      "description": "国内知名网络安全媒体平台"
+    },
+    {
+      "name": "FreeBuf",
+      "rss_url": "https://www.freebuf.com/feed",
+      "weight": 1.0,
+      "language": "zh",
+      "region": "中国",
+      "category": "综合安全",
+      "enabled": true,
+      "description": "国内领先的网络安全行业门户"
+    },
+    {
+      "name": "嘶吼",
+      "rss_url": "https://www.4hou.com/feed",
+      "weight": 1.0,
+      "language": "zh",
+      "region": "中国",
+      "category": "综合安全",
+      "enabled": true,
+      "description": "专业的网络安全媒体平台"
+    },
+    {
+      "name": "Krebs on Security",
+      "rss_url": "https://krebsonsecurity.com/feed/",
+      "weight": 1.2,
+      "language": "en",
+      "region": "美国",
+      "category": "网络犯罪",
+      "enabled": true,
+      "description": "Brian Krebs的权威网络安全博客，专注网络犯罪调查"
+    },
+    {
+      "name": "Schneier on Security",
+      "rss_url": "https://www.schneier.com/feed/",
+      "weight": 1.2,
+      "language": "en",
+      "region": "美国",
+      "category": "安全理论",
+      "enabled": true,
+      "description": "Bruce Schneier的安全技术博客，密码学和安全专家"
+    },
+    {
+      "name": "The Hacker News",
+      "rss_url": "https://feeds.feedburner.com/TheHackersNews",
+      "weight": 1.1,
+      "language": "en",
+      "region": "国际",
+      "category": "综合安全",
+      "enabled": true,
+      "description": "全球知名的网络安全新闻平台"
+    },
+    {
+      "name": "Dark Reading",
+      "rss_url": "https://www.darkreading.com/rss.xml",
+      "weight": 1.1,
+      "language": "en",
+      "region": "美国",
+      "category": "企业安全",
+      "enabled": true,
+      "description": "企业网络安全专业媒体"
+    },
+    {
+      "name": "Security Week",
+      "rss_url": "https://www.securityweek.com/feed",
+      "weight": 1.0,
+      "language": "en",
+      "region": "美国",
+      "category": "行业新闻",
+      "enabled": true,
+      "description": "网络安全行业新闻和分析"
+    },
+    {
+      "name": "Threatpost",
+      "rss_url": "https://threatpost.com/feed/",
+      "weight": 1.0,
+      "language": "en",
+      "region": "美国",
+      "category": "威胁情报",
+      "enabled": true,
+      "description": "威胁情报和安全新闻"
+    },
+    {
+      "name": "SANS Internet Storm Center",
+      "rss_url": "https://isc.sans.edu/rssfeed.xml",
+      "weight": 1.2,
+      "language": "en",
+      "region": "美国",
+      "category": "威胁分析",
+      "enabled": true,
+      "description": "SANS研究所的威胁情报中心"
+    },
+    {
+      "name": "CISA Alerts",
+      "rss_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "weight": 1.3,
+      "language": "en",
+      "region": "美国",
+      "category": "官方警报",
+      "enabled": true,
+      "description": "美国网络安全和基础设施安全局官方警报"
+    },
+    {
+      "name": "US-CERT Alerts",
+      "rss_url": "https://www.us-cert.gov/ncas/alerts.xml",
+      "weight": 1.3,
+      "language": "en",
+      "region": "美国",
+      "category": "官方警报",
+      "enabled": true,
+      "description": "美国计算机应急响应小组警报"
+    },
+    {
+      "name": "NIST Cybersecurity",
+      "rss_url": "https://www.nist.gov/news-events/cybersecurity/rss.xml",
+      "weight": 1.2,
+      "language": "en",
+      "region": "美国",
+      "category": "标准规范",
+      "enabled": true,
+      "description": "美国国家标准与技术研究院网络安全新闻"
+    },
+    {
+      "name": "ENISA",
+      "rss_url": "https://www.enisa.europa.eu/rss/news",
+      "weight": 1.1,
+      "language": "en",
+      "region": "欧盟",
+      "category": "政策法规",
+      "enabled": true,
+      "description": "欧盟网络与信息安全局"
+    },
+    {
+      "name": "NCSC UK",
+      "rss_url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+      "weight": 1.2,
+      "language": "en",
+      "region": "英国",
+      "category": "官方指导",
+      "enabled": true,
+      "description": "英国国家网络安全中心"
+    },
+    {
+      "name": "ACSC Australia",
+      "rss_url": "https://www.cyber.gov.au/rss.xml",
+      "weight": 1.1,
+      "language": "en",
+      "region": "澳大利亚",
+      "category": "官方警报",
+      "enabled": true,
+      "description": "澳大利亚网络安全中心"
+    },
+    {
+      "name": "Bleeping Computer",
+      "rss_url": "https://www.bleepingcomputer.com/feed/",
+      "weight": 1.0,
+      "language": "en",
+      "region": "国际",
+      "category": "技术新闻",
+      "enabled": true,
+      "description": "计算机安全和技术新闻"
+    },
+    {
+      "name": "Ars Technica Security",
+      "rss_url": "https://feeds.arstechnica.com/arstechnica/security",
+      "weight": 1.0,
+      "language": "en",
+      "region": "美国",
+      "category": "技术分析",
+      "enabled": true,
+      "description": "Ars Technica安全版块"
+    },
+    {
+      "name": "ZDNet Security",
+      "rss_url": "https://www.zdnet.com/topic/security/rss.xml",
+      "weight": 0.9,
+      "language": "en",
+      "region": "国际",
+      "category": "商业安全",
+      "enabled": true,
+      "description": "ZDNet安全新闻"
+    },
+    {
+      "name": "CSO Online",
+      "rss_url": "https://www.csoonline.com/index.rss",
+      "weight": 1.0,
+      "language": "en",
+      "region": "美国",
+      "category": "企业安全",
+      "enabled": true,
+      "description": "首席安全官在线杂志"
+    },
+    {
+      "name": "InfoSecurity Magazine",
+      "rss_url": "https://www.infosecurity-magazine.com/rss/news/",
+      "weight": 1.0,
+      "language": "en",
+      "region": "英国",
+      "category": "行业资讯",
+      "enabled": true,
+      "description": "信息安全专业杂志"
+    },
+    {
+      "name": "Security Affairs",
+      "rss_url": "https://securityaffairs.co/wordpress/feed",
+      "weight": 0.9,
+      "language": "en",
+      "region": "意大利",
+      "category": "综合安全",
+      "enabled": true,
+      "description": "网络安全事务博客"
+    },
+    {
+      "name": "Recorded Future",
+      "rss_url": "https://www.recordedfuture.com/feed",
+      "weight": 1.1,
+      "language": "en",
+      "region": "美国",
+      "category": "威胁情报",
+      "enabled": true,
+      "description": "威胁情报和安全分析"
+    },
+    {
+      "name": "FireEye Threat Research",
+      "rss_url": "https://www.fireeye.com/blog/threat-research/_jcr_content.feed",
+      "weight": 1.2,
+      "language": "en",
+      "region": "美国",
+      "category": "威胁研究",
+      "enabled": true,
+      "description": "FireEye威胁研究博客"
+    },
+    {
+      "name": "Kaspersky Securelist",
+      "rss_url": "https://securelist.com/feed/",
+      "weight": 1.1,
+      "language": "en",
+      "region": "俄罗斯",
+      "category": "恶意软件",
+      "enabled": true,
+      "description": "卡巴斯基安全研究博客"
+    },
+    {
+      "name": "Symantec Security Response",
+      "rss_url": "https://www.symantec.com/connect/item-feeds/blog/2261/feed/all/en/all",
+      "weight": 1.0,
+      "language": "en",
+      "region": "美国",
+      "category": "威胁分析",
+      "enabled": false,
+      "description": "赛门铁克安全响应博客（需要验证RSS链接）"
+    },
+    {
+      "name": "Trend Micro Security Intelligence",
+      "rss_url": "https://blog.trendmicro.com/trendlabs-security-intelligence/feed/",
+      "weight": 1.0,
+      "language": "en",
+      "region": "日本",
+      "category": "威胁情报",
+      "enabled": true,
+      "description": "趋势科技安全情报博客"
+    },
+    {
+      "name": "Microsoft Security Blog",
+      "rss_url": "https://www.microsoft.com/security/blog/feed/",
+      "weight": 1.1,
+      "language": "en",
+      "region": "美国",
+      "category": "产品安全",
+      "enabled": true,
+      "description": "微软安全博客"
+    },
+    {
+      "name": "Google Security Blog",
+      "rss_url": "https://security.googleblog.com/feeds/posts/default",
+      "weight": 1.1,
+      "language": "en",
+      "region": "美国",
+      "category": "产品安全",
+      "enabled": true,
+      "description": "谷歌安全博客"
+    },
+    {
+      "name": "Apple Security Updates",
+      "rss_url": "https://support.apple.com/en-us/HT201222/rss",
+      "weight": 1.0,
+      "language": "en",
+      "region": "美国",
+      "category": "产品安全",
+      "enabled": true,
+      "description": "苹果安全更新"
+    }
+  ],
+  "source_categories": {
+    "官方警报": {
+      "priority": "highest",
+      "description": "政府和官方机构发布的安全警报"
+    },
+    "威胁情报": {
+      "priority": "high",
+      "description": "专业威胁情报和分析"
+    },
+    "威胁研究": {
+      "priority": "high",
+      "description": "深度威胁研究和分析"
+    },
+    "综合安全": {
+      "priority": "medium",
+      "description": "综合性网络安全新闻"
+    },
+    "企业安全": {
+      "priority": "medium",
+      "description": "企业级安全解决方案和新闻"
+    },
+    "技术分析": {
+      "priority": "medium",
+      "description": "技术深度分析和评论"
+    },
+    "行业资讯": {
+      "priority": "low",
+      "description": "行业动态和商业新闻"
+    }
+  },
+  "regional_weights": {
+    "中国": 1.0,
+    "美国": 1.1,
+    "欧盟": 1.0,
+    "英国": 1.0,
+    "国际": 1.0
+  },
+  "language_support": {
+    "zh": "中文",
+    "en": "英文"
+  },
+  "update_instructions": {
+    "how_to_add": "在news_sources数组中添加新的源配置",
+    "required_fields": ["name", "rss_url", "weight", "language", "region", "category", "enabled"],
+    "weight_range": "0.5-1.5，数值越高优先级越高",
+    "testing": "添加新源后运行 python3 test_news_sources.py 验证"
+  }
+}

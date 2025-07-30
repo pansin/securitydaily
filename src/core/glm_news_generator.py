@@ -41,24 +41,80 @@ class GLMNewsGenerator:
             "Content-Type": "application/json"
         }
         
-        # 新闻源配置
-        self.news_sources = [
-            {
-                'name': '安全客',
-                'rss_url': 'https://api.anquanke.com/data/v1/rss',
-                'weight': 1.0
-            },
-            {
-                'name': 'FreeBuf',
-                'rss_url': 'https://www.freebuf.com/feed',
-                'weight': 1.0
-            },
-            {
-                'name': '嘶吼',
-                'rss_url': 'https://www.4hou.com/feed',
-                'weight': 1.0
-            }
-        ]
+        # 加载新闻源配置
+        try:
+            from src.core.news_sources_loader import NewsSourcesLoader
+            self.sources_loader = NewsSourcesLoader()
+            self.news_sources = self.sources_loader.get_enabled_sources()
+            logger.info(f"✅ 从配置文件加载了 {len(self.news_sources)} 个新闻源")
+        except ImportError:
+            try:
+                from news_sources_loader import NewsSourcesLoader
+                self.sources_loader = NewsSourcesLoader()
+                self.news_sources = self.sources_loader.get_enabled_sources()
+                logger.info(f"✅ 从配置文件加载了 {len(self.news_sources)} 个新闻源")
+            except ImportError:
+                logger.warning("⚠️ 新闻源配置加载器未找到，使用默认配置")
+                # 备用默认配置
+                self.news_sources = [
+                    {
+                        'name': '安全客',
+                        'rss_url': 'https://api.anquanke.com/data/v1/rss',
+                        'weight': 1.0,
+                        'language': 'zh',
+                        'region': '中国',
+                        'category': '综合安全',
+                        'enabled': True
+                    },
+                    {
+                        'name': 'FreeBuf',
+                        'rss_url': 'https://www.freebuf.com/feed',
+                        'weight': 1.0,
+                        'language': 'zh',
+                        'region': '中国',
+                        'category': '综合安全',
+                        'enabled': True
+                    },
+                    {
+                        'name': '嘶吼',
+                        'rss_url': 'https://www.4hou.com/feed',
+                        'weight': 1.0,
+                        'language': 'zh',
+                        'region': '中国',
+                        'category': '综合安全',
+                        'enabled': True
+                    }
+                ]
+            # 备用默认配置
+            self.news_sources = [
+                {
+                    'name': '安全客',
+                    'rss_url': 'https://api.anquanke.com/data/v1/rss',
+                    'weight': 1.0,
+                    'language': 'zh',
+                    'region': '中国',
+                    'category': '综合安全',
+                    'enabled': True
+                },
+                {
+                    'name': 'FreeBuf',
+                    'rss_url': 'https://www.freebuf.com/feed',
+                    'weight': 1.0,
+                    'language': 'zh',
+                    'region': '中国',
+                    'category': '综合安全',
+                    'enabled': True
+                },
+                {
+                    'name': '嘶吼',
+                    'rss_url': 'https://www.4hou.com/feed',
+                    'weight': 1.0,
+                    'language': 'zh',
+                    'region': '中国',
+                    'category': '综合安全',
+                    'enabled': True
+                }
+            ]
         
         self.security_keywords = [
             '安全', '漏洞', '攻击', '黑客', '病毒', '恶意软件', '勒索', '渗透',
@@ -120,8 +176,7 @@ class GLMNewsGenerator:
             包含完整文章信息的字典
         """
         try:
-            from enhanced_crawler import EnhancedNewsCrawler
-            
+            from src.crawlers.enhanced_crawler import EnhancedNewsCrawler
             crawler = EnhancedNewsCrawler()
             result = crawler.extract_article_content(url, max_length)
             
@@ -133,7 +188,24 @@ class GLMNewsGenerator:
                 return self._fallback_content_extraction(url, max_length)
                 
         except ImportError:
-            logger.warning("增强爬虫模块未找到，使用备用方法")
+            try:
+                from enhanced_crawler import EnhancedNewsCrawler
+                crawler = EnhancedNewsCrawler()
+                result = crawler.extract_article_content(url, max_length)
+                
+                if result['success']:
+                    logger.info(f"成功提取文章内容: {result['title'][:50]}... ({result['char_count']}字符)")
+                    return result
+                else:
+                    logger.warning(f"增强爬虫提取失败，使用备用方法: {url}")
+                    return self._fallback_content_extraction(url, max_length)
+                    
+            except ImportError:
+                logger.warning("增强爬虫模块未找到，使用备用方法")
+                return self._fallback_content_extraction(url, max_length)
+        except Exception as e:
+            logger.warning(f"增强爬虫提取失败: {e}，使用备用方法")
+            return self._fallback_content_extraction(url, max_length)
             return self._fallback_content_extraction(url, max_length)
         except Exception as e:
             logger.warning(f"增强爬虫提取失败: {e}，使用备用方法")
@@ -362,7 +434,14 @@ class GLMNewsGenerator:
         news_text = "\n".join(news_details)
         
         # 使用GLM精选新闻
-        from glm_config import PROMPT_TEMPLATES
+        try:
+            from config.glm_config import PROMPT_TEMPLATES
+        except ImportError:
+            # 备用导入路径
+            import sys
+            import os
+            sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+            from config.glm_config import PROMPT_TEMPLATES
         select_prompt = PROMPT_TEMPLATES['select_top_news'].format(news_text=news_text)
         
         select_result = self.call_glm_api(select_prompt)
@@ -452,7 +531,14 @@ class GLMNewsGenerator:
         news_text = "\n".join(news_details)
         
         # 生成全球安全态势摘要
-        from glm_config import PROMPT_TEMPLATES
+        try:
+            from config.glm_config import PROMPT_TEMPLATES
+        except ImportError:
+            # 备用导入路径
+            import sys
+            import os
+            sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+            from config.glm_config import PROMPT_TEMPLATES
         summary_prompt = PROMPT_TEMPLATES['summary'].format(news_text=news_text)
         summary = self.call_glm_api(summary_prompt)
         
@@ -557,7 +643,13 @@ class GLMNewsGenerator:
             return news
         
         try:
-            from glm_config import PROMPT_TEMPLATES
+            from config.glm_config import PROMPT_TEMPLATES
+        except ImportError:
+            # 备用导入路径
+            import sys
+            import os
+            sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+            from config.glm_config import PROMPT_TEMPLATES
             translate_prompt = PROMPT_TEMPLATES['translate_and_analyze'].format(
                 title=news['title'],
                 content=news.get('content', '')[:1000],  # 限制长度避免超时
@@ -593,6 +685,16 @@ class GLMNewsGenerator:
             HTML内容
         """
         current_time = datetime.now().strftime('%Y年%m月%d日')
+        
+        # 导入样式保护模块
+        try:
+            from style_protection import get_mobile_responsive_css, ensure_mobile_responsive
+            mobile_css = get_mobile_responsive_css()
+            logger.info("✅ 成功加载移动端样式保护模块")
+        except ImportError:
+            # 如果导入失败，使用内置的移动端样式
+            mobile_css = self._get_fallback_mobile_css()
+            logger.warning("⚠️ 样式保护模块未找到，使用内置备用样式")
         
         html_template = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -1026,6 +1128,255 @@ class GLMNewsGenerator:
     .icon-opinion::before {{ content: '📢'; }}
     .icon-trend::before {{ content: '📈'; }}
     .icon-focus::before {{ content: '🎯'; }}
+    
+    /* 移动端适配样式 - 重要：请勿删除或覆盖 */
+    @media (max-width: 768px) {{
+      .container {{
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
+      }}
+      
+      .header {{
+        padding: 20px 15px;
+        border-radius: 0;
+      }}
+      
+      .logo {{
+        width: 150px;
+        margin-bottom: 15px;
+      }}
+      
+      .title {{
+        font-size: 24px;
+        margin-bottom: 12px;
+      }}
+      
+      .subtitle {{
+        font-size: 14px;
+        margin-bottom: 6px;
+      }}
+      
+      .content {{
+        padding: 20px 15px;
+      }}
+      
+      .summary-section {{
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }}
+      
+      .summary-title {{
+        font-size: 16px;
+        margin-bottom: 12px;
+      }}
+      
+      .summary-content {{
+        font-size: 14px;
+        line-height: 1.6;
+      }}
+      
+      .stats-section {{
+        margin-bottom: 20px;
+      }}
+      
+      .stats-grid {{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }}
+      
+      .stat-card {{
+        padding: 15px;
+        border-radius: 8px;
+      }}
+      
+      .stat-number {{
+        font-size: 24px;
+        margin-bottom: 6px;
+      }}
+      
+      .stat-label {{
+        font-size: 12px;
+      }}
+      
+      .stat-detail {{
+        font-size: 10px;
+      }}
+      
+      .enhancement-info {{
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }}
+      
+      .enhancement-info h3 {{
+        font-size: 14px;
+        margin-bottom: 10px;
+      }}
+      
+      .enhancement-item {{
+        padding: 6px 0;
+      }}
+      
+      .enhancement-label,
+      .enhancement-value {{
+        font-size: 12px;
+      }}
+      
+      .source-list {{
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }}
+      
+      .source-list h3 {{
+        font-size: 14px;
+        margin-bottom: 10px;
+      }}
+      
+      .source-tag {{
+        padding: 4px 8px;
+        font-size: 10px;
+        margin: 2px;
+      }}
+      
+      .category-section {{
+        margin-bottom: 25px;
+        border-radius: 8px;
+      }}
+      
+      .category-header {{
+        padding: 15px 20px;
+      }}
+      
+      .category-title {{
+        font-size: 18px;
+      }}
+      
+      .category-news {{
+        padding: 15px;
+      }}
+      
+      .news-item {{
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }}
+      
+      .news-title {{
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }}
+      
+      .news-meta {{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 6px;
+      }}
+      
+      .news-source,
+      .region-badge,
+      .impact-badge,
+      .content-quality-badge {{
+        font-size: 10px;
+        padding: 3px 6px;
+        margin: 2px 4px 2px 0;
+      }}
+      
+      .news-summary {{
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }}
+      
+      .key-points {{
+        margin: 10px 0;
+        padding-left: 15px;
+        font-size: 12px;
+      }}
+      
+      .key-points li {{
+        margin-bottom: 3px;
+        line-height: 1.3;
+      }}
+      
+      .footer {{
+        padding: 15px;
+        border-radius: 0;
+        font-size: 12px;
+      }}
+    }}
+    
+    /* 超小屏幕适配 (iPhone SE等) */
+    @media (max-width: 480px) {{
+      .container {{
+        padding: 5px;
+      }}
+      
+      .header {{
+        padding: 15px 10px;
+      }}
+      
+      .logo {{
+        width: 120px;
+      }}
+      
+      .title {{
+        font-size: 20px;
+      }}
+      
+      .subtitle {{
+        font-size: 12px;
+      }}
+      
+      .content {{
+        padding: 15px 10px;
+      }}
+      
+      .stats-grid {{
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }}
+      
+      .stat-card {{
+        padding: 12px;
+      }}
+      
+      .stat-number {{
+        font-size: 20px;
+      }}
+      
+      .category-title {{
+        font-size: 16px;
+      }}
+      
+      .news-title {{
+        font-size: 14px;
+      }}
+      
+      .news-summary {{
+        font-size: 12px;
+      }}
+    }}
+    
+    /* 横屏适配 */
+    @media (max-width: 768px) and (orientation: landscape) {{
+      .stats-grid {{
+        grid-template-columns: repeat(4, 1fr);
+      }}
+      
+      .category-section {{
+        margin-bottom: 20px;
+      }}
+      
+      .news-item {{
+        padding: 12px;
+        margin-bottom: 12px;
+      }}
+    }}
   </style>
 </head>
 <body>
@@ -1196,7 +1547,68 @@ class GLMNewsGenerator:
 </body>
 </html>"""
         
+        # 确保包含移动端样式保护
+        try:
+            from style_protection import ensure_mobile_responsive
+            html_template = ensure_mobile_responsive(html_template)
+            logger.info("✅ 移动端样式保护已应用")
+        except ImportError:
+            # 如果保护模块不可用，手动检查和添加
+            if "@media (max-width: 768px)" not in html_template:
+                fallback_css = self._get_fallback_mobile_css()
+                html_template = html_template.replace("</style>", fallback_css + "\n  </style>")
+                logger.info("✅ 备用移动端样式已应用")
+        
         return html_template
+    
+    def _get_fallback_mobile_css(self) -> str:
+        """
+        备用移动端CSS样式
+        """
+        return """
+    /* 移动端适配样式 - 重要：请勿删除或覆盖 */
+    @media (max-width: 768px) {
+      .container { margin: 0; padding: 10px; border-radius: 0; }
+      .header { padding: 20px 15px; border-radius: 0; }
+      .logo { width: 150px; margin-bottom: 15px; }
+      .title { font-size: 24px; margin-bottom: 12px; }
+      .subtitle { font-size: 14px; margin-bottom: 6px; }
+      .content { padding: 20px 15px; }
+      .summary-section { padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+      .summary-title { font-size: 16px; margin-bottom: 12px; }
+      .summary-content { font-size: 14px; line-height: 1.6; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .stat-card { padding: 15px; border-radius: 8px; }
+      .stat-number { font-size: 24px; margin-bottom: 6px; }
+      .stat-label { font-size: 12px; }
+      .category-section { margin-bottom: 25px; border-radius: 8px; }
+      .category-header { padding: 15px 20px; }
+      .category-title { font-size: 18px; }
+      .category-news { padding: 15px; }
+      .news-item { padding: 15px; margin-bottom: 15px; border-radius: 6px; }
+      .news-title { font-size: 16px; margin-bottom: 10px; line-height: 1.3; }
+      .news-meta { flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 6px; }
+      .news-source, .region-badge, .impact-badge, .content-quality-badge { font-size: 10px; padding: 3px 6px; margin: 2px 4px 2px 0; }
+      .news-summary { font-size: 13px; line-height: 1.5; margin-bottom: 10px; }
+      .key-points { margin: 10px 0; padding-left: 15px; font-size: 12px; }
+      .key-points li { margin-bottom: 3px; line-height: 1.3; }
+      .footer { padding: 15px; border-radius: 0; font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 5px; }
+      .header { padding: 15px 10px; }
+      .logo { width: 120px; }
+      .title { font-size: 20px; }
+      .subtitle { font-size: 12px; }
+      .content { padding: 15px 10px; }
+      .stats-grid { grid-template-columns: 1fr; gap: 8px; }
+      .stat-card { padding: 12px; }
+      .stat-number { font-size: 20px; }
+      .category-title { font-size: 16px; }
+      .news-title { font-size: 14px; }
+      .news-summary { font-size: 12px; }
+    }
+        """
     
     def generate_daily_report(self, days_back: int = 1) -> str:
         """
