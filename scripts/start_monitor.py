@@ -127,7 +127,6 @@ def generate_index():
         # 更新最新新闻内容
         if latest_news:
             # 更新今日要闻的标题和内容
-            import re
             
             # 更新新闻标题
             html_content = re.sub(
@@ -158,7 +157,7 @@ def generate_index():
             # 更新点击链接
             html_content = re.sub(
                 r'onclick="window\.open\(\'[^\']*\', \'_blank\'\)"',
-                f'onclick="window.open(\'{latest_news["file"]}\', \'_blank\')"',
+                f'onclick="window.open(\'{latest_news["filename"]}\', \'_blank\')"',
                 html_content,
                 count=1
             )
@@ -178,7 +177,7 @@ def generate_index():
             if week_news:
                 html_content = re.sub(
                     r'<a href="[^"]*" class="news-link" target="_blank">\s*<div class="news-link-title">.*?</div>\s*<div class="news-link-date">.*?</div>\s*</a>',
-                    f'<a href="{week_news["file"]}" class="news-link" target="_blank">\n                                <div class="news-link-title">{week_news["title"]}</div>\n                                <div class="news-link-date">{week_news["date"]}</div>\n                            </a>',
+                    f'<a href="{week_news["filename"]}" class="news-link" target="_blank">\n                                <div class="news-link-title">{week_news["title"]}</div>\n                                <div class="news-link-date">{week_news["date"]}</div>\n                            </a>',
                     html_content,
                     count=1,
                     flags=re.DOTALL
