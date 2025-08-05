@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安网络安全日报 - 2025年08月05日</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Microsoft YaHei', 'SimHei', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+    }
+    
+    .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    
+    .content {
+      padding: 40px;
+    }
+    
+    .summary-section {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .summary-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .summary-title::before {
+      content: '📊';
+      font-size: 24px;
+    }
+    
+    .summary-content {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    
+    .category-section {
+      margin-bottom: 40px;
+      background: rgba(30, 41, 59, 0.4);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      overflow: hidden;
+    }
+    
+    .category-header {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .category-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .category-news {
+      padding: 24px;
+    }
+    
+    .news-item {
+      background: rgba(51, 65, 85, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .news-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+      border-radius: 2px 0 0 2px;
+    }
+    
+    .news-item:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    }
+    
+    .news-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    
+    .news-analysis {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    
+    .footer {
+      background: rgba(15, 23, 42, 0.8);
+      border-top: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 24px 40px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+    
+    .stats-section {
+      margin-bottom: 32px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .stat-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    
+    .stat-detail {
+      font-size: 12px;
+      color: #64748b;
+    }
+    
+    .source-list {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .source-list h3 {
+      color: #3b82f6;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .source-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .source-tag {
+      background: rgba(59, 130, 246, 0.1);
+      color: #93c5fd;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .enhancement-info {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(34, 197, 94, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    
+    .enhancement-info h3 {
+      color: #22c55e;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .enhancement-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .enhancement-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+    
+    .enhancement-item:last-child {
+      border-bottom: none;
+    }
+    
+    .enhancement-label {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .enhancement-value {
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .content-quality-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    
+    .quality-enhanced {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .quality-rss {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .quality-failed {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .news-header {
+      margin-bottom: 12px;
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+    
+    .news-source {
+      color: #94a3b8;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .severity-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .severity-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .severity-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .severity-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .severity-info {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .news-summary {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    
+    .key-points {
+      margin: 12px 0;
+      padding-left: 20px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .key-points li {
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    
+    .region-badge {
+      background: rgba(34, 197, 94, 0.1);
+      color: #86efac;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin: 0 4px;
+    }
+    
+    .impact-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .impact-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .impact-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .impact-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .icon-risk::before { content: '⚠️'; }
+    .icon-event::before { content: '🚨'; }
+    .icon-opinion::before { content: '📢'; }
+    .icon-trend::before { content: '📈'; }
+    .icon-focus::before { content: '🎯'; }
+    
+    /* 移动端适配样式 - 重要：请勿删除或覆盖 */
+    @media (max-width: 768px) {
+      .container {
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
+      }
+      
+      .header {
+        padding: 20px 15px;
+        border-radius: 0;
+      }
+      
+      .logo {
+        width: 150px;
+        margin-bottom: 15px;
+      }
+      
+      .title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      
+      .subtitle {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      
+      .content {
+        padding: 20px 15px;
+      }
+      
+      .summary-section {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+      
+      .summary-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      
+      .summary-content {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      .stats-section {
+        margin-bottom: 20px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      
+      .stat-card {
+        padding: 15px;
+        border-radius: 8px;
+      }
+      
+      .stat-number {
+        font-size: 24px;
+        margin-bottom: 6px;
+      }
+      
+      .stat-label {
+        font-size: 12px;
+      }
+      
+      .stat-detail {
+        font-size: 10px;
+      }
+      
+      .enhancement-info {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+      
+      .enhancement-info h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      .enhancement-item {
+        padding: 6px 0;
+      }
+      
+      .enhancement-label,
+      .enhancement-value {
+        font-size: 12px;
+      }
+      
+      .source-list {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+      
+      .source-list h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      .source-tag {
+        padding: 4px 8px;
+        font-size: 10px;
+        margin: 2px;
+      }
+      
+      .category-section {
+        margin-bottom: 25px;
+        border-radius: 8px;
+      }
+      
+      .category-header {
+        padding: 15px 20px;
+      }
+      
+      .category-title {
+        font-size: 18px;
+      }
+      
+      .category-news {
+        padding: 15px;
+      }
+      
+      .news-item {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }
+      
+      .news-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      
+      .news-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 6px;
+      }
+      
+      .news-source,
+      .region-badge,
+      .impact-badge,
+      .content-quality-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+        margin: 2px 4px 2px 0;
+      }
+      
+      .news-summary {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+      
+      .key-points {
+        margin: 10px 0;
+        padding-left: 15px;
+        font-size: 12px;
+      }
+      
+      .key-points li {
+        margin-bottom: 3px;
+        line-height: 1.3;
+      }
+      
+      .footer {
+        padding: 15px;
+        border-radius: 0;
+        font-size: 12px;
+      }
+    }
+    
+    /* 超小屏幕适配 (iPhone SE等) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 5px;
+      }
+      
+      .header {
+        padding: 15px 10px;
+      }
+      
+      .logo {
+        width: 120px;
+      }
+      
+      .title {
+        font-size: 20px;
+      }
+      
+      .subtitle {
+        font-size: 12px;
+      }
+      
+      .content {
+        padding: 15px 10px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      
+      .stat-card {
+        padding: 12px;
+      }
+      
+      .stat-number {
+        font-size: 20px;
+      }
+      
+      .category-title {
+        font-size: 16px;
+      }
+      
+      .news-title {
+        font-size: 14px;
+      }
+      
+      .news-summary {
+        font-size: 12px;
+      }
+    }
+    
+    /* 横屏适配 */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .category-section {
+        margin-bottom: 20px;
+      }
+      
+      .news-item {
+        padding: 12px;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle cx="40" cy="60" r="25" fill="url(#logoGradient)" opacity="0.8"/>
+        <circle cx="25" cy="35" r="15" fill="url(#logoGradient)" opacity="0.9"/>
+        <circle cx="55" cy="35" r="12" fill="url(#logoGradient)" opacity="0.7"/>
+        <circle cx="35" cy="75" r="10" fill="url(#logoGradient)" opacity="0.6"/>
+        <circle cx="60" cy="75" r="8" fill="url(#logoGradient)" opacity="0.8"/>
+        <text x="90" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3b82f6">ocean security</text>
+        <text x="90" y="70" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">海之安，数字安全专家</text>
+      </svg>
+      <h1 class="title">海之安网络安全日报</h1>
+      <div class="subtitle">2025年08月05日 · AI智能生成</div>
+    </div>
+    
+    <div class="content">
+      <div class="summary-section">
+        <h2 class="summary-title">今日摘要</h2>
+        <div class="summary-content">今日全球网络安全态势摘要：
+
+1. 攻击者利用链接包装服务窃取微软365登录信息，通过Proofpoint和Intermedia服务进行恶意链接包装，诱骗用户访问钓鱼页面，窃取凭证。
+2. NestJS DevTools存在严重RCE漏洞（CVE-2025-54782），攻击者可诱导开发者访问恶意网站，在本地机器上执行任意代码。
+3. Cursor代码编辑器遭遇关键多级权限控制漏洞（CVE-2025-54135和CVE-2025-54136），可导致远程代码执行，无需用户交互。
+4. 新型“Plague” PAM后门潜伏Linux系统，可窃取凭证、绕过认证检查，规避安全工具检测。
+5. Akira勒索软件疑似利用零日漏洞攻击已打补丁的SonicWall VPN设备，攻击时间短，影响面广。
+6. 攻击者利用伪造OAuth应用和Tycoon工具包入侵Microsoft 365账户，绕过多因素身份验证，非法获取访问权限。
+7. Noma融资1亿美元部署“智能代理AI”安全平台，提升网络防御能力，应对智能体型人工智能系统带来的全新挑战。
+8. 韩国黑客入侵美国公司案件，一名亚利桑那女子因协助朝鲜工人渗透美国公司被判八年半监禁。
+9. NVIDIA Triton推理服务器存在安全漏洞，可被未认证攻击者执行代码和劫持AI服务器。
+10. 本周网络安全事件回顾：VPN零日漏洞、加密后门、AI恶意软件、macOS漏洞、ATM黑客攻击等。</div>
+      </div>
+
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">精选新闻</div>
+            <div class="stat-detail">从15条中精选</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">9</div>
+            <div class="stat-label">增强内容</div>
+            <div class="stat-detail">深度抓取成功</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">8,231</div>
+            <div class="stat-label">内容字符</div>
+            <div class="stat-detail">丰富可读</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">分析维度</div>
+            <div class="stat-detail">风险·事件·舆情·趋势</div>
+          </div>
+        </div>
+        <div class="enhancement-info">
+          <h3>🚀 内容增强效果</h3>
+          <div class="enhancement-stats">
+            <div class="enhancement-item">
+              <span class="enhancement-label">深度抓取成功率:</span>
+              <span class="enhancement-value">90.0%</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">平均内容长度:</span>
+              <span class="enhancement-value">823字符</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">内容质量:</span>
+              <span class="enhancement-value">优秀</span>
+            </div>
+          </div>
+        </div>
+        <div class="source-list">
+          <h3>📰 全球新闻来源</h3>
+          <div class="source-tags">
+<span class="source-tag">安全客</span><span class="source-tag">Schneier on Security</span><span class="source-tag">The Hacker News</span><span class="source-tag">嘶吼</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-risk">安全风险</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">攻击者利用链接包装服务窃取微软365登录信息<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">嘶吼 - 中国</span>
+                <span class="region-badge">全球</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>2023年6月至7月，攻击者通过滥用网络安全公司Proofpoint和云通信公司Intermedia的链接包装服务，窃取了微软365的登录凭证。该服务原本用于重写邮件中的URL为受信任域，并扫描以阻止恶意链接。攻击者入侵了受保护账户后，利用链接包装功能将恶意链接合法化，通过虚假语音邮件通知或共享的微软团队文件引诱受害者。这些链接最终指向一个收集凭据的Microsoft Office 365钓鱼页面。攻击者还通过URL缩短器进行多层重定向滥用。该漏洞影响Proofpoint和Intermedia的用户，可能导致敏感信息泄露。
+            </div>
+            <ul class='key-points'><li>链接包装服务被滥用</li><li>窃取微软365登录凭证</li><li>Proofpoint和Intermedia受影响</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">NestJS DevTools 存在严重RCE漏洞（CVE-2025-54782）<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客 - 中国</span>
+                <span class="region-badge">全球</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>NestJS框架的组件@nestjs/devtools-integration存在严重远程代码执行（RCE）漏洞，编号为CVE-2025-54782，CVSS v4评分高达9.4。该漏洞源于沙箱隔离不当和缺乏跨源保护，攻击者仅需诱导开发者访问恶意网站，即可在本地机器上执行任意代码。漏洞源于devtools集成启动的本地开发HTTP服务器，暴露了多个接口，其中/inspector/graph/interact端点接受包含代码的JSON输入，并使用不安全的vm.runInNewContext沙箱执行这些代码。该漏洞影响所有版本NestJS，厂商已发布修复补丁。
+            </div>
+            <ul class='key-points'><li>NestJS DevTools RCE漏洞</li><li>CVE-2025-54782</li><li>远程代码执行</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Cursor 代码编辑器遭遇关键多级权限控制漏洞（CVE-2025-54135 和 CVE-2025-54136）<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客 - 中国</span>
+                <span class="region-badge">全球</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>Cursor代码编辑器存在两个严重漏洞，CVE-2025-54135和CVE-2025-54136，均可能导致远程代码执行。CVE-2025-54135允许攻击者通过恶意提示注入链执行代码，CVE-2025-54136则涉及MCP配置文件，攻击者可利用这些漏洞在未征得用户同意的情况下创建敏感文件。Cursor版本≤1.2.1受影响，已在版本1.3.9中修复。
+            </div>
+            <ul class='key-points'><li>Cursor代码编辑器漏洞</li><li>CVE-2025-54135</li><li>CVE-2025-54136</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">新型“Plague” PAM 后门曝光：关键 Linux 系统面临静默凭证窃取风险<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客 - 中国</span>
+                <span class="region-badge">全球</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>网络安全研究人员发现了一种名为Plague的Linux后门程序，通过恶意PAM模块绕过系统认证，窃取SSH访问权限。该后门具有静态凭证、反调试和字符串混淆等特性，隐蔽性强。自2024年7月29日起，多个与Plague有关的样本在VirusTotal上被发现，但无一被杀毒引擎识别为恶意文件。
+            </div>
+            <ul class='key-points'><li>Plague后门</li><li>PAM模块</li><li>静默凭证窃取</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Akira 勒索软件疑似利用零日漏洞攻击已打补丁的 SonicWall VPN 设备<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客 - 中国</span>
+                <span class="region-badge">全球</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>Akira勒索软件攻击目标为SonicWall SSL VPN设备，攻击者可能利用了尚未公开的安全漏洞。部分受害设备已打上所有官方补丁，但攻击者仍能成功入侵。攻击者通过远程访问获取账户访问权限，然后快速执行勒索加密。攻击始于2025年7月15日，但早在2024年10月就已发现类似的恶意VPN登录行为。
+            </div>
+            <ul class='key-points'><li>Akira勒索软件</li><li>SonicWall VPN漏洞</li><li>零日漏洞</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">攻击者利用伪造 OAuth 应用和 Tycoon 工具包入侵 Microsoft 365 账户<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客 - 中国</span>
+                <span class="region-badge">全球</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>攻击者通过伪造企业身份创建假冒的Microsoft OAuth应用程序，诱导用户授权，窃取凭证并接管Microsoft 365账户。攻击者利用钓鱼工具包如Tycoon和ODx，通过OAuth应用绕过多因素身份验证，非法获取用户访问权限。此类攻击已用于多个邮件钓鱼活动中，涉及超过50个伪造的应用程序。
+            </div>
+            <ul class='key-points'><li>伪造OAuth应用</li><li>Microsoft 365账户入侵</li><li>钓鱼攻击</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Noma融资1亿美元部署“智能代理AI”安全平台，提升网络防御能力<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客 - 中国</span>
+                <span class="region-badge">全球</span>
+                <span class="impact-badge impact-medium">影响: 中</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>Noma Security完成1亿美元融资，旨在通过加强安全性和治理能力，推动企业采用Agentic AI技术。Noma将用于提升AI智能体发现与治理、风险管理以及运行时防护方面的能力，以应对智能体型人工智能系统带来的全新挑战。
+            </div>
+            <ul class='key-points'><li>Noma融资</li><li>智能代理AI</li><li>安全平台</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>© 2025 海之安（中国）科技有限公司 | 基于智谱GLM AI生成</p>
+      <p>共分析 10 条安全新闻 | 官网：<a href="https://www.oceansecurity.cn" style="color: #3b82f6;">www.oceansecurity.cn</a></p>
+    </div>
+  </div>
+</body>
+</html>
