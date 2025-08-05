@@ -790,6 +790,7 @@ class GLMNewsGenerator:
       color: #cbd5e1;
       line-height: 1.8;
       font-size: 16px;
+      white-space: pre-line;
     }}
     
     .category-section {{
@@ -1165,6 +1166,7 @@ class GLMNewsGenerator:
       .summary-content {{
         font-size: 14px;
         line-height: 1.6;
+        white-space: pre-line;
       }}
       
       .stats-section {{
@@ -1566,7 +1568,7 @@ class GLMNewsGenerator:
       .content { padding: 20px 15px; }
       .summary-section { padding: 15px; margin-bottom: 20px; border-radius: 8px; }
       .summary-title { font-size: 16px; margin-bottom: 12px; }
-      .summary-content { font-size: 14px; line-height: 1.6; }
+      .summary-content { font-size: 14px; line-height: 1.6; white-space: pre-line; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .stat-card { padding: 15px; border-radius: 8px; }
       .stat-number { font-size: 24px; margin-bottom: 6px; }

@@ -102,6 +102,7 @@
       color: #cbd5e1;
       line-height: 1.8;
       font-size: 16px;
+      white-space: pre-line;
     }
     
     .category-section {
@@ -477,6 +478,7 @@
       .summary-content {
         font-size: 14px;
         line-height: 1.6;
+        white-space: pre-line;
       }
       
       .stats-section {
@@ -709,16 +711,17 @@
         <h2 class="summary-title">今日摘要</h2>
         <div class="summary-content">今日全球网络安全态势摘要：
 
-1. 攻击者利用链接包装服务窃取微软365登录信息，通过Proofpoint和Intermedia服务进行恶意链接包装，诱骗用户访问钓鱼页面，窃取凭证。
-2. NestJS DevTools存在严重RCE漏洞（CVE-2025-54782），攻击者可诱导开发者访问恶意网站，在本地机器上执行任意代码。
-3. Cursor代码编辑器遭遇关键多级权限控制漏洞（CVE-2025-54135和CVE-2025-54136），可导致远程代码执行，无需用户交互。
-4. 新型“Plague” PAM后门潜伏Linux系统，可窃取凭证、绕过认证检查，规避安全工具检测。
-5. Akira勒索软件疑似利用零日漏洞攻击已打补丁的SonicWall VPN设备，攻击时间短，影响面广。
-6. 攻击者利用伪造OAuth应用和Tycoon工具包入侵Microsoft 365账户，绕过多因素身份验证，非法获取访问权限。
-7. Noma融资1亿美元部署“智能代理AI”安全平台，提升网络防御能力，应对智能体型人工智能系统带来的全新挑战。
-8. 韩国黑客入侵美国公司案件，一名亚利桑那女子因协助朝鲜工人渗透美国公司被判八年半监禁。
-9. NVIDIA Triton推理服务器存在安全漏洞，可被未认证攻击者执行代码和劫持AI服务器。
-10. 本周网络安全事件回顾：VPN零日漏洞、加密后门、AI恶意软件、macOS漏洞、ATM黑客攻击等。</div>
+1. 攻击者利用链接包装服务窃取微软365登录信息，通过滥用Proofpoint和Intermedia的URL安全功能，将恶意链接伪装成合法链接进行钓鱼攻击。
+
+2. 美国初创公司Noma融资1亿美元，部署“智能代理AI”安全平台，提升网络防御能力，应对智能体型人工智能系统带来的全新挑战。
+
+3. NVIDIA Triton推理服务器存在安全漏洞，可能导致远程攻击者执行代码和劫持AI服务器。
+
+4. 美国CISA与FEMA宣布投入超过1亿美元用于社区网络安全补助金，以增强网络安全韧性。
+
+5. NestJS DevTools组件存在严重远程代码执行漏洞，攻击者可诱导开发者访问恶意网站，在本地机器上执行任意代码。
+
+全球网络安全形势严峻，钓鱼攻击、AI安全、漏洞利用等威胁持续存在，各国政府和企业在网络安全方面投入加大，提升网络安全防护能力。</div>
       </div>
 
       <div class="stats-section">
@@ -729,12 +732,12 @@
             <div class="stat-detail">从15条中精选</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">9</div>
+            <div class="stat-number">6</div>
             <div class="stat-label">增强内容</div>
             <div class="stat-detail">深度抓取成功</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">8,231</div>
+            <div class="stat-number">13,033</div>
             <div class="stat-label">内容字符</div>
             <div class="stat-detail">丰富可读</div>
           </div>
@@ -749,11 +752,11 @@
           <div class="enhancement-stats">
             <div class="enhancement-item">
               <span class="enhancement-label">深度抓取成功率:</span>
-              <span class="enhancement-value">90.0%</span>
+              <span class="enhancement-value">60.0%</span>
             </div>
             <div class="enhancement-item">
               <span class="enhancement-label">平均内容长度:</span>
-              <span class="enhancement-value">823字符</span>
+              <span class="enhancement-value">1,303字符</span>
             </div>
             <div class="enhancement-item">
               <span class="enhancement-label">内容质量:</span>
@@ -764,7 +767,7 @@
         <div class="source-list">
           <h3>📰 全球新闻来源</h3>
           <div class="source-tags">
-<span class="source-tag">安全客</span><span class="source-tag">Schneier on Security</span><span class="source-tag">The Hacker News</span><span class="source-tag">嘶吼</span>
+<span class="source-tag">Dark Reading</span><span class="source-tag">The Hacker News</span><span class="source-tag">嘶吼</span><span class="source-tag">安全客</span><span class="source-tag">Schneier on Security</span>
           </div>
         </div>
       </div>
@@ -779,98 +782,56 @@
               <div class="news-title">攻击者利用链接包装服务窃取微软365登录信息<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">嘶吼 - 中国</span>
-                <span class="region-badge">全球</span>
+                <span class="region-badge">中国</span>
                 <span class="impact-badge impact-high">影响: 高</span>
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>2023年6月至7月，攻击者通过滥用网络安全公司Proofpoint和云通信公司Intermedia的链接包装服务，窃取了微软365的登录凭证。该服务原本用于重写邮件中的URL为受信任域，并扫描以阻止恶意链接。攻击者入侵了受保护账户后，利用链接包装功能将恶意链接合法化，通过虚假语音邮件通知或共享的微软团队文件引诱受害者。这些链接最终指向一个收集凭据的Microsoft Office 365钓鱼页面。攻击者还通过URL缩短器进行多层重定向滥用。该漏洞影响Proofpoint和Intermedia的用户，可能导致敏感信息泄露。
+              <strong>内容要素：</strong>2023年6月至7月期间，攻击者利用链接包装服务窃取微软365登录信息。他们滥用网络安全公司Proofpoint和云通信公司Intermedia的URL安全功能，将恶意链接合法化，并通过URL缩短器和多层重定向滥用Proofpoint链接包装。攻击者在发送恶意链接之前，首先缩短恶意链接，然后自动包装链接，用虚假的语音邮件通知或共享等方式诱导用户点击，从而窃取登录凭证。此攻击手段影响了使用Proofpoint和Intermedia服务的电子邮件用户，可能涉及数百万用户。微软和Proofpoint已发布安全通告，建议用户更新安全设置并加强对钓鱼攻击的警惕。
             </div>
-            <ul class='key-points'><li>链接包装服务被滥用</li><li>窃取微软365登录凭证</li><li>Proofpoint和Intermedia受影响</li></ul>
-          </div>
-          <div class="news-item">
-            <div class="news-header">
-              <div class="news-title">NestJS DevTools 存在严重RCE漏洞（CVE-2025-54782）<span class="content-quality-badge quality-failed">简要内容</span></div>
-              <div class="news-meta">
-                <span class="news-source">安全客 - 中国</span>
-                <span class="region-badge">全球</span>
-                <span class="impact-badge impact-high">影响: 高</span>
-              </div>
-            </div>
-            <div class="news-summary">
-              <strong>内容要素：</strong>NestJS框架的组件@nestjs/devtools-integration存在严重远程代码执行（RCE）漏洞，编号为CVE-2025-54782，CVSS v4评分高达9.4。该漏洞源于沙箱隔离不当和缺乏跨源保护，攻击者仅需诱导开发者访问恶意网站，即可在本地机器上执行任意代码。漏洞源于devtools集成启动的本地开发HTTP服务器，暴露了多个接口，其中/inspector/graph/interact端点接受包含代码的JSON输入，并使用不安全的vm.runInNewContext沙箱执行这些代码。该漏洞影响所有版本NestJS，厂商已发布修复补丁。
-            </div>
-            <ul class='key-points'><li>NestJS DevTools RCE漏洞</li><li>CVE-2025-54782</li><li>远程代码执行</li></ul>
-          </div>
-          <div class="news-item">
-            <div class="news-header">
-              <div class="news-title">Cursor 代码编辑器遭遇关键多级权限控制漏洞（CVE-2025-54135 和 CVE-2025-54136）<span class="content-quality-badge quality-failed">简要内容</span></div>
-              <div class="news-meta">
-                <span class="news-source">安全客 - 中国</span>
-                <span class="region-badge">全球</span>
-                <span class="impact-badge impact-high">影响: 高</span>
-              </div>
-            </div>
-            <div class="news-summary">
-              <strong>内容要素：</strong>Cursor代码编辑器存在两个严重漏洞，CVE-2025-54135和CVE-2025-54136，均可能导致远程代码执行。CVE-2025-54135允许攻击者通过恶意提示注入链执行代码，CVE-2025-54136则涉及MCP配置文件，攻击者可利用这些漏洞在未征得用户同意的情况下创建敏感文件。Cursor版本≤1.2.1受影响，已在版本1.3.9中修复。
-            </div>
-            <ul class='key-points'><li>Cursor代码编辑器漏洞</li><li>CVE-2025-54135</li><li>CVE-2025-54136</li></ul>
-          </div>
-          <div class="news-item">
-            <div class="news-header">
-              <div class="news-title">新型“Plague” PAM 后门曝光：关键 Linux 系统面临静默凭证窃取风险<span class="content-quality-badge quality-failed">简要内容</span></div>
-              <div class="news-meta">
-                <span class="news-source">安全客 - 中国</span>
-                <span class="region-badge">全球</span>
-                <span class="impact-badge impact-high">影响: 高</span>
-              </div>
-            </div>
-            <div class="news-summary">
-              <strong>内容要素：</strong>网络安全研究人员发现了一种名为Plague的Linux后门程序，通过恶意PAM模块绕过系统认证，窃取SSH访问权限。该后门具有静态凭证、反调试和字符串混淆等特性，隐蔽性强。自2024年7月29日起，多个与Plague有关的样本在VirusTotal上被发现，但无一被杀毒引擎识别为恶意文件。
-            </div>
-            <ul class='key-points'><li>Plague后门</li><li>PAM模块</li><li>静默凭证窃取</li></ul>
-          </div>
-          <div class="news-item">
-            <div class="news-header">
-              <div class="news-title">Akira 勒索软件疑似利用零日漏洞攻击已打补丁的 SonicWall VPN 设备<span class="content-quality-badge quality-failed">简要内容</span></div>
-              <div class="news-meta">
-                <span class="news-source">安全客 - 中国</span>
-                <span class="region-badge">全球</span>
-                <span class="impact-badge impact-high">影响: 高</span>
-              </div>
-            </div>
-            <div class="news-summary">
-              <strong>内容要素：</strong>Akira勒索软件攻击目标为SonicWall SSL VPN设备，攻击者可能利用了尚未公开的安全漏洞。部分受害设备已打上所有官方补丁，但攻击者仍能成功入侵。攻击者通过远程访问获取账户访问权限，然后快速执行勒索加密。攻击始于2025年7月15日，但早在2024年10月就已发现类似的恶意VPN登录行为。
-            </div>
-            <ul class='key-points'><li>Akira勒索软件</li><li>SonicWall VPN漏洞</li><li>零日漏洞</li></ul>
-          </div>
-          <div class="news-item">
-            <div class="news-header">
-              <div class="news-title">攻击者利用伪造 OAuth 应用和 Tycoon 工具包入侵 Microsoft 365 账户<span class="content-quality-badge quality-failed">简要内容</span></div>
-              <div class="news-meta">
-                <span class="news-source">安全客 - 中国</span>
-                <span class="region-badge">全球</span>
-                <span class="impact-badge impact-high">影响: 高</span>
-              </div>
-            </div>
-            <div class="news-summary">
-              <strong>内容要素：</strong>攻击者通过伪造企业身份创建假冒的Microsoft OAuth应用程序，诱导用户授权，窃取凭证并接管Microsoft 365账户。攻击者利用钓鱼工具包如Tycoon和ODx，通过OAuth应用绕过多因素身份验证，非法获取用户访问权限。此类攻击已用于多个邮件钓鱼活动中，涉及超过50个伪造的应用程序。
-            </div>
-            <ul class='key-points'><li>伪造OAuth应用</li><li>Microsoft 365账户入侵</li><li>钓鱼攻击</li></ul>
+            <ul class='key-points'><li>链接包装服务被滥用进行网络钓鱼</li><li>Proofpoint和Intermedia服务受影响</li><li>数百万用户可能受影响</li></ul>
           </div>
           <div class="news-item">
             <div class="news-header">
               <div class="news-title">Noma融资1亿美元部署“智能代理AI”安全平台，提升网络防御能力<span class="content-quality-badge quality-failed">简要内容</span></div>
               <div class="news-meta">
                 <span class="news-source">安全客 - 中国</span>
-                <span class="region-badge">全球</span>
+                <span class="region-badge">中国</span>
                 <span class="impact-badge impact-medium">影响: 中</span>
               </div>
             </div>
             <div class="news-summary">
-              <strong>内容要素：</strong>Noma Security完成1亿美元融资，旨在通过加强安全性和治理能力，推动企业采用Agentic AI技术。Noma将用于提升AI智能体发现与治理、风险管理以及运行时防护方面的能力，以应对智能体型人工智能系统带来的全新挑战。
+              <strong>内容要素：</strong>Noma Security，一家由前Verint集团经理领导的初创公司，已完成1亿美元融资。该公司旨在通过加强安全性和治理能力，推动企业采用Agentic AI（自主智能体人工智能）技术。Noma将利用这笔资金提升在AI智能体发现与治理、风险管理以及运行时防护方面的能力。此举旨在应对智能体型人工智能系统带来的全新挑战，如AI模型本身和AI智能体的安全防护。Noma成立于2023年，目前拥有43名员工，累计融资达1.32亿美元。
             </div>
-            <ul class='key-points'><li>Noma融资</li><li>智能代理AI</li><li>安全平台</li></ul>
+            <ul class='key-points'><li>Noma完成1亿美元融资</li><li>Agentic AI技术应用于网络安全</li><li>提升AI智能体安全防护能力</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">NVIDIA Triton漏洞让未认证攻击者执行代码和劫持AI服务器<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">The Hacker News - 国际</span>
+                <span class="region-badge">国际</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>NVIDIA的Triton Inference Server存在安全漏洞，可能导致未认证攻击者远程执行代码和劫持AI服务器。Wiz研究人员发现，这些漏洞可以通过链式攻击实现，攻击者可能获取对受影响服务器的完全控制权。NVIDIA已发布补丁，建议用户尽快更新以防止攻击。
+            </div>
+            <ul class='key-points'><li>NVIDIA Triton Inference Server漏洞</li><li>未认证攻击者可执行代码和劫持服务器</li><li>NVIDIA已发布补丁</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">NestJS DevTools存在严重RCE漏洞（CVE-2025-54782）<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客 - 中国</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>NestJS框架的@nestjs/devtools-integration组件存在严重安全漏洞（CVE-2025-54782），CVSS v4评分高达9.4。攻击者可通过诱导开发者访问恶意网站，在本地机器上执行任意代码。Nest官方已发布通告，建议用户更新至最新版本以修复漏洞。
+            </div>
+            <ul class='key-points'><li>NestJS DevTools RCE漏洞</li><li>CVSS v4评分9.4</li><li>攻击者可执行任意代码</li></ul>
           </div>
         </div>
       </div>
