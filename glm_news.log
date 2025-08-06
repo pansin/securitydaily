@@ -3587,3 +3587,252 @@
 2025-08-05 13:54:57,448 - INFO - 成功使用GLM进行四维度新闻分类和要素总结
 2025-08-05 13:54:57,450 - INFO - ✅ 成功加载移动端样式保护模块
 2025-08-05 13:54:57,452 - INFO - ✅ 成功生成AI智能新闻快报: news20250804.html
+2025-08-06 17:48:00,130 - INFO - ✅ 成功加载新闻源配置: 30 个数据源
+2025-08-06 17:48:00,131 - INFO - 📰 获取到 29 个启用的新闻源
+2025-08-06 17:48:00,131 - INFO - ✅ 从配置文件加载了 29 个新闻源
+2025-08-06 17:48:00,131 - INFO - 开始抓取 2025-08-05 的网络安全新闻...
+2025-08-06 17:48:00,131 - INFO - 正在抓取 安全客 (中国) 的RSS源...
+2025-08-06 17:48:02,415 - INFO - 正在使用增强爬虫抓取: NestJS DevTools 存在严重RCE漏洞（CVE-2025-54782）...
+2025-08-06 17:48:02,417 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310849
+2025-08-06 17:48:06,212 - INFO - 成功提取内容: NestJS DevTools 存在严重RCE漏洞（CVE-2025-54782）... (907字符)
+2025-08-06 17:48:06,212 - INFO - 成功提取文章内容: NestJS DevTools 存在严重RCE漏洞（CVE-2025-54782）... (907字符)
+2025-08-06 17:48:06,213 - INFO - 正在使用增强爬虫抓取: Cursor 代码编辑器遭遇关键多级权限控制漏洞（CVE-2025-54135 和 CVE-2025...
+2025-08-06 17:48:06,213 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310852
+2025-08-06 17:48:09,546 - INFO - 成功提取内容: Cursor 代码编辑器遭遇关键多级权限控制漏洞（CVE-2025-54135 和 CVE-2025... (826字符)
+2025-08-06 17:48:09,547 - INFO - 成功提取文章内容: Cursor 代码编辑器遭遇关键多级权限控制漏洞（CVE-2025-54135 和 CVE-2025... (826字符)
+2025-08-06 17:48:09,547 - INFO - 正在使用增强爬虫抓取: Squid严重漏洞（CVE-2025-54574）：造成RCE以及数据泄露风险...
+2025-08-06 17:48:09,547 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310855
+2025-08-06 17:48:11,874 - INFO - 成功提取内容: Squid严重漏洞（CVE-2025-54574）：造成RCE以及数据泄露风险... (811字符)
+2025-08-06 17:48:11,874 - INFO - 成功提取文章内容: Squid严重漏洞（CVE-2025-54574）：造成RCE以及数据泄露风险... (811字符)
+2025-08-06 17:48:11,875 - INFO - 正在使用增强爬虫抓取: 新型“Plague” PAM 后门曝光：关键 Linux 系统面临静默凭证窃取风险...
+2025-08-06 17:48:11,875 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310859
+2025-08-06 17:48:14,793 - INFO - 成功提取内容: 新型“Plague” PAM 后门曝光：关键 Linux 系统面临静默凭证窃取风险... (814字符)
+2025-08-06 17:48:14,793 - INFO - 成功提取文章内容: 新型“Plague” PAM 后门曝光：关键 Linux 系统面临静默凭证窃取风险... (814字符)
+2025-08-06 17:48:14,793 - INFO - 正在使用增强爬虫抓取: Akira 勒索软件疑似利用零日漏洞攻击已打补丁的 SonicWall VPN 设备...
+2025-08-06 17:48:14,793 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310863
+2025-08-06 17:48:17,749 - INFO - 成功提取内容: Akira 勒索软件疑似利用零日漏洞攻击已打补丁的 SonicWall VPN 设备... (901字符)
+2025-08-06 17:48:17,749 - INFO - 成功提取文章内容: Akira 勒索软件疑似利用零日漏洞攻击已打补丁的 SonicWall VPN 设备... (901字符)
+2025-08-06 17:48:17,749 - INFO - 正在使用增强爬虫抓取: 攻击者利用伪造 OAuth 应用和 Tycoon 工具包入侵 Microsoft 365 账户...
+2025-08-06 17:48:17,749 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310868
+2025-08-06 17:48:20,161 - INFO - 成功提取内容: 攻击者利用伪造 OAuth 应用和 Tycoon 工具包入侵 Microsoft 365 账户... (1750字符)
+2025-08-06 17:48:20,161 - INFO - 成功提取文章内容: 攻击者利用伪造 OAuth 应用和 Tycoon 工具包入侵 Microsoft 365 账户... (1750字符)
+2025-08-06 17:48:20,162 - INFO - 正在使用增强爬虫抓取: Noma融资1亿美元部署“智能代理AI”安全平台，提升网络防御能力...
+2025-08-06 17:48:20,162 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310840
+2025-08-06 17:48:22,890 - INFO - 成功提取内容: Noma融资1亿美元部署“智能代理AI”安全平台，提升网络防御能力... (2109字符)
+2025-08-06 17:48:22,890 - INFO - 成功提取文章内容: Noma融资1亿美元部署“智能代理AI”安全平台，提升网络防御能力... (2109字符)
+2025-08-06 17:48:22,890 - INFO - 正在使用增强爬虫抓取: AI 生成的恶意 npm 包攻击 Solana 用户，超 1500 次下载后被下架...
+2025-08-06 17:48:22,890 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/310875
+2025-08-06 17:48:25,187 - INFO - 成功提取内容: AI 生成的恶意 npm 包攻击 Solana 用户，超 1500 次下载后被下架... (1161字符)
+2025-08-06 17:48:25,187 - INFO - 成功提取文章内容: AI 生成的恶意 npm 包攻击 Solana 用户，超 1500 次下载后被下架... (1161字符)
+2025-08-06 17:48:25,187 - INFO - 从 安全客 获取到 8 条安全新闻
+2025-08-06 17:48:27,192 - INFO - 正在抓取 FreeBuf (中国) 的RSS源...
+2025-08-06 17:48:29,467 - INFO - 从 FreeBuf 获取到 15 条安全新闻
+2025-08-06 17:48:31,473 - INFO - 正在抓取 嘶吼 (中国) 的RSS源...
+2025-08-06 17:48:35,435 - INFO - 正在使用增强爬虫抓取: 攻击者仍在对 “防钓鱼” 认证实施攻击...
+2025-08-06 17:48:35,435 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/LGkw
+2025-08-06 17:48:38,231 - INFO - 成功提取内容: 攻击者仍在对 “防钓鱼” 认证实施攻击... (3003字符)
+2025-08-06 17:48:38,231 - INFO - 成功提取文章内容: 攻击者仍在对 “防钓鱼” 认证实施攻击... (3003字符)
+2025-08-06 17:48:38,231 - INFO - 正在使用增强爬虫抓取: 正式发布！梆梆安全移动应用安全监测电诈监测专业版，“立体防护+秒级阻断”终结电诈风险...
+2025-08-06 17:48:38,232 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/8gvm
+2025-08-06 17:48:40,370 - INFO - 成功提取内容: 正式发布！梆梆安全移动应用安全监测电诈监测专业版，“立体防护+秒级阻断”终结电诈风险... (2125字符)
+2025-08-06 17:48:40,370 - INFO - 成功提取文章内容: 正式发布！梆梆安全移动应用安全监测电诈监测专业版，“立体防护+秒级阻断”终结电诈风险... (2125字符)
+2025-08-06 17:48:40,370 - INFO - 正在使用增强爬虫抓取: OT风险上升为核心高管层关注焦点！Fortinet发布全球OT与网络安全态势研究报告...
+2025-08-06 17:48:40,370 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/7Mrj
+2025-08-06 17:48:42,627 - INFO - 成功提取内容: OT风险上升为核心高管层关注焦点！Fortinet发布全球OT与网络安全态势研究报告... (3003字符)
+2025-08-06 17:48:42,628 - INFO - 成功提取文章内容: OT风险上升为核心高管层关注焦点！Fortinet发布全球OT与网络安全态势研究报告... (3003字符)
+2025-08-06 17:48:42,628 - INFO - 正在使用增强爬虫抓取: 沙场秋点兵！RayScan 新锐引擎利刃出鞘，开启漏洞“全方位检阅”...
+2025-08-06 17:48:42,628 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/6Mqn
+2025-08-06 17:48:44,816 - INFO - 成功提取内容: 沙场秋点兵！RayScan 新锐引擎利刃出鞘，开启漏洞“全方位检阅”... (1130字符)
+2025-08-06 17:48:44,816 - INFO - 成功提取文章内容: 沙场秋点兵！RayScan 新锐引擎利刃出鞘，开启漏洞“全方位检阅”... (1130字符)
+2025-08-06 17:48:44,816 - INFO - 正在使用增强爬虫抓取: 攻击者利用链接包装服务窃取微软365登录信息...
+2025-08-06 17:48:44,816 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/ZgBJ
+2025-08-06 17:48:46,898 - INFO - 成功提取内容: 攻击者利用链接包装服务窃取微软365登录信息... (1266字符)
+2025-08-06 17:48:46,898 - INFO - 成功提取文章内容: 攻击者利用链接包装服务窃取微软365登录信息... (1266字符)
+2025-08-06 17:48:46,899 - INFO - 正在使用增强爬虫抓取: ISC.AI 2025盛幕即启，锁定三大亮点，解锁智能体时代新升级...
+2025-08-06 17:48:46,899 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/33nM
+2025-08-06 17:48:49,186 - INFO - 成功提取内容: ISC.AI 2025盛幕即启，锁定三大亮点，解锁智能体时代新升级... (2402字符)
+2025-08-06 17:48:49,186 - INFO - 成功提取文章内容: ISC.AI 2025盛幕即启，锁定三大亮点，解锁智能体时代新升级... (2402字符)
+2025-08-06 17:48:49,186 - INFO - 正在使用增强爬虫抓取: Lumma infostealer窃取恶意软件团伙在遭受执法部门打击后卷土重来...
+2025-08-06 17:48:49,186 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/9jox
+2025-08-06 17:48:51,276 - INFO - 成功提取内容: Lumma infostealer窃取恶意软件团伙在遭受执法部门打击后卷土重来... (1544字符)
+2025-08-06 17:48:51,277 - INFO - 成功提取文章内容: Lumma infostealer窃取恶意软件团伙在遭受执法部门打击后卷土重来... (1544字符)
+2025-08-06 17:48:51,277 - INFO - 正在使用增强爬虫抓取: RC2安全保密专项赋能大礼包 • 奉上...
+2025-08-06 17:48:51,277 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/VWxM
+2025-08-06 17:48:53,461 - INFO - 成功提取内容: RC2安全保密专项赋能大礼包 • 奉上... (2748字符)
+2025-08-06 17:48:53,461 - INFO - 成功提取文章内容: RC2安全保密专项赋能大礼包 • 奉上... (2748字符)
+2025-08-06 17:48:53,461 - INFO - 正在使用增强爬虫抓取: 共享充电宝成窃密新通道！梆梆安全构筑智能终端防护网狙击数据泄露...
+2025-08-06 17:48:53,461 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/YZAK
+2025-08-06 17:48:56,619 - INFO - 成功提取内容: 共享充电宝成窃密新通道！梆梆安全构筑智能终端防护网狙击数据泄露... (1907字符)
+2025-08-06 17:48:56,619 - INFO - 成功提取文章内容: 共享充电宝成窃密新通道！梆梆安全构筑智能终端防护网狙击数据泄露... (1907字符)
+2025-08-06 17:48:56,619 - INFO - 正在使用增强爬虫抓取: 吴世忠院士：大模型安全治理的现状与展望...
+2025-08-06 17:48:56,620 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/XPzW
+2025-08-06 17:48:58,741 - INFO - 成功提取内容: 吴世忠院士：大模型安全治理的现状与展望... (3003字符)
+2025-08-06 17:48:58,741 - INFO - 成功提取文章内容: 吴世忠院士：大模型安全治理的现状与展望... (3003字符)
+2025-08-06 17:48:58,741 - INFO - 从 嘶吼 获取到 10 条安全新闻
+2025-08-06 17:49:00,743 - INFO - 正在抓取 Krebs on Security (美国) 的RSS源...
+2025-08-06 17:49:03,065 - INFO - 从 Krebs on Security 获取到 0 条安全新闻
+2025-08-06 17:49:05,070 - INFO - 正在抓取 Schneier on Security (美国) 的RSS源...
+2025-08-06 17:49:06,336 - INFO - 从 Schneier on Security 获取到 1 条安全新闻
+2025-08-06 17:49:08,341 - INFO - 正在抓取 The Hacker News (国际) 的RSS源...
+2025-08-06 17:49:09,882 - INFO - 正在使用增强爬虫抓取: CERT-UA Warns of HTA-Delivered C# Malware Attacks ...
+2025-08-06 17:49:09,882 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/cert-ua-warns-of-hta-delivered-c.html
+2025-08-06 17:49:12,662 - INFO - 成功提取内容: CERT-UA Warns of HTA-Delivered C# Malware Attacks ... (3003字符)
+2025-08-06 17:49:12,662 - INFO - 成功提取文章内容: CERT-UA Warns of HTA-Delivered C# Malware Attacks ... (3003字符)
+2025-08-06 17:49:12,662 - INFO - 正在使用增强爬虫抓取: CISA Adds 3 D-Link Vulnerabilities to KEV Catalog ...
+2025-08-06 17:49:12,662 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/cisa-adds-3-d-link-router-flaws-to-kev.html
+2025-08-06 17:49:14,236 - INFO - 成功提取内容: CISA Adds 3 D-Link Vulnerabilities to KEV Catalog ... (1947字符)
+2025-08-06 17:49:14,236 - INFO - 成功提取文章内容: CISA Adds 3 D-Link Vulnerabilities to KEV Catalog ... (1947字符)
+2025-08-06 17:49:14,236 - INFO - 正在使用增强爬虫抓取: ClickFix Malware Campaign Exploits CAPTCHAs to Spr...
+2025-08-06 17:49:14,236 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/clickfix-malware-campaign-exploits.html
+2025-08-06 17:49:15,845 - INFO - 成功提取内容: ClickFix Malware Campaign Exploits CAPTCHAs to Spr... (3003字符)
+2025-08-06 17:49:15,846 - INFO - 成功提取文章内容: ClickFix Malware Campaign Exploits CAPTCHAs to Spr... (3003字符)
+2025-08-06 17:49:15,846 - INFO - 正在使用增强爬虫抓取: Google’s August Patch Fixes Two Qualcomm Vulnerabi...
+2025-08-06 17:49:15,846 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/google-fixes-3-android-vulnerabilities.html
+2025-08-06 17:49:17,268 - INFO - 成功提取内容: Google's August Patch Fixes Two Qualcomm Vulnerabi... (2297字符)
+2025-08-06 17:49:17,268 - INFO - 成功提取文章内容: Google's August Patch Fixes Two Qualcomm Vulnerabi... (2297字符)
+2025-08-06 17:49:17,268 - INFO - 正在使用增强爬虫抓取: Cursor AI Code Editor Vulnerability Enables RCE vi...
+2025-08-06 17:49:17,268 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/cursor-ai-code-editor-vulnerability.html
+2025-08-06 17:49:18,663 - INFO - 成功提取内容: Cursor AI Code Editor Vulnerability Enables RCE vi... (3003字符)
+2025-08-06 17:49:18,664 - INFO - 成功提取文章内容: Cursor AI Code Editor Vulnerability Enables RCE vi... (3003字符)
+2025-08-06 17:49:18,664 - INFO - 正在使用增强爬虫抓取: 15,000 Fake TikTok Shop Domains Deliver Malware, S...
+2025-08-06 17:49:18,664 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/15000-fake-tiktok-shop-domains-deliver.html
+2025-08-06 17:49:20,238 - INFO - 成功提取内容: 15,000 Fake TikTok Shop Domains Deliver Malware, S... (3003字符)
+2025-08-06 17:49:20,238 - INFO - 成功提取文章内容: 15,000 Fake TikTok Shop Domains Deliver Malware, S... (3003字符)
+2025-08-06 17:49:20,238 - INFO - 正在使用增强爬虫抓取: NVIDIA Triton Bugs Let Unauthenticated Attackers E...
+2025-08-06 17:49:20,239 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/nvidia-triton-bugs-let-unauthenticated.html
+2025-08-06 17:49:21,600 - INFO - 成功提取内容: NVIDIA Triton Bugs Let Unauthenticated Attackers E... (3003字符)
+2025-08-06 17:49:21,600 - INFO - 成功提取文章内容: NVIDIA Triton Bugs Let Unauthenticated Attackers E... (3003字符)
+2025-08-06 17:49:21,600 - INFO - 正在使用增强爬虫抓取: ⚡ Weekly Recap: VPN 0-Day, Encryption Backdoor, AI...
+2025-08-06 17:49:21,600 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/weekly-recap-vpn-0-day-encryption.html
+2025-08-06 17:49:23,176 - INFO - 成功提取内容: ⚡ Weekly Recap: VPN 0-Day, Encryption Backdoor, AI... (3003字符)
+2025-08-06 17:49:23,177 - INFO - 成功提取文章内容: ⚡ Weekly Recap: VPN 0-Day, Encryption Backdoor, AI... (3003字符)
+2025-08-06 17:49:23,177 - INFO - 正在使用增强爬虫抓取: Man-in-the-Middle Attack Prevention Guide...
+2025-08-06 17:49:23,177 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/08/man-in-middle-attack-prevention-guide.html
+2025-08-06 17:49:24,722 - INFO - 成功提取内容: Man-in-the-Middle Attack Prevention Guide... (3003字符)
+2025-08-06 17:49:24,722 - INFO - 成功提取文章内容: Man-in-the-Middle Attack Prevention Guide... (3003字符)
+2025-08-06 17:49:24,722 - INFO - 从 The Hacker News 获取到 9 条安全新闻
+2025-08-06 17:49:26,728 - INFO - 正在抓取 Dark Reading (美国) 的RSS源...
+2025-08-06 17:49:28,172 - INFO - 正在使用增强爬虫抓取: RCE Flaw in AI-Assisted Coding Tool Poses Software...
+2025-08-06 17:49:28,173 - INFO - 正在抓取文章内容: https://www.darkreading.com/vulnerabilities-threats/rce-flaw-ai-coding-tool-supply-chain-risk
+2025-08-06 17:49:29,392 - ERROR - 抓取文章内容失败 https://www.darkreading.com/vulnerabilities-threats/rce-flaw-ai-coding-tool-supply-chain-risk: 403 Client Error: Forbidden for url: https://www.darkreading.com/vulnerabilities-threats/rce-flaw-ai-coding-tool-supply-chain-risk
+2025-08-06 17:49:29,392 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/vulnerabilities-threats/rce-flaw-ai-coding-tool-supply-chain-risk
+2025-08-06 17:49:30,497 - WARNING - 备用方法也失败 https://www.darkreading.com/vulnerabilities-threats/rce-flaw-ai-coding-tool-supply-chain-risk: 403 Client Error: Forbidden for url: https://www.darkreading.com/vulnerabilities-threats/rce-flaw-ai-coding-tool-supply-chain-risk
+2025-08-06 17:49:30,498 - INFO - 正在使用增强爬虫抓取: NVIDIA Patches Critical RCE Vulnerability Chain...
+2025-08-06 17:49:30,498 - INFO - 正在抓取文章内容: https://www.darkreading.com/vulnerabilities-threats/nvidia-patches-critical-rce-vulnerability-chain
+2025-08-06 17:49:31,790 - ERROR - 抓取文章内容失败 https://www.darkreading.com/vulnerabilities-threats/nvidia-patches-critical-rce-vulnerability-chain: 403 Client Error: Forbidden for url: https://www.darkreading.com/vulnerabilities-threats/nvidia-patches-critical-rce-vulnerability-chain
+2025-08-06 17:49:31,790 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/vulnerabilities-threats/nvidia-patches-critical-rce-vulnerability-chain
+2025-08-06 17:49:33,028 - WARNING - 备用方法也失败 https://www.darkreading.com/vulnerabilities-threats/nvidia-patches-critical-rce-vulnerability-chain: 403 Client Error: Forbidden for url: https://www.darkreading.com/vulnerabilities-threats/nvidia-patches-critical-rce-vulnerability-chain
+2025-08-06 17:49:33,029 - INFO - 正在使用增强爬虫抓取: CISA &amp; FEMA Announce $100M+ in Community Cyber...
+2025-08-06 17:49:33,029 - INFO - 正在抓取文章内容: https://www.darkreading.com/cyberattacks-data-breaches/cisa-fema-100m-cybersecurity-grants
+2025-08-06 17:49:34,142 - ERROR - 抓取文章内容失败 https://www.darkreading.com/cyberattacks-data-breaches/cisa-fema-100m-cybersecurity-grants: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/cisa-fema-100m-cybersecurity-grants
+2025-08-06 17:49:34,143 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/cyberattacks-data-breaches/cisa-fema-100m-cybersecurity-grants
+2025-08-06 17:49:35,458 - WARNING - 备用方法也失败 https://www.darkreading.com/cyberattacks-data-breaches/cisa-fema-100m-cybersecurity-grants: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/cisa-fema-100m-cybersecurity-grants
+2025-08-06 17:49:35,459 - INFO - 正在使用增强爬虫抓取: Turning Human Vulnerability Into Organizational St...
+2025-08-06 17:49:35,459 - INFO - 正在抓取文章内容: https://www.darkreading.com/vulnerabilities-threats/human-vulnerability-organizational-strength
+2025-08-06 17:49:36,702 - ERROR - 抓取文章内容失败 https://www.darkreading.com/vulnerabilities-threats/human-vulnerability-organizational-strength: 403 Client Error: Forbidden for url: https://www.darkreading.com/vulnerabilities-threats/human-vulnerability-organizational-strength
+2025-08-06 17:49:36,702 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/vulnerabilities-threats/human-vulnerability-organizational-strength
+2025-08-06 17:49:37,835 - WARNING - 备用方法也失败 https://www.darkreading.com/vulnerabilities-threats/human-vulnerability-organizational-strength: 403 Client Error: Forbidden for url: https://www.darkreading.com/vulnerabilities-threats/human-vulnerability-organizational-strength
+2025-08-06 17:49:37,836 - INFO - 从 Dark Reading 获取到 4 条安全新闻
+2025-08-06 17:49:39,841 - INFO - 正在抓取 Security Week (美国) 的RSS源...
+2025-08-06 17:49:40,988 - INFO - 从 Security Week 获取到 0 条安全新闻
+2025-08-06 17:49:42,994 - INFO - 正在抓取 Threatpost (美国) 的RSS源...
+2025-08-06 17:49:45,010 - INFO - 从 Threatpost 获取到 0 条安全新闻
+2025-08-06 17:49:47,015 - INFO - 正在抓取 SANS Internet Storm Center (美国) 的RSS源...
+2025-08-06 17:49:48,314 - INFO - 从 SANS Internet Storm Center 获取到 1 条安全新闻
+2025-08-06 17:49:50,319 - INFO - 正在抓取 CISA Alerts (美国) 的RSS源...
+2025-08-06 17:49:51,821 - INFO - 正在使用增强爬虫抓取: Tigo Energy Cloud Connect Advanced...
+2025-08-06 17:49:51,821 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-25-217-02
+2025-08-06 17:49:53,102 - INFO - 成功提取内容: Tigo Energy Cloud Connect Advanced... (106字符)
+2025-08-06 17:49:53,102 - INFO - 成功提取文章内容: Tigo Energy Cloud Connect Advanced... (106字符)
+2025-08-06 17:49:53,102 - INFO - 正在使用增强爬虫抓取: Mitsubishi Electric Iconics Digital Solutions Mult...
+2025-08-06 17:49:53,102 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-25-217-01
+2025-08-06 17:49:54,342 - INFO - 成功提取内容: Mitsubishi Electric Iconics Digital Solutions Mult... (3003字符)
+2025-08-06 17:49:54,342 - INFO - 成功提取文章内容: Mitsubishi Electric Iconics Digital Solutions Mult... (3003字符)
+2025-08-06 17:49:54,343 - INFO - 正在使用增强爬虫抓取: CISA Adds Three Known Exploited Vulnerabilities to...
+2025-08-06 17:49:54,343 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/alerts/2025/08/05/cisa-adds-three-known-exploited-vulnerabilities-catalog
+2025-08-06 17:49:55,595 - INFO - 成功提取内容: CISA Adds Three Known Exploited Vulnerabilities to... (1629字符)
+2025-08-06 17:49:55,595 - INFO - 成功提取文章内容: CISA Adds Three Known Exploited Vulnerabilities to... (1629字符)
+2025-08-06 17:49:55,595 - INFO - 从 CISA Alerts 获取到 3 条安全新闻
+2025-08-06 17:49:57,600 - INFO - 正在抓取 US-CERT Alerts (美国) 的RSS源...
+2025-08-06 17:50:00,765 - INFO - 从 US-CERT Alerts 获取到 0 条安全新闻
+2025-08-06 17:50:02,770 - INFO - 正在抓取 NIST Cybersecurity (美国) 的RSS源...
+2025-08-06 17:50:04,678 - INFO - 正在使用增强爬虫抓取: Second Seminar on Building an In-Space Circular Ec...
+2025-08-06 17:50:04,678 - INFO - 正在抓取文章内容: https://www.nist.gov/news-events/events/2025/08/second-seminar-building-space-circular-economy
+2025-08-06 17:50:07,040 - INFO - 成功提取内容: Second Seminar on Building an In-Space Circular Ec... (3003字符)
+2025-08-06 17:50:07,041 - INFO - 成功提取文章内容: Second Seminar on Building an In-Space Circular Ec... (3003字符)
+2025-08-06 17:50:07,041 - INFO - 从 NIST Cybersecurity 获取到 1 条安全新闻
+2025-08-06 17:50:09,046 - INFO - 正在抓取 ENISA (欧盟) 的RSS源...
+2025-08-06 17:50:11,288 - INFO - 从 ENISA 获取到 0 条安全新闻
+2025-08-06 17:50:13,292 - INFO - 正在抓取 NCSC UK (英国) 的RSS源...
+2025-08-06 17:50:14,592 - INFO - 正在使用增强爬虫抓取: What is an antivirus product? Do I need one?...
+2025-08-06 17:50:14,593 - INFO - 正在抓取文章内容: https://www.ncsc.gov.uk/guidance/what-is-an-antivirus-product
+2025-08-06 17:50:17,525 - INFO - 成功提取内容: NCSC... (0字符)
+2025-08-06 17:50:17,525 - INFO - 成功提取文章内容: NCSC... (0字符)
+2025-08-06 17:50:17,526 - INFO - 从 NCSC UK 获取到 1 条安全新闻
+2025-08-06 17:50:19,531 - INFO - 正在抓取 ACSC Australia (澳大利亚) 的RSS源...
+2025-08-06 17:50:35,441 - ERROR - 抓取 ACSC Australia 失败: HTTPSConnectionPool(host='www.cyber.gov.au', port=443): Read timed out. (read timeout=15)
+2025-08-06 17:50:35,443 - INFO - 正在抓取 Bleeping Computer (国际) 的RSS源...
+2025-08-06 17:50:36,817 - INFO - 从 Bleeping Computer 获取到 0 条安全新闻
+2025-08-06 17:50:38,822 - INFO - 正在抓取 Ars Technica Security (美国) 的RSS源...
+2025-08-06 17:50:40,145 - INFO - 从 Ars Technica Security 获取到 0 条安全新闻
+2025-08-06 17:50:42,146 - INFO - 正在抓取 ZDNet Security (国际) 的RSS源...
+2025-08-06 17:50:44,159 - INFO - 正在使用增强爬虫抓取: Should you upgrade from M1 to M4 MacBook Pro? I di...
+2025-08-06 17:50:44,160 - INFO - 正在抓取文章内容: https://www.zdnet.com/article/should-you-upgrade-from-m1-to-m4-macbook-pro-i-did-and-it-was-totally-worth-it/
+2025-08-06 17:50:46,102 - INFO - 成功提取内容: Should you upgrade from M1 to M4 MacBook Pro? I di... (3003字符)
+2025-08-06 17:50:46,102 - INFO - 成功提取文章内容: Should you upgrade from M1 to M4 MacBook Pro? I di... (3003字符)
+2025-08-06 17:50:46,103 - INFO - 正在使用增强爬虫抓取: Why this universal travel charger earned a place i...
+2025-08-06 17:50:46,103 - INFO - 正在抓取文章内容: https://www.zdnet.com/article/why-this-universal-travel-charger-earned-a-place-in-my-backpack-especially-at-its-price/
+2025-08-06 17:50:48,251 - INFO - 成功提取内容: Why this universal travel charger earned a place i... (3003字符)
+2025-08-06 17:50:48,251 - INFO - 成功提取文章内容: Why this universal travel charger earned a place i... (3003字符)
+2025-08-06 17:50:48,251 - INFO - 正在使用增强爬虫抓取: OpenAI returns to its open-source roots with new o...
+2025-08-06 17:50:48,251 - INFO - 正在抓取文章内容: https://www.zdnet.com/article/openai-returns-to-its-open-source-roots-with-new-open-weight-ai-models-and-its-a-big-deal/
+2025-08-06 17:50:50,501 - INFO - 成功提取内容: OpenAI returns to its open-source roots with new o... (3003字符)
+2025-08-06 17:50:50,502 - INFO - 成功提取文章内容: OpenAI returns to its open-source roots with new o... (3003字符)
+2025-08-06 17:50:50,502 - INFO - 正在使用增强爬虫抓取: The best Lenovo laptops of 2025: Expert tested and...
+2025-08-06 17:50:50,502 - INFO - 正在抓取文章内容: https://www.zdnet.com/article/best-lenovo-laptop/
+2025-08-06 17:50:52,911 - INFO - 成功提取内容: I tested the best Lenovo laptops, from affordable ... (3003字符)
+2025-08-06 17:50:52,911 - INFO - 成功提取文章内容: I tested the best Lenovo laptops, from affordable ... (3003字符)
+2025-08-06 17:50:52,911 - INFO - 从 ZDNet Security 获取到 4 条安全新闻
+2025-08-06 17:50:54,916 - INFO - 正在抓取 CSO Online (美国) 的RSS源...
+2025-08-06 17:50:56,615 - INFO - 从 CSO Online 获取到 0 条安全新闻
+2025-08-06 17:50:58,620 - INFO - 正在抓取 InfoSecurity Magazine (英国) 的RSS源...
+2025-08-06 17:50:59,957 - INFO - 正在使用增强爬虫抓取: Chanel and Pandora Breached as Salesforce Campaign...
+2025-08-06 17:50:59,958 - INFO - 正在抓取文章内容: https://www.infosecurity-magazine.com/news/chanel-pandora-breach-salesforce/
+2025-08-06 17:51:01,358 - INFO - 成功提取内容: Chanel and Pandora Breached as Salesforce Campaign... (3003字符)
+2025-08-06 17:51:01,359 - INFO - 成功提取文章内容: Chanel and Pandora Breached as Salesforce Campaign... (3003字符)
+2025-08-06 17:51:01,359 - INFO - 正在使用增强爬虫抓取: #BHUSA: Microsoft and Google Among Most Affected a...
+2025-08-06 17:51:01,359 - INFO - 正在抓取文章内容: https://www.infosecurity-magazine.com/news/microsoft-google-zero-day-exploits/
+2025-08-06 17:51:02,777 - INFO - 成功提取内容: #BHUSA: Microsoft and Google Among Most Affected a... (3003字符)
+2025-08-06 17:51:02,777 - INFO - 成功提取文章内容: #BHUSA: Microsoft and Google Among Most Affected a... (3003字符)
+2025-08-06 17:51:02,777 - INFO - 从 InfoSecurity Magazine 获取到 2 条安全新闻
+2025-08-06 17:51:04,783 - INFO - 正在抓取 Security Affairs (意大利) 的RSS源...
+2025-08-06 17:51:08,267 - INFO - 从 Security Affairs 获取到 2 条安全新闻
+2025-08-06 17:51:10,273 - INFO - 正在抓取 Recorded Future (美国) 的RSS源...
+2025-08-06 17:51:12,374 - INFO - 从 Recorded Future 获取到 0 条安全新闻
+2025-08-06 17:51:14,378 - INFO - 正在抓取 FireEye Threat Research (美国) 的RSS源...
+2025-08-06 17:51:15,603 - INFO - 从 FireEye Threat Research 获取到 0 条安全新闻
+2025-08-06 17:51:17,608 - INFO - 正在抓取 Kaspersky Securelist (俄罗斯) 的RSS源...
+2025-08-06 17:51:20,153 - INFO - 从 Kaspersky Securelist 获取到 0 条安全新闻
+2025-08-06 17:51:22,159 - INFO - 正在抓取 Trend Micro Security Intelligence (日本) 的RSS源...
+2025-08-06 17:51:24,786 - INFO - 从 Trend Micro Security Intelligence 获取到 0 条安全新闻
+2025-08-06 17:51:26,791 - INFO - 正在抓取 Microsoft Security Blog (美国) 的RSS源...
+2025-08-06 17:51:37,795 - INFO - 从 Microsoft Security Blog 获取到 0 条安全新闻
+2025-08-06 17:51:39,801 - INFO - 正在抓取 Google Security Blog (美国) 的RSS源...
+2025-08-06 17:51:42,783 - INFO - 从 Google Security Blog 获取到 0 条安全新闻
+2025-08-06 17:51:44,789 - INFO - 正在抓取 Apple Security Updates (美国) 的RSS源...
+2025-08-06 17:51:46,184 - INFO - 从 Apple Security Updates 获取到 0 条安全新闻
+2025-08-06 17:51:48,190 - INFO - 总共获取到 61 条不重复的安全新闻
+2025-08-06 17:51:48,190 - INFO - 正在使用GLM生成新闻分析...
+2025-08-06 17:51:48,190 - INFO - 正在使用GLM精选全球重要安全新闻...
+2025-08-06 17:51:48,195 - INFO - GLM API调用尝试 1/4
+2025-08-06 17:52:13,241 - INFO - GLM API调用成功
+2025-08-06 17:52:13,242 - WARNING - JSON解析失败，尝试提取JSON部分
+2025-08-06 17:52:13,243 - INFO - 成功精选出 10 篇全球安全新闻
+2025-08-06 17:52:13,244 - INFO - GLM API调用尝试 1/4
+2025-08-06 17:52:25,818 - INFO - GLM API调用成功
+2025-08-06 17:52:25,819 - INFO - GLM API调用尝试 1/4
+2025-08-06 17:52:56,512 - INFO - GLM API调用成功
+2025-08-06 17:52:56,514 - WARNING - JSON解析失败，尝试提取JSON部分
+2025-08-06 17:52:56,514 - INFO - 成功使用GLM进行四维度新闻分类和要素总结
+2025-08-06 17:52:56,516 - INFO - ✅ 成功加载移动端样式保护模块
+2025-08-06 17:52:56,518 - INFO - ✅ 成功生成AI智能新闻快报: news20250805.html
