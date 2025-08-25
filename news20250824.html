@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安网络安全日报 - 2025年08月25日</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Microsoft YaHei', 'SimHei', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+    }
+    
+    .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    
+    .content {
+      padding: 40px;
+    }
+    
+    .summary-section {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .summary-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .summary-title::before {
+      content: '📊';
+      font-size: 24px;
+    }
+    
+    .summary-content {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 16px;
+      white-space: pre-line;
+    }
+    
+    .category-section {
+      margin-bottom: 40px;
+      background: rgba(30, 41, 59, 0.4);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      overflow: hidden;
+    }
+    
+    .category-header {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .category-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .category-news {
+      padding: 24px;
+    }
+    
+    .news-item {
+      background: rgba(51, 65, 85, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .news-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+      border-radius: 2px 0 0 2px;
+    }
+    
+    .news-item:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    }
+    
+    .news-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    
+    .news-analysis {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    
+    .footer {
+      background: rgba(15, 23, 42, 0.8);
+      border-top: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 24px 40px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+    
+    .stats-section {
+      margin-bottom: 32px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .stat-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    
+    .stat-detail {
+      font-size: 12px;
+      color: #64748b;
+    }
+    
+    .source-list {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .source-list h3 {
+      color: #3b82f6;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .source-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .source-tag {
+      background: rgba(59, 130, 246, 0.1);
+      color: #93c5fd;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .enhancement-info {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(34, 197, 94, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    
+    .enhancement-info h3 {
+      color: #22c55e;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .enhancement-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .enhancement-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+    
+    .enhancement-item:last-child {
+      border-bottom: none;
+    }
+    
+    .enhancement-label {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .enhancement-value {
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .content-quality-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    
+    .quality-enhanced {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .quality-rss {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .quality-failed {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .news-header {
+      margin-bottom: 12px;
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+    
+    .news-source {
+      color: #94a3b8;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .severity-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .severity-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .severity-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .severity-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .severity-info {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .news-summary {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    
+    .key-points {
+      margin: 12px 0;
+      padding-left: 20px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .key-points li {
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    
+    .region-badge {
+      background: rgba(34, 197, 94, 0.1);
+      color: #86efac;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin: 0 4px;
+    }
+    
+    .impact-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .impact-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .impact-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .impact-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .icon-risk::before { content: '⚠️'; }
+    .icon-event::before { content: '🚨'; }
+    .icon-opinion::before { content: '📢'; }
+    .icon-trend::before { content: '📈'; }
+    .icon-focus::before { content: '🎯'; }
+    
+    /* 移动端适配样式 - 重要：请勿删除或覆盖 */
+    @media (max-width: 768px) {
+      .container {
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
+      }
+      
+      .header {
+        padding: 20px 15px;
+        border-radius: 0;
+      }
+      
+      .logo {
+        width: 150px;
+        margin-bottom: 15px;
+      }
+      
+      .title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      
+      .subtitle {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      
+      .content {
+        padding: 20px 15px;
+      }
+      
+      .summary-section {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+      
+      .summary-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      
+      .summary-content {
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: pre-line;
+      }
+      
+      .stats-section {
+        margin-bottom: 20px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      
+      .stat-card {
+        padding: 15px;
+        border-radius: 8px;
+      }
+      
+      .stat-number {
+        font-size: 24px;
+        margin-bottom: 6px;
+      }
+      
+      .stat-label {
+        font-size: 12px;
+      }
+      
+      .stat-detail {
+        font-size: 10px;
+      }
+      
+      .enhancement-info {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+      
+      .enhancement-info h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      .enhancement-item {
+        padding: 6px 0;
+      }
+      
+      .enhancement-label,
+      .enhancement-value {
+        font-size: 12px;
+      }
+      
+      .source-list {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+      
+      .source-list h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      .source-tag {
+        padding: 4px 8px;
+        font-size: 10px;
+        margin: 2px;
+      }
+      
+      .category-section {
+        margin-bottom: 25px;
+        border-radius: 8px;
+      }
+      
+      .category-header {
+        padding: 15px 20px;
+      }
+      
+      .category-title {
+        font-size: 18px;
+      }
+      
+      .category-news {
+        padding: 15px;
+      }
+      
+      .news-item {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }
+      
+      .news-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      
+      .news-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 6px;
+      }
+      
+      .news-source,
+      .region-badge,
+      .impact-badge,
+      .content-quality-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+        margin: 2px 4px 2px 0;
+      }
+      
+      .news-summary {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+      
+      .key-points {
+        margin: 10px 0;
+        padding-left: 15px;
+        font-size: 12px;
+      }
+      
+      .key-points li {
+        margin-bottom: 3px;
+        line-height: 1.3;
+      }
+      
+      .footer {
+        padding: 15px;
+        border-radius: 0;
+        font-size: 12px;
+      }
+    }
+    
+    /* 超小屏幕适配 (iPhone SE等) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 5px;
+      }
+      
+      .header {
+        padding: 15px 10px;
+      }
+      
+      .logo {
+        width: 120px;
+      }
+      
+      .title {
+        font-size: 20px;
+      }
+      
+      .subtitle {
+        font-size: 12px;
+      }
+      
+      .content {
+        padding: 15px 10px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      
+      .stat-card {
+        padding: 12px;
+      }
+      
+      .stat-number {
+        font-size: 20px;
+      }
+      
+      .category-title {
+        font-size: 16px;
+      }
+      
+      .news-title {
+        font-size: 14px;
+      }
+      
+      .news-summary {
+        font-size: 12px;
+      }
+    }
+    
+    /* 横屏适配 */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .category-section {
+        margin-bottom: 20px;
+      }
+      
+      .news-item {
+        padding: 12px;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle cx="40" cy="60" r="25" fill="url(#logoGradient)" opacity="0.8"/>
+        <circle cx="25" cy="35" r="15" fill="url(#logoGradient)" opacity="0.9"/>
+        <circle cx="55" cy="35" r="12" fill="url(#logoGradient)" opacity="0.7"/>
+        <circle cx="35" cy="75" r="10" fill="url(#logoGradient)" opacity="0.6"/>
+        <circle cx="60" cy="75" r="8" fill="url(#logoGradient)" opacity="0.8"/>
+        <text x="90" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3b82f6">ocean security</text>
+        <text x="90" y="70" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">海之安，数字安全专家</text>
+      </svg>
+      <h1 class="title">海之安网络安全日报</h1>
+      <div class="subtitle">2025年08月25日 · AI智能生成</div>
+    </div>
+    
+    <div class="content">
+      <div class="summary-section">
+        <h2 class="summary-title">今日摘要</h2>
+        <div class="summary-content">今日全球网络安全态势摘要：
+
+1. 新型攻击技术绕过EDR检测，静默窃取Windows系统凭证，对终端安全构成严重威胁。
+2. 恶意软件通过RAR文件传播，可规避杀毒软件检测，攻击手段日益复杂。
+3. ApacheTomcat存在远程代码执行漏洞，影响范围广泛，需及时修复。
+4. 360入选《甲方安全建设精品采购指南》，为政企单位数字化转型提供安全参考。
+5. 针对CFO的鱼叉式网络钓鱼活动浮出水面，攻击手段融合多阶段恶意软件投递。
+6. AI建站工具Lovable遭恶意滥用，网络安全风险持续升级。
+7. 新型MITM6+NTLM中继攻击可导致域环境全面沦陷，需加强IPv6防护。
+8. 黑客组织UNC5518入侵合法网站，植入虚假验证码诱骗用户执行恶意软件。
+9. Directus高危漏洞曝出，未授权文件上传可致服务器沦陷。
+10. 热门JS库sha.js曝关键漏洞，全球网络安全受严重威胁。</div>
+      </div>
+
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">精选新闻</div>
+            <div class="stat-detail">从15条中精选</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">7</div>
+            <div class="stat-label">增强内容</div>
+            <div class="stat-detail">深度抓取成功</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">7,924</div>
+            <div class="stat-label">内容字符</div>
+            <div class="stat-detail">丰富可读</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">分析维度</div>
+            <div class="stat-detail">风险·事件·舆情·趋势</div>
+          </div>
+        </div>
+        <div class="enhancement-info">
+          <h3>🚀 内容增强效果</h3>
+          <div class="enhancement-stats">
+            <div class="enhancement-item">
+              <span class="enhancement-label">深度抓取成功率:</span>
+              <span class="enhancement-value">70.0%</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">平均内容长度:</span>
+              <span class="enhancement-value">792字符</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">内容质量:</span>
+              <span class="enhancement-value">优秀</span>
+            </div>
+          </div>
+        </div>
+        <div class="source-list">
+          <h3>📰 全球新闻来源</h3>
+          <div class="source-tags">
+<span class="source-tag">安全客</span><span class="source-tag">FreeBuf</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-risk">安全风险</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">新型攻击方式可绕过EDR检测，静默窃取Windows系统凭证<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>2023年，网络安全研究人员发现一种新型攻击技术，该技术能够绕过大多数终端检测与响应（EDR）系统的监控，实现对Windows系统凭证信息的静默窃取。这种攻击方式利用了Windows系统的某些特性，使得攻击者能够在不引起系统警报的情况下获取敏感凭证。攻击者通过精心设计的恶意软件，能够在目标系统上安装后门程序，从而实现对凭证信息的窃取。该攻击方式对企业和个人用户的安全构成了严重威胁，因为一旦凭证信息被窃取，攻击者可以轻易地访问用户的个人账户和敏感数据。目前，针对此漏洞的修复方案尚未公布，用户需要加强安全意识，定期更新系统和软件，以防止此类攻击。
+            </div>
+            <ul class='key-points'><li>新型攻击方式</li><li>绕过EDR检测</li><li>窃取Windows系统凭证</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">恶意RAR文件可传播Linux恶意软件，还可规避杀毒软件检测<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>近期，网络安全研究人员发现了一种新的攻击链，该攻击链通过恶意RAR文件传播Linux恶意软件，并且能够规避杀毒软件的检测。攻击者通过钓鱼邮件向受害者发送包含恶意RAR文件的附件，一旦受害者打开附件，恶意软件就会被激活，并开始传播。这种攻击方式对Linux系统的用户构成了严重威胁，因为它能够绕过传统的安全防护措施。目前，针对此漏洞的修复方案尚未公布，用户需要加强安全意识，避免打开来历不明的邮件附件。
+            </div>
+            <ul class='key-points'><li>恶意RAR文件</li><li>传播Linux恶意软件</li><li>规避杀毒软件检测</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">ApacheTomcat存在远程代码执行漏洞（CVE-2024-56337）<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>ApacheTomcat存在一个远程代码执行漏洞（CVE-2024-56337），该漏洞允许攻击者通过上传恶意文件到Web应用中，从而在服务器上执行任意代码。该漏洞的影响范围非常广泛，包括所有版本的ApacheTomcat。CVSS评分显示，该漏洞的严重程度为高。目前，ApacheTomcat官方已经发布了修复补丁，用户应尽快更新到最新版本，以防止攻击者利用此漏洞。
+            </div>
+            <ul class='key-points'><li>ApacheTomcat</li><li>远程代码执行漏洞</li><li>CVE-2024-56337</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">360入选《甲方安全建设精品采购指南》 为政企单位数转智改提供参考<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-medium">影响: 中</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>360数字安全集团凭借在数据安全、安全运营、应用安全、身份安全、网络及端点安全等领域的标杆实践，成功入围《甲方安全建设精品采购指南》。该指南为政企单位数字化转型提供了安全建设的参考。360数字安全集团在安全运营领域，通过构建智能化防护体系，为信创企业提供了精准的安全托管服务。该公司的全栈安全能力和深度行业实践得到了认可。
+            </div>
+            <ul class='key-points'><li>360数字安全集团</li><li>安全建设精品采购指南</li><li>数转智改</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">鱼叉式网络钓鱼活动锁定企业CFO， 复杂多阶段攻击链浮出水面<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>亨特智库最新研究报告揭露，一场针对企业首席财务官（CFO）的鱼叉式网络钓鱼活动正在全球范围内进行。该攻击活动融合了社会工程学、多阶段恶意软件投递及合法远程工具滥用等手段，实现对受害者环境的持久控制。攻击者通过伪装成罗斯柴尔德公司招聘人员的欺诈邮件，将受害者引导至钓鱼页面，诱导下载包含恶意VBScript文件的ZIP压缩包，最终实现对受害者凭证信息的窃取。
+            </div>
+            <ul class='key-points'><li>鱼叉式网络钓鱼</li><li>CFO攻击</li><li>复杂攻击链</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">AI建站工具Lovable遭恶意滥用 网络安全风险持续升级<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>网络犯罪分子正在滥用人工智能驱动的Lovable网站创建与托管平台，生成大量恶意网站。这些恶意网站仿冒知名品牌，并配备验证码系统以规避机器人检测。通过Lovable平台创建的恶意活动自2月份以来，网络安全公司Proofpoint观察到数万个通过电子邮件传播的Lovable链接被标记为威胁。
+            </div>
+            <ul class='key-points'><li>AI建站工具</li><li>恶意滥用</li><li>恶意网站</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">新型MITM6+NTLM中继攻击来袭 ，攻击者可提权掌控整个域环境<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>一种结合MITM6与NTLM中继技术的精密攻击链近日被披露，可导致Active Directory域环境全面沦陷。该攻击利用Windows默认的IPv6自动配置行为，使攻击者能在数分钟内从网络访问权限提升至域管理员权限。
+            </div>
+            <ul class='key-points'><li>MITM6+NTLM中继攻击</li><li>域环境沦陷</li><li>IPv6自动配置</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">黑客组织UNC5518入侵合法网站 植入虚假验证码诱骗用户执行恶意软件<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>黑客组织UNC5518通过入侵合法网站，注入恶意的虚假验证码验证页面，诱骗访问者在不知情的情况下执行恶意软件。这项被安全研究人员命名为“ClickFix”的攻击活动，利用用户对常规验证码检查的熟悉感实施欺骗。
+            </div>
+            <ul class='key-points'><li>UNC5518</li><li>合法网站入侵</li><li>虚假验证码</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">CVE-2025-55746漏洞预警：Directus高危漏洞曝出 未授权文件上传可致服务器沦陷<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>Directus项目近日披露一个关键漏洞（CVE-2025-55746，CVSS评分9.3），未认证攻击者可通过该漏洞在受影响服务器上上传或修改文件，从而可能导致服务器沦陷。
+            </div>
+            <ul class='key-points'><li>Directus</li><li>CVE-2025-55746</li><li>高危漏洞</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">CVE-2025-9288安全警报：热门JS库曝关键漏洞 全球网络安全受严重威胁<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>JavaScript加密库sha.js曝出关键安全漏洞（CVE-2025-9288，CVSS评分9.1），该漏洞源于输入类型检查缺失问题，可能导致哈希状态回退和数值计算错误。
+            </div>
+            <ul class='key-points'><li>sha.js</li><li>CVE-2025-9288</li><li>关键漏洞</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>© 2025 海之安（中国）科技有限公司 | 基于智谱GLM AI生成</p>
+      <p>共分析 10 条安全新闻 | 官网：<a href="https://www.oceansecurity.cn" style="color: #3b82f6;">www.oceansecurity.cn</a></p>
+    </div>
+  </div>
+</body>
+</html>

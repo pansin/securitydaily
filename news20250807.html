@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安网络安全日报 - 2025年08月08日</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Microsoft YaHei', 'SimHei', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+    }
+    
+    .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    
+    .content {
+      padding: 40px;
+    }
+    
+    .summary-section {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .summary-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .summary-title::before {
+      content: '📊';
+      font-size: 24px;
+    }
+    
+    .summary-content {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 16px;
+      white-space: pre-line;
+    }
+    
+    .category-section {
+      margin-bottom: 40px;
+      background: rgba(30, 41, 59, 0.4);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      overflow: hidden;
+    }
+    
+    .category-header {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .category-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .category-news {
+      padding: 24px;
+    }
+    
+    .news-item {
+      background: rgba(51, 65, 85, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .news-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+      border-radius: 2px 0 0 2px;
+    }
+    
+    .news-item:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    }
+    
+    .news-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    
+    .news-analysis {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    
+    .footer {
+      background: rgba(15, 23, 42, 0.8);
+      border-top: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 24px 40px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+    
+    .stats-section {
+      margin-bottom: 32px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .stat-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    
+    .stat-detail {
+      font-size: 12px;
+      color: #64748b;
+    }
+    
+    .source-list {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .source-list h3 {
+      color: #3b82f6;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .source-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .source-tag {
+      background: rgba(59, 130, 246, 0.1);
+      color: #93c5fd;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .enhancement-info {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(34, 197, 94, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    
+    .enhancement-info h3 {
+      color: #22c55e;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .enhancement-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .enhancement-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+    
+    .enhancement-item:last-child {
+      border-bottom: none;
+    }
+    
+    .enhancement-label {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .enhancement-value {
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .content-quality-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    
+    .quality-enhanced {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .quality-rss {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .quality-failed {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .news-header {
+      margin-bottom: 12px;
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+    
+    .news-source {
+      color: #94a3b8;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .severity-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .severity-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .severity-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .severity-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .severity-info {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .news-summary {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    
+    .key-points {
+      margin: 12px 0;
+      padding-left: 20px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .key-points li {
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    
+    .region-badge {
+      background: rgba(34, 197, 94, 0.1);
+      color: #86efac;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin: 0 4px;
+    }
+    
+    .impact-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .impact-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .impact-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .impact-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .icon-risk::before { content: '⚠️'; }
+    .icon-event::before { content: '🚨'; }
+    .icon-opinion::before { content: '📢'; }
+    .icon-trend::before { content: '📈'; }
+    .icon-focus::before { content: '🎯'; }
+    
+    /* 移动端适配样式 - 重要：请勿删除或覆盖 */
+    @media (max-width: 768px) {
+      .container {
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
+      }
+      
+      .header {
+        padding: 20px 15px;
+        border-radius: 0;
+      }
+      
+      .logo {
+        width: 150px;
+        margin-bottom: 15px;
+      }
+      
+      .title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      
+      .subtitle {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      
+      .content {
+        padding: 20px 15px;
+      }
+      
+      .summary-section {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+      
+      .summary-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      
+      .summary-content {
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: pre-line;
+      }
+      
+      .stats-section {
+        margin-bottom: 20px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      
+      .stat-card {
+        padding: 15px;
+        border-radius: 8px;
+      }
+      
+      .stat-number {
+        font-size: 24px;
+        margin-bottom: 6px;
+      }
+      
+      .stat-label {
+        font-size: 12px;
+      }
+      
+      .stat-detail {
+        font-size: 10px;
+      }
+      
+      .enhancement-info {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+      
+      .enhancement-info h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      .enhancement-item {
+        padding: 6px 0;
+      }
+      
+      .enhancement-label,
+      .enhancement-value {
+        font-size: 12px;
+      }
+      
+      .source-list {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+      
+      .source-list h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      .source-tag {
+        padding: 4px 8px;
+        font-size: 10px;
+        margin: 2px;
+      }
+      
+      .category-section {
+        margin-bottom: 25px;
+        border-radius: 8px;
+      }
+      
+      .category-header {
+        padding: 15px 20px;
+      }
+      
+      .category-title {
+        font-size: 18px;
+      }
+      
+      .category-news {
+        padding: 15px;
+      }
+      
+      .news-item {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }
+      
+      .news-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      
+      .news-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 6px;
+      }
+      
+      .news-source,
+      .region-badge,
+      .impact-badge,
+      .content-quality-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+        margin: 2px 4px 2px 0;
+      }
+      
+      .news-summary {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+      
+      .key-points {
+        margin: 10px 0;
+        padding-left: 15px;
+        font-size: 12px;
+      }
+      
+      .key-points li {
+        margin-bottom: 3px;
+        line-height: 1.3;
+      }
+      
+      .footer {
+        padding: 15px;
+        border-radius: 0;
+        font-size: 12px;
+      }
+    }
+    
+    /* 超小屏幕适配 (iPhone SE等) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 5px;
+      }
+      
+      .header {
+        padding: 15px 10px;
+      }
+      
+      .logo {
+        width: 120px;
+      }
+      
+      .title {
+        font-size: 20px;
+      }
+      
+      .subtitle {
+        font-size: 12px;
+      }
+      
+      .content {
+        padding: 15px 10px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      
+      .stat-card {
+        padding: 12px;
+      }
+      
+      .stat-number {
+        font-size: 20px;
+      }
+      
+      .category-title {
+        font-size: 16px;
+      }
+      
+      .news-title {
+        font-size: 14px;
+      }
+      
+      .news-summary {
+        font-size: 12px;
+      }
+    }
+    
+    /* 横屏适配 */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .category-section {
+        margin-bottom: 20px;
+      }
+      
+      .news-item {
+        padding: 12px;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle cx="40" cy="60" r="25" fill="url(#logoGradient)" opacity="0.8"/>
+        <circle cx="25" cy="35" r="15" fill="url(#logoGradient)" opacity="0.9"/>
+        <circle cx="55" cy="35" r="12" fill="url(#logoGradient)" opacity="0.7"/>
+        <circle cx="35" cy="75" r="10" fill="url(#logoGradient)" opacity="0.6"/>
+        <circle cx="60" cy="75" r="8" fill="url(#logoGradient)" opacity="0.8"/>
+        <text x="90" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3b82f6">ocean security</text>
+        <text x="90" y="70" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">海之安，数字安全专家</text>
+      </svg>
+      <h1 class="title">海之安网络安全日报</h1>
+      <div class="subtitle">2025年08月08日 · AI智能生成</div>
+    </div>
+    
+    <div class="content">
+      <div class="summary-section">
+        <h2 class="summary-title">今日摘要</h2>
+        <div class="summary-content">今日全球网络安全态势摘要：
+
+美国网络安全和基础设施安全局（CISA）发布了一系列安全警报，涉及多个领域的设备和服务。其中，Delta Electronics DIAView、Burk Technology ARC Solo、Packet Power EMX and EG、Johnson Controls FX80 and FX90、Dreame Technology iOS和Android移动应用、EG4 Electronics EG4 Inverters等设备均存在安全漏洞。此外，CISA还发布了紧急指令ED 25-02，要求联邦民用行政部门对微软Exchange服务器混合部署中的漏洞CVE-2025-53786进行缓解。同时，CISA发布了与微软SharePoint漏洞相关的恶意软件分析报告，分析了CVE-2025-49704、CVE-2025-49706、CVE-2025-53770和CVE-2025-53771等漏洞。全球网络安全风险持续上升，各国需加强安全防护措施。</div>
+      </div>
+
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">精选新闻</div>
+            <div class="stat-detail">从15条中精选</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">增强内容</div>
+            <div class="stat-detail">深度抓取成功</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">7,230</div>
+            <div class="stat-label">内容字符</div>
+            <div class="stat-detail">丰富可读</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">分析维度</div>
+            <div class="stat-detail">风险·事件·舆情·趋势</div>
+          </div>
+        </div>
+        <div class="enhancement-info">
+          <h3>🚀 内容增强效果</h3>
+          <div class="enhancement-stats">
+            <div class="enhancement-item">
+              <span class="enhancement-label">深度抓取成功率:</span>
+              <span class="enhancement-value">100.0%</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">平均内容长度:</span>
+              <span class="enhancement-value">723字符</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">内容质量:</span>
+              <span class="enhancement-value">优秀</span>
+            </div>
+          </div>
+        </div>
+        <div class="source-list">
+          <h3>📰 全球新闻来源</h3>
+          <div class="source-tags">
+<span class="source-tag">CISA Alerts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-risk">安全风险</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Delta Electronics DIAView、Burk Technology ARC Solo、Packet Power EMX and EG、Johnson Controls FX80 and FX90等多个产品存在安全漏洞<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">CISA Alerts</span>
+                <span class="region-badge">美国</span>
+                <span class="impact-badge impact-medium">影响: 中</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>2025年8月7日，美国网络安全和基础设施安全局（CISA）发布了关于Delta Electronics DIAView、Burk Technology ARC Solo、Packet Power EMX and EG、Johnson Controls FX80 and FX90等多个产品的安全漏洞警告。这些产品均存在安全漏洞，可能导致未经授权的远程访问和资源分配问题。具体来说，这些漏洞涉及不当限制过多认证尝试、无限制或限制不足的资源分配、不正确的授权等。CISA建议用户立即采取措施，包括更新软件和配置系统，以降低安全风险。
+            </div>
+            <ul class='key-points'><li>Delta Electronics DIAView</li><li>Burk Technology ARC Solo</li><li>Packet Power EMX and EG</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">CISA发布紧急指令：缓解微软Exchange服务器混合部署的漏洞<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">CISA Alerts</span>
+                <span class="region-badge">美国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>2025年8月7日，CISA发布了紧急指令ED 25-02，要求所有拥有微软Exchange服务器混合环境的联邦政府机构采取措施缓解CVE-2025-53786漏洞。该漏洞可能导致未经授权的远程访问，并可能被用于发起网络攻击。CISA要求受影响的机构在8月10日9:00 AM EDT之前实施必要的缓解措施，包括安装安全更新和配置安全设置。
+            </div>
+            <ul class='key-points'><li>微软Exchange服务器</li><li>CVE-2025-53786</li><li>未经授权的远程访问</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">Yealink IP电话和RPS（重定向和配置服务）存在安全漏洞<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">CISA Alerts</span>
+                <span class="region-badge">美国</span>
+                <span class="impact-badge impact-medium">影响: 中</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>2025年8月7日，CISA发布了关于Yealink IP电话和RPS（重定向和配置服务）的安全漏洞警告。这些产品存在多个安全漏洞，包括不当限制过多认证尝试、无限制或限制不足的资源分配、不正确的授权等。这些漏洞可能被用于未经授权的远程访问和数据泄露。CISA建议用户立即采取措施，包括更新软件和配置系统，以降低安全风险。
+            </div>
+            <ul class='key-points'><li>Yealink IP电话</li><li>RPS（重定向和配置服务）</li><li>安全漏洞</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">CISA发布与微软SharePoint漏洞相关的恶意软件分析报告<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">CISA Alerts</span>
+                <span class="region-badge">美国</span>
+                <span class="impact-badge impact-medium">影响: 中</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>2025年8月6日，CISA发布了与微软SharePoint漏洞相关的恶意软件分析报告。报告分析了CVE-2025-49704、CVE-2025-49706、CVE-2025-53770和CVE-2025-53771等漏洞，并提供了相关的检测签名。这些漏洞可能导致代码注入、不当认证、不信任数据的反序列化和远程代码执行等安全问题。CISA建议用户及时更新软件和配置系统，以降低安全风险。
+            </div>
+            <ul class='key-points'><li>微软SharePoint</li><li>CVE-2025-49704</li><li>CVE-2025-49706</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>© 2025 海之安（中国）科技有限公司 | 基于智谱GLM AI生成</p>
+      <p>共分析 10 条安全新闻 | 官网：<a href="https://www.oceansecurity.cn" style="color: #3b82f6;">www.oceansecurity.cn</a></p>
+    </div>
+  </div>
+</body>
+</html>
