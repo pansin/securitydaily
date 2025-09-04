@@ -4278,3 +4278,274 @@
 2025-08-25 10:18:29,654 - INFO - 成功使用GLM进行四维度新闻分类和要素总结
 2025-08-25 10:18:29,657 - INFO - ✅ 成功加载移动端样式保护模块
 2025-08-25 10:18:29,659 - INFO - ✅ 成功生成AI智能新闻快报: news20250824.html
+2025-09-04 15:36:22,892 - INFO - ✅ 成功加载新闻源配置: 30 个数据源
+2025-09-04 15:36:22,893 - INFO - 📰 获取到 29 个启用的新闻源
+2025-09-04 15:36:22,893 - INFO - ✅ 从配置文件加载了 29 个新闻源
+2025-09-04 15:36:22,893 - INFO - 开始抓取 2025-09-03 的网络安全新闻...
+2025-09-04 15:36:22,893 - INFO - 正在抓取 安全客 (中国) 的RSS源...
+2025-09-04 15:36:26,138 - INFO - 正在使用增强爬虫抓取: “攻界智汇·技破万防”第十五期「度安讲」技术沙龙&极客之夜喊你集结！...
+2025-09-04 15:36:26,142 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311870
+2025-09-04 15:36:27,070 - INFO - 成功提取内容: “攻界智汇·技破万防”第十五期「度安讲」技术沙龙&极客之夜喊你集结！... (701字符)
+2025-09-04 15:36:27,070 - INFO - 成功提取文章内容: “攻界智汇·技破万防”第十五期「度安讲」技术沙龙&极客之夜喊你集结！... (701字符)
+2025-09-04 15:36:27,070 - INFO - 正在使用增强爬虫抓取: Android安全公告：2025年9月更新修复两个已被主动利用的漏洞（CVE-2025-38352与...
+2025-09-04 15:36:27,070 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311824
+2025-09-04 15:36:28,001 - INFO - 成功提取内容: Android安全公告：2025年9月更新修复两个已被主动利用的漏洞（CVE-2025-38352与... (868字符)
+2025-09-04 15:36:28,001 - INFO - 成功提取文章内容: Android安全公告：2025年9月更新修复两个已被主动利用的漏洞（CVE-2025-38352与... (868字符)
+2025-09-04 15:36:28,001 - INFO - 正在使用增强爬虫抓取: 数据安全巨头Varonis收购SlashNext 斥资7000万美元加码反钓鱼攻防体系...
+2025-09-04 15:36:28,001 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311821
+2025-09-04 15:36:28,987 - INFO - 成功提取内容: 数据安全巨头Varonis收购SlashNext 斥资7000万美元加码反钓鱼攻防体系... (1074字符)
+2025-09-04 15:36:28,988 - INFO - 成功提取文章内容: 数据安全巨头Varonis收购SlashNext 斥资7000万美元加码反钓鱼攻防体系... (1074字符)
+2025-09-04 15:36:28,988 - INFO - 正在使用增强爬虫抓取: Inf0s3c窃密木马警报：新型Python恶意程序正滥用Discord窃取数据...
+2025-09-04 15:36:28,988 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311827
+2025-09-04 15:36:29,690 - INFO - 成功提取内容: Inf0s3c窃密木马警报：新型Python恶意程序正滥用Discord窃取数据... (1232字符)
+2025-09-04 15:36:29,690 - INFO - 成功提取文章内容: Inf0s3c窃密木马警报：新型Python恶意程序正滥用Discord窃取数据... (1232字符)
+2025-09-04 15:36:29,691 - INFO - 正在使用增强爬虫抓取: 新型钓鱼攻击警报：黑客利用OneDrive窃取企业高管凭证...
+2025-09-04 15:36:29,691 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311830
+2025-09-04 15:36:30,649 - INFO - 成功提取内容: 新型钓鱼攻击警报：黑客利用OneDrive窃取企业高管凭证... (972字符)
+2025-09-04 15:36:30,649 - INFO - 成功提取文章内容: 新型钓鱼攻击警报：黑客利用OneDrive窃取企业高管凭证... (972字符)
+2025-09-04 15:36:30,649 - INFO - 正在使用增强爬虫抓取: CVE-2025-6507高危漏洞预警（CVSS 9.8）：H2O-3机器学习框架存在重大安全风险...
+2025-09-04 15:36:30,650 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311842
+2025-09-04 15:36:31,588 - INFO - 成功提取内容: CVE-2025-6507高危漏洞预警（CVSS 9.8）：H2O-3机器学习框架存在重大安全风险... (1120字符)
+2025-09-04 15:36:31,589 - INFO - 成功提取文章内容: CVE-2025-6507高危漏洞预警（CVSS 9.8）：H2O-3机器学习框架存在重大安全风险... (1120字符)
+2025-09-04 15:36:31,589 - INFO - 正在使用增强爬虫抓取: CVE-2025-57808：ESPHome Web服务器认证绕过漏洞曝光...
+2025-09-04 15:36:31,589 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311845
+2025-09-04 15:36:32,550 - INFO - 成功提取内容: CVE-2025-57808：ESPHome Web服务器认证绕过漏洞曝光... (1238字符)
+2025-09-04 15:36:32,550 - INFO - 成功提取文章内容: CVE-2025-57808：ESPHome Web服务器认证绕过漏洞曝光... (1238字符)
+2025-09-04 15:36:32,551 - INFO - 正在使用增强爬虫抓取: 恶意npm包仿冒Nodemailer劫持加密货币...
+2025-09-04 15:36:32,551 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311853
+2025-09-04 15:36:33,542 - INFO - 成功提取内容: 恶意npm包仿冒Nodemailer劫持加密货币... (832字符)
+2025-09-04 15:36:33,542 - INFO - 成功提取文章内容: 恶意npm包仿冒Nodemailer劫持加密货币... (832字符)
+2025-09-04 15:36:33,542 - INFO - 正在使用增强爬虫抓取: 史上最大规模DDoS攻击：Cloudflare成功拦截11.5 Tbps破纪录攻击...
+2025-09-04 15:36:33,542 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311858
+2025-09-04 15:36:34,229 - INFO - 成功提取内容: 史上最大规模DDoS攻击：Cloudflare成功拦截11.5 Tbps破纪录攻击... (685字符)
+2025-09-04 15:36:34,229 - INFO - 成功提取文章内容: 史上最大规模DDoS攻击：Cloudflare成功拦截11.5 Tbps破纪录攻击... (685字符)
+2025-09-04 15:36:34,229 - INFO - 正在使用增强爬虫抓取: 超越ClickFix：新型攻击滥用Windows搜索功能分发MetaStealer窃密木马...
+2025-09-04 15:36:34,229 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311761
+2025-09-04 15:36:35,151 - INFO - 成功提取内容: 超越ClickFix：新型攻击滥用Windows搜索功能分发MetaStealer窃密木马... (1105字符)
+2025-09-04 15:36:35,151 - INFO - 成功提取文章内容: 超越ClickFix：新型攻击滥用Windows搜索功能分发MetaStealer窃密木马... (1105字符)
+2025-09-04 15:36:35,151 - INFO - 正在使用增强爬虫抓取: CVE-2025-6203：HashiCorp Vault拒绝服务漏洞可致服务器崩溃...
+2025-09-04 15:36:35,151 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311758
+2025-09-04 15:36:36,149 - INFO - 成功提取内容: CVE-2025-6203：HashiCorp Vault拒绝服务漏洞可致服务器崩溃... (917字符)
+2025-09-04 15:36:36,149 - INFO - 成功提取文章内容: CVE-2025-6203：HashiCorp Vault拒绝服务漏洞可致服务器崩溃... (917字符)
+2025-09-04 15:36:36,150 - INFO - 正在使用增强爬虫抓取: CVE-2025-58158：Harness Gitness曝高危漏洞 允许攻击者任意文件写入...
+2025-09-04 15:36:36,150 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311771
+2025-09-04 15:36:37,369 - INFO - 成功提取内容: CVE-2025-58158：Harness Gitness曝高危漏洞 允许攻击者任意文件写入... (802字符)
+2025-09-04 15:36:37,369 - INFO - 成功提取文章内容: CVE-2025-58158：Harness Gitness曝高危漏洞 允许攻击者任意文件写入... (802字符)
+2025-09-04 15:36:37,369 - INFO - 正在使用增强爬虫抓取: AI Waifu RAT：新型恶意软件伪装AI助手劫持用户电脑...
+2025-09-04 15:36:37,369 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311788
+2025-09-04 15:36:38,250 - INFO - 成功提取内容: AI Waifu RAT：新型恶意软件伪装AI助手劫持用户电脑... (1097字符)
+2025-09-04 15:36:38,250 - INFO - 成功提取文章内容: AI Waifu RAT：新型恶意软件伪装AI助手劫持用户电脑... (1097字符)
+2025-09-04 15:36:38,251 - INFO - 正在使用增强爬虫抓取: WhatsApp漏洞与苹果零日漏洞遭组合利用，间谍软件攻击复杂度升级...
+2025-09-04 15:36:38,251 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311781
+2025-09-04 15:36:39,527 - INFO - 成功提取内容: WhatsApp漏洞与苹果零日漏洞遭组合利用，间谍软件攻击复杂度升级... (1193字符)
+2025-09-04 15:36:39,527 - INFO - 成功提取文章内容: WhatsApp漏洞与苹果零日漏洞遭组合利用，间谍软件攻击复杂度升级... (1193字符)
+2025-09-04 15:36:39,528 - INFO - 正在使用增强爬虫抓取: 冒牌PDF编辑器分发TamperedChef信息窃取木马...
+2025-09-04 15:36:39,528 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311798
+2025-09-04 15:36:40,920 - INFO - 成功提取内容: 冒牌PDF编辑器分发TamperedChef信息窃取木马... (1536字符)
+2025-09-04 15:36:40,920 - INFO - 成功提取文章内容: 冒牌PDF编辑器分发TamperedChef信息窃取木马... (1536字符)
+2025-09-04 15:36:40,920 - INFO - 正在使用增强爬虫抓取: 虚假TradingView广告推送Brokewell安卓银行木马...
+2025-09-04 15:36:40,920 - INFO - 正在抓取文章内容: https://www.anquanke.com/post/id/311790
+2025-09-04 15:36:41,849 - INFO - 成功提取内容: 虚假TradingView广告推送Brokewell安卓银行木马... (1088字符)
+2025-09-04 15:36:41,849 - INFO - 成功提取文章内容: 虚假TradingView广告推送Brokewell安卓银行木马... (1088字符)
+2025-09-04 15:36:41,849 - INFO - 从 安全客 获取到 16 条安全新闻
+2025-09-04 15:36:43,854 - INFO - 正在抓取 FreeBuf (中国) 的RSS源...
+2025-09-04 15:36:44,364 - INFO - 从 FreeBuf 获取到 15 条安全新闻
+2025-09-04 15:36:46,369 - INFO - 正在抓取 嘶吼 (中国) 的RSS源...
+2025-09-04 15:36:47,257 - INFO - 正在使用增强爬虫抓取: 【梆梆安全监测】安全隐私合规监管趋势及漏洞风险报告（0720-0802）...
+2025-09-04 15:36:47,258 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/OGxN
+2025-09-04 15:36:47,654 - INFO - 成功提取内容: 【梆梆安全监测】安全隐私合规监管趋势及漏洞风险报告（0720-0802）... (2013字符)
+2025-09-04 15:36:47,654 - INFO - 成功提取文章内容: 【梆梆安全监测】安全隐私合规监管趋势及漏洞风险报告（0720-0802）... (2013字符)
+2025-09-04 15:36:47,655 - INFO - 正在使用增强爬虫抓取: PromptLock勒索软件利用人工智能加密和窃取数据...
+2025-09-04 15:36:47,655 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/xyMr
+2025-09-04 15:36:48,025 - INFO - 成功提取内容: PromptLock勒索软件利用人工智能加密和窃取数据... (1520字符)
+2025-09-04 15:36:48,025 - INFO - 成功提取文章内容: PromptLock勒索软件利用人工智能加密和窃取数据... (1520字符)
+2025-09-04 15:36:48,026 - INFO - 正在使用增强爬虫抓取: 360安全智能体亮相南亚东南亚数字合作大会，助东南亚数字安全升级...
+2025-09-04 15:36:48,026 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/LGr4
+2025-09-04 15:36:48,621 - INFO - 成功提取内容: 360安全智能体亮相南亚东南亚数字合作大会，助东南亚数字安全升级... (1939字符)
+2025-09-04 15:36:48,621 - INFO - 成功提取文章内容: 360安全智能体亮相南亚东南亚数字合作大会，助东南亚数字安全升级... (1939字符)
+2025-09-04 15:36:48,621 - INFO - 正在使用增强爬虫抓取: Storm-0501黑客转向云端勒索软件攻击...
+2025-09-04 15:36:48,621 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/wxLw
+2025-09-04 15:36:48,982 - INFO - 成功提取内容: Storm-0501黑客转向云端勒索软件攻击... (1933字符)
+2025-09-04 15:36:48,982 - INFO - 成功提取文章内容: Storm-0501黑客转向云端勒索软件攻击... (1933字符)
+2025-09-04 15:36:48,982 - INFO - 正在使用增强爬虫抓取: 韧者笃行 | 梆梆安全再度入选中国网络安全百强企业，彰显移动安全领域稳健力量...
+2025-09-04 15:36:48,982 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/J1po
+2025-09-04 15:36:49,349 - INFO - 成功提取内容: 韧者笃行 | 梆梆安全再度入选中国网络安全百强企业，彰显移动安全领域稳健力量... (1720字符)
+2025-09-04 15:36:49,350 - INFO - 成功提取文章内容: 韧者笃行 | 梆梆安全再度入选中国网络安全百强企业，彰显移动安全领域稳健力量... (1720字符)
+2025-09-04 15:36:49,350 - INFO - 正在使用增强爬虫抓取: Docker Desktop严重漏洞可让攻击者劫持Windows主机...
+2025-09-04 15:36:49,350 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/omzK
+2025-09-04 15:36:49,707 - INFO - 成功提取内容: Docker Desktop严重漏洞可让攻击者劫持Windows主机... (1602字符)
+2025-09-04 15:36:49,707 - INFO - 成功提取文章内容: Docker Desktop严重漏洞可让攻击者劫持Windows主机... (1602字符)
+2025-09-04 15:36:49,707 - INFO - 正在使用增强爬虫抓取: 2025年夏季网络安全攻击事件激增...
+2025-09-04 15:36:49,707 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/mk4O
+2025-09-04 15:36:50,086 - INFO - 成功提取内容: 2025年夏季网络安全攻击事件激增... (3003字符)
+2025-09-04 15:36:50,086 - INFO - 成功提取文章内容: 2025年夏季网络安全攻击事件激增... (3003字符)
+2025-09-04 15:36:50,086 - INFO - 正在使用增强爬虫抓取: 近2000个IP同步扫描微软RDP认证服务器 或与返校季相关...
+2025-09-04 15:36:50,086 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/pnA6
+2025-09-04 15:36:50,448 - INFO - 成功提取内容: 近2000个IP同步扫描微软RDP认证服务器 或与返校季相关... (1263字符)
+2025-09-04 15:36:50,449 - INFO - 成功提取文章内容: 近2000个IP同步扫描微软RDP认证服务器 或与返校季相关... (1263字符)
+2025-09-04 15:36:50,449 - INFO - 从 嘶吼 获取到 8 条安全新闻
+2025-09-04 15:36:52,454 - INFO - 正在抓取 Krebs on Security (美国) 的RSS源...
+2025-09-04 15:36:54,770 - INFO - 从 Krebs on Security 获取到 1 条安全新闻
+2025-09-04 15:36:56,775 - INFO - 正在抓取 Schneier on Security (美国) 的RSS源...
+2025-09-04 15:36:58,476 - INFO - 从 Schneier on Security 获取到 1 条安全新闻
+2025-09-04 15:37:00,481 - INFO - 正在抓取 The Hacker News (国际) 的RSS源...
+2025-09-04 15:37:01,664 - INFO - 正在使用增强爬虫抓取: Android Security Alert: Google Patches 120 Flaws, ...
+2025-09-04 15:37:01,664 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/09/android-security-alert-google-patches.html
+2025-09-04 15:37:02,114 - INFO - 成功提取内容: Android Security Alert: Google Patches 120 Flaws, ... (1955字符)
+2025-09-04 15:37:02,114 - INFO - 成功提取文章内容: Android Security Alert: Google Patches 120 Flaws, ... (1955字符)
+2025-09-04 15:37:02,114 - INFO - 正在使用增强爬虫抓取: Cloudflare Blocks Record-Breaking 11.5 Tbps DDoS A...
+2025-09-04 15:37:02,114 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/09/cloudflare-blocks-record-breaking-115.html
+2025-09-04 15:37:02,607 - INFO - 成功提取内容: Cloudflare Blocks Record-Breaking 11.5 Tbps DDoS A... (3003字符)
+2025-09-04 15:37:02,607 - INFO - 成功提取文章内容: Cloudflare Blocks Record-Breaking 11.5 Tbps DDoS A... (3003字符)
+2025-09-04 15:37:02,608 - INFO - 正在使用增强爬虫抓取: CISA Adds TP-Link and WhatsApp Flaws to KEV Catalo...
+2025-09-04 15:37:02,608 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/09/cisa-adds-tp-link-and-whatsapp-flaws-to.html
+2025-09-04 15:37:05,298 - INFO - 成功提取内容: CISA Adds TP-Link and WhatsApp Flaws to KEV Catalo... (2021字符)
+2025-09-04 15:37:05,298 - INFO - 成功提取文章内容: CISA Adds TP-Link and WhatsApp Flaws to KEV Catalo... (2021字符)
+2025-09-04 15:37:05,298 - INFO - 正在使用增强爬虫抓取: Researchers Warn of MystRodX Backdoor Using DNS an...
+2025-09-04 15:37:05,298 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/09/researchers-warn-of-mystrodx-backdoor.html
+2025-09-04 15:37:05,651 - INFO - 成功提取内容: Researchers Warn of MystRodX Backdoor Using DNS an... (3003字符)
+2025-09-04 15:37:05,651 - INFO - 成功提取文章内容: Researchers Warn of MystRodX Backdoor Using DNS an... (3003字符)
+2025-09-04 15:37:05,651 - INFO - 正在使用增强爬虫抓取: Ukrainian Network FDN3 Launches Massive Brute-Forc...
+2025-09-04 15:37:05,651 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/09/ukrainian-network-fdn3-launches-massive.html
+2025-09-04 15:37:05,996 - INFO - 成功提取内容: Ukrainian Network FDN3 Launches Massive Brute-Forc... (3003字符)
+2025-09-04 15:37:05,997 - INFO - 成功提取文章内容: Ukrainian Network FDN3 Launches Massive Brute-Forc... (3003字符)
+2025-09-04 15:37:05,997 - INFO - 正在使用增强爬虫抓取: ⚡ Weekly Recap: WhatsApp 0-Day, Docker Bug, Salesf...
+2025-09-04 15:37:05,997 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/09/weekly-recap-whatsapp-0-day-docker-bug.html
+2025-09-04 15:37:06,438 - INFO - 成功提取内容: ⚡ Weekly Recap: WhatsApp 0-Day, Docker Bug, Salesf... (3003字符)
+2025-09-04 15:37:06,438 - INFO - 成功提取文章内容: ⚡ Weekly Recap: WhatsApp 0-Day, Docker Bug, Salesf... (3003字符)
+2025-09-04 15:37:06,438 - INFO - 正在使用增强爬虫抓取: ScarCruft Uses RokRAT Malware in Operation HanKook...
+2025-09-04 15:37:06,438 - INFO - 正在抓取文章内容: https://thehackernews.com/2025/09/scarcruft-uses-rokrat-malware-in.html
+2025-09-04 15:37:07,001 - INFO - 成功提取内容: ScarCruft Uses RokRAT Malware in Operation HanKook... (3003字符)
+2025-09-04 15:37:07,001 - INFO - 成功提取文章内容: ScarCruft Uses RokRAT Malware in Operation HanKook... (3003字符)
+2025-09-04 15:37:07,001 - INFO - 从 The Hacker News 获取到 7 条安全新闻
+2025-09-04 15:37:09,007 - INFO - 正在抓取 Dark Reading (美国) 的RSS源...
+2025-09-04 15:37:09,853 - INFO - 正在使用增强爬虫抓取: Iran MOIS Phishes 50+ Embassies, Ministries, Int'l...
+2025-09-04 15:37:09,853 - INFO - 正在抓取文章内容: https://www.darkreading.com/cyberattacks-data-breaches/iran-mois-50-embassies-ministries-intl-orgs
+2025-09-04 15:37:10,127 - ERROR - 抓取文章内容失败 https://www.darkreading.com/cyberattacks-data-breaches/iran-mois-50-embassies-ministries-intl-orgs: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/iran-mois-50-embassies-ministries-intl-orgs
+2025-09-04 15:37:10,127 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/cyberattacks-data-breaches/iran-mois-50-embassies-ministries-intl-orgs
+2025-09-04 15:37:10,397 - WARNING - 备用方法也失败 https://www.darkreading.com/cyberattacks-data-breaches/iran-mois-50-embassies-ministries-intl-orgs: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/iran-mois-50-embassies-ministries-intl-orgs
+2025-09-04 15:37:10,397 - INFO - 正在使用增强爬虫抓取: Russia's APT28 Targets Microsoft Outlook With 'Not...
+2025-09-04 15:37:10,398 - INFO - 正在抓取文章内容: https://www.darkreading.com/endpoint-security/apt28-outlook-notdoor-backdoor
+2025-09-04 15:37:12,021 - ERROR - 抓取文章内容失败 https://www.darkreading.com/endpoint-security/apt28-outlook-notdoor-backdoor: 403 Client Error: Forbidden for url: https://www.darkreading.com/endpoint-security/apt28-outlook-notdoor-backdoor
+2025-09-04 15:37:12,022 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/endpoint-security/apt28-outlook-notdoor-backdoor
+2025-09-04 15:37:12,138 - WARNING - 备用方法也失败 https://www.darkreading.com/endpoint-security/apt28-outlook-notdoor-backdoor: 403 Client Error: Forbidden for url: https://www.darkreading.com/endpoint-security/apt28-outlook-notdoor-backdoor
+2025-09-04 15:37:12,138 - INFO - 正在使用增强爬虫抓取: Cloudflare Holds Back the Tide on 11.5Tbps DDoS At...
+2025-09-04 15:37:12,139 - INFO - 正在抓取文章内容: https://www.darkreading.com/cyberattacks-data-breaches/cloudflare-ddos-attacks-new-heights
+2025-09-04 15:37:12,259 - ERROR - 抓取文章内容失败 https://www.darkreading.com/cyberattacks-data-breaches/cloudflare-ddos-attacks-new-heights: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/cloudflare-ddos-attacks-new-heights
+2025-09-04 15:37:12,259 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/cyberattacks-data-breaches/cloudflare-ddos-attacks-new-heights
+2025-09-04 15:37:12,370 - WARNING - 备用方法也失败 https://www.darkreading.com/cyberattacks-data-breaches/cloudflare-ddos-attacks-new-heights: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/cloudflare-ddos-attacks-new-heights
+2025-09-04 15:37:12,371 - INFO - 正在使用增强爬虫抓取: Amazon Stymies APT29 Credential Theft Campaign...
+2025-09-04 15:37:12,371 - INFO - 正在抓取文章内容: https://www.darkreading.com/cyberattacks-data-breaches/amazon-apt29-credential-theft-campaign
+2025-09-04 15:37:12,508 - ERROR - 抓取文章内容失败 https://www.darkreading.com/cyberattacks-data-breaches/amazon-apt29-credential-theft-campaign: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/amazon-apt29-credential-theft-campaign
+2025-09-04 15:37:12,508 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/cyberattacks-data-breaches/amazon-apt29-credential-theft-campaign
+2025-09-04 15:37:12,617 - WARNING - 备用方法也失败 https://www.darkreading.com/cyberattacks-data-breaches/amazon-apt29-credential-theft-campaign: 403 Client Error: Forbidden for url: https://www.darkreading.com/cyberattacks-data-breaches/amazon-apt29-credential-theft-campaign
+2025-09-04 15:37:12,618 - INFO - 从 Dark Reading 获取到 4 条安全新闻
+2025-09-04 15:37:14,623 - INFO - 正在抓取 Security Week (美国) 的RSS源...
+2025-09-04 15:37:14,857 - INFO - 从 Security Week 获取到 0 条安全新闻
+2025-09-04 15:37:16,862 - INFO - 正在抓取 Threatpost (美国) 的RSS源...
+2025-09-04 15:37:18,259 - INFO - 从 Threatpost 获取到 0 条安全新闻
+2025-09-04 15:37:20,264 - INFO - 正在抓取 SANS Internet Storm Center (美国) 的RSS源...
+2025-09-04 15:37:21,021 - INFO - 从 SANS Internet Storm Center 获取到 1 条安全新闻
+2025-09-04 15:37:23,027 - INFO - 正在抓取 CISA Alerts (美国) 的RSS源...
+2025-09-04 15:37:23,979 - INFO - 正在使用增强爬虫抓取: CISA Adds Two Known Exploited Vulnerabilities to C...
+2025-09-04 15:37:23,979 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/alerts/2025/09/03/cisa-adds-two-known-exploited-vulnerabilities-catalog
+2025-09-04 15:37:24,437 - INFO - 成功提取内容: CISA Adds Two Known Exploited Vulnerabilities to C... (1557字符)
+2025-09-04 15:37:24,437 - INFO - 成功提取文章内容: CISA Adds Two Known Exploited Vulnerabilities to C... (1557字符)
+2025-09-04 15:37:24,437 - INFO - 正在使用增强爬虫抓取: CISA, NSA, and Global Partners Release a Shared Vi...
+2025-09-04 15:37:24,437 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/alerts/2025/09/03/cisa-nsa-and-global-partners-release-shared-vision-software-bill-materials-sbom-guidance
+2025-09-04 15:37:32,905 - INFO - 成功提取内容: CISA, NSA, and Global Partners Release a Shared Vi... (289字符)
+2025-09-04 15:37:32,905 - INFO - 成功提取文章内容: CISA, NSA, and Global Partners Release a Shared Vi... (289字符)
+2025-09-04 15:37:32,905 - INFO - 正在使用增强爬虫抓取: Delta Electronics EIP Builder...
+2025-09-04 15:37:32,905 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-25-245-01
+2025-09-04 15:37:33,393 - INFO - 成功提取内容: Delta Electronics EIP Builder... (3003字符)
+2025-09-04 15:37:33,393 - INFO - 成功提取文章内容: Delta Electronics EIP Builder... (3003字符)
+2025-09-04 15:37:33,393 - INFO - 正在使用增强爬虫抓取: SunPower PVS6...
+2025-09-04 15:37:33,394 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-25-245-03
+2025-09-04 15:37:33,825 - INFO - 成功提取内容: SunPower PVS6... (3003字符)
+2025-09-04 15:37:33,825 - INFO - 成功提取文章内容: SunPower PVS6... (3003字符)
+2025-09-04 15:37:33,826 - INFO - 正在使用增强爬虫抓取: CISA Adds Two Known Exploited Vulnerabilities to C...
+2025-09-04 15:37:33,826 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/alerts/2025/09/02/cisa-adds-two-known-exploited-vulnerabilities-catalog
+2025-09-04 15:37:34,229 - INFO - 成功提取内容: CISA Adds Two Known Exploited Vulnerabilities to C... (1554字符)
+2025-09-04 15:37:34,229 - INFO - 成功提取文章内容: CISA Adds Two Known Exploited Vulnerabilities to C... (1554字符)
+2025-09-04 15:37:34,229 - INFO - 正在使用增强爬虫抓取: Fuji Electric FRENIC-Loader 4...
+2025-09-04 15:37:34,229 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-25-245-02
+2025-09-04 15:37:37,197 - INFO - 成功提取内容: Fuji Electric FRENIC-Loader 4... (3003字符)
+2025-09-04 15:37:37,197 - INFO - 成功提取文章内容: Fuji Electric FRENIC-Loader 4... (3003字符)
+2025-09-04 15:37:37,197 - INFO - 从 CISA Alerts 获取到 6 条安全新闻
+2025-09-04 15:37:39,203 - INFO - 正在抓取 US-CERT Alerts (美国) 的RSS源...
+2025-09-04 15:37:41,231 - INFO - 从 US-CERT Alerts 获取到 0 条安全新闻
+2025-09-04 15:37:43,236 - INFO - 正在抓取 NIST Cybersecurity (美国) 的RSS源...
+2025-09-04 15:37:44,135 - INFO - 从 NIST Cybersecurity 获取到 0 条安全新闻
+2025-09-04 15:37:46,137 - INFO - 正在抓取 ENISA (欧盟) 的RSS源...
+2025-09-04 15:37:48,735 - INFO - 从 ENISA 获取到 0 条安全新闻
+2025-09-04 15:37:50,739 - INFO - 正在抓取 NCSC UK (英国) 的RSS源...
+2025-09-04 15:37:53,749 - INFO - 正在使用增强爬虫抓取: From bugs to bypasses: adapting vulnerability disc...
+2025-09-04 15:37:53,749 - INFO - 正在抓取文章内容: https://www.ncsc.gov.uk/blog-post/from-bugs-to-bypasses-adapting-vulnerability-disclosure-for-ai-safeguards
+2025-09-04 15:37:55,161 - INFO - 成功提取内容: NCSC... (0字符)
+2025-09-04 15:37:55,162 - INFO - 成功提取文章内容: NCSC... (0字符)
+2025-09-04 15:37:55,163 - INFO - 从 NCSC UK 获取到 1 条安全新闻
+2025-09-04 15:37:57,169 - INFO - 正在抓取 ACSC Australia (澳大利亚) 的RSS源...
+2025-09-04 15:38:45,475 - INFO - 从 ACSC Australia 获取到 0 条安全新闻
+2025-09-04 15:38:47,480 - INFO - 正在抓取 Bleeping Computer (国际) 的RSS源...
+2025-09-04 15:38:47,847 - INFO - 正在使用增强爬虫抓取: SaaS giant Workiva discloses data breach after Sal...
+2025-09-04 15:38:47,847 - INFO - 正在抓取文章内容: https://www.bleepingcomputer.com/news/security/saas-giant-workiva-discloses-data-breach-after-salesforce-attack/
+2025-09-04 15:38:49,396 - INFO - 成功提取内容: SaaS giant Workiva discloses data breach after Sal... (3003字符)
+2025-09-04 15:38:49,396 - INFO - 成功提取文章内容: SaaS giant Workiva discloses data breach after Sal... (3003字符)
+2025-09-04 15:38:49,396 - INFO - 正在使用增强爬虫抓取: They know where you are: Cybersecurity and the sha...
+2025-09-04 15:38:49,396 - INFO - 正在抓取文章内容: https://www.bleepingcomputer.com/news/security/they-know-where-you-are-cybersecurity-and-the-shadow-world-of-geolocation/
+2025-09-04 15:38:50,886 - INFO - 成功提取内容: They know where you are: Cybersecurity and the sha... (3003字符)
+2025-09-04 15:38:50,886 - INFO - 成功提取文章内容: They know where you are: Cybersecurity and the sha... (3003字符)
+2025-09-04 15:38:50,886 - INFO - 正在使用增强爬虫抓取: Cloudflare blocks largest recorded DDoS attack pea...
+2025-09-04 15:38:50,887 - INFO - 正在抓取文章内容: https://www.bleepingcomputer.com/news/security/cloudflare-blocks-record-breaking-115-tbps-ddos-attack/
+2025-09-04 15:38:52,508 - INFO - 成功提取内容: Cloudflare blocks largest recorded DDoS attack pea... (3003字符)
+2025-09-04 15:38:52,508 - INFO - 成功提取文章内容: Cloudflare blocks largest recorded DDoS attack pea... (3003字符)
+2025-09-04 15:38:52,509 - INFO - 从 Bleeping Computer 获取到 3 条安全新闻
+2025-09-04 15:38:54,514 - INFO - 正在抓取 Ars Technica Security (美国) 的RSS源...
+2025-09-04 15:38:55,552 - INFO - 从 Ars Technica Security 获取到 0 条安全新闻
+2025-09-04 15:38:57,557 - INFO - 正在抓取 ZDNet Security (国际) 的RSS源...
+2025-09-04 15:38:58,551 - INFO - 从 ZDNet Security 获取到 0 条安全新闻
+2025-09-04 15:39:00,556 - INFO - 正在抓取 CSO Online (美国) 的RSS源...
+2025-09-04 15:39:01,417 - INFO - 从 CSO Online 获取到 0 条安全新闻
+2025-09-04 15:39:03,420 - INFO - 正在抓取 InfoSecurity Magazine (英国) 的RSS源...
+2025-09-04 15:39:04,548 - INFO - 正在使用增强爬虫抓取: Russian APT28 Expands Arsenal with 'NotDoor' Outlo...
+2025-09-04 15:39:04,548 - INFO - 正在抓取文章内容: https://www.infosecurity-magazine.com/news/russia-apt28-notdoor-outlook/
+2025-09-04 15:39:08,507 - INFO - 成功提取内容: Russian APT28 Expands Arsenal with 'NotDoor' Outlo... (3003字符)
+2025-09-04 15:39:08,507 - INFO - 成功提取文章内容: Russian APT28 Expands Arsenal with 'NotDoor' Outlo... (3003字符)
+2025-09-04 15:39:08,508 - INFO - 正在使用增强爬虫抓取: Zscaler Customer Info Taken in Salesloft Breach...
+2025-09-04 15:39:08,508 - INFO - 正在抓取文章内容: https://www.infosecurity-magazine.com/news/zscaler-customer-info-taken/
+2025-09-04 15:39:09,775 - INFO - 成功提取内容: Zscaler Customer Info Taken in Salesloft Breach... (2376字符)
+2025-09-04 15:39:09,775 - INFO - 成功提取文章内容: Zscaler Customer Info Taken in Salesloft Breach... (2376字符)
+2025-09-04 15:39:09,775 - INFO - 从 InfoSecurity Magazine 获取到 2 条安全新闻
+2025-09-04 15:39:11,780 - INFO - 正在抓取 Security Affairs (意大利) 的RSS源...
+2025-09-04 15:39:15,869 - INFO - 从 Security Affairs 获取到 4 条安全新闻
+2025-09-04 15:39:17,873 - INFO - 正在抓取 Recorded Future (美国) 的RSS源...
+2025-09-04 15:39:18,032 - INFO - 从 Recorded Future 获取到 0 条安全新闻
+2025-09-04 15:39:20,037 - INFO - 正在抓取 FireEye Threat Research (美国) 的RSS源...
+2025-09-04 15:39:20,321 - INFO - 从 FireEye Threat Research 获取到 0 条安全新闻
+2025-09-04 15:39:22,322 - INFO - 正在抓取 Kaspersky Securelist (俄罗斯) 的RSS源...
+2025-09-04 15:39:24,919 - INFO - 从 Kaspersky Securelist 获取到 0 条安全新闻
+2025-09-04 15:39:26,926 - INFO - 正在抓取 Trend Micro Security Intelligence (日本) 的RSS源...
+2025-09-04 15:39:30,141 - INFO - 从 Trend Micro Security Intelligence 获取到 0 条安全新闻
+2025-09-04 15:39:32,143 - INFO - 正在抓取 Microsoft Security Blog (美国) 的RSS源...
+2025-09-04 15:39:33,508 - INFO - 从 Microsoft Security Blog 获取到 0 条安全新闻
+2025-09-04 15:39:35,514 - INFO - 正在抓取 Google Security Blog (美国) 的RSS源...
+2025-09-04 15:39:39,586 - INFO - 从 Google Security Blog 获取到 0 条安全新闻
+2025-09-04 15:39:41,591 - INFO - 正在抓取 Apple Security Updates (美国) 的RSS源...
+2025-09-04 15:39:42,130 - INFO - 从 Apple Security Updates 获取到 0 条安全新闻
+2025-09-04 15:39:44,136 - INFO - 总共获取到 68 条不重复的安全新闻
+2025-09-04 15:39:44,136 - INFO - 正在使用GLM生成新闻分析...
+2025-09-04 15:39:44,136 - INFO - 正在使用GLM精选全球重要安全新闻...
+2025-09-04 15:39:44,142 - INFO - GLM API调用尝试 1/4
+2025-09-04 15:40:02,746 - INFO - GLM API调用成功
+2025-09-04 15:40:02,746 - WARNING - JSON解析失败，尝试提取JSON部分
+2025-09-04 15:40:02,747 - INFO - 成功精选出 10 篇全球安全新闻
+2025-09-04 15:40:02,747 - INFO - GLM API调用尝试 1/4
+2025-09-04 15:40:07,684 - ERROR - GLM API HTTP错误: 400 - {"contentFilter":[{"level":1,"role":"assistant"}],"error":{"code":"1301","message":"系统检测到输入或生成内容可能包含不安全或敏感内容，请您避免输入易产生敏感内容的提示语，感谢您的配合。"}}
+2025-09-04 15:40:07,684 - INFO - GLM API调用尝试 2/4
+2025-09-04 15:40:14,691 - INFO - GLM API调用成功
+2025-09-04 15:40:14,691 - INFO - GLM API调用尝试 1/4
+2025-09-04 15:40:41,592 - INFO - GLM API调用成功
+2025-09-04 15:40:41,593 - WARNING - JSON解析失败，尝试提取JSON部分
+2025-09-04 15:40:41,593 - INFO - 成功使用GLM进行四维度新闻分类和要素总结
+2025-09-04 15:40:41,597 - INFO - ✅ 成功加载移动端样式保护模块
+2025-09-04 15:40:41,598 - INFO - ✅ 成功生成AI智能新闻快报: news20250903.html
