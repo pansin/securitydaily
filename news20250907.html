@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海之安网络安全日报 - 2025年09月08日</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Microsoft YaHei', 'SimHei', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+    }
+    
+    .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    
+    .content {
+      padding: 40px;
+    }
+    
+    .summary-section {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .summary-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .summary-title::before {
+      content: '📊';
+      font-size: 24px;
+    }
+    
+    .summary-content {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 16px;
+      white-space: pre-line;
+    }
+    
+    .category-section {
+      margin-bottom: 40px;
+      background: rgba(30, 41, 59, 0.4);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      overflow: hidden;
+    }
+    
+    .category-header {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .category-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .category-news {
+      padding: 24px;
+    }
+    
+    .news-item {
+      background: rgba(51, 65, 85, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .news-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+      border-radius: 2px 0 0 2px;
+    }
+    
+    .news-item:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    }
+    
+    .news-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    
+    .news-analysis {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    
+    .footer {
+      background: rgba(15, 23, 42, 0.8);
+      border-top: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 24px 40px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+    
+    .stats-section {
+      margin-bottom: 32px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .stat-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    
+    .stat-detail {
+      font-size: 12px;
+      color: #64748b;
+    }
+    
+    .source-list {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .source-list h3 {
+      color: #3b82f6;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .source-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .source-tag {
+      background: rgba(59, 130, 246, 0.1);
+      color: #93c5fd;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    
+    .enhancement-info {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(34, 197, 94, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    
+    .enhancement-info h3 {
+      color: #22c55e;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .enhancement-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .enhancement-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+    
+    .enhancement-item:last-child {
+      border-bottom: none;
+    }
+    
+    .enhancement-label {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .enhancement-value {
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .content-quality-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    
+    .quality-enhanced {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .quality-rss {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .quality-failed {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .news-header {
+      margin-bottom: 12px;
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+    
+    .news-source {
+      color: #94a3b8;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .severity-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .severity-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .severity-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .severity-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .severity-info {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .news-summary {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    
+    .key-points {
+      margin: 12px 0;
+      padding-left: 20px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    .key-points li {
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    
+    .region-badge {
+      background: rgba(34, 197, 94, 0.1);
+      color: #86efac;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin: 0 4px;
+    }
+    
+    .impact-badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+    }
+    
+    .impact-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    
+    .impact-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    
+    .impact-low {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    
+    .icon-risk::before { content: '⚠️'; }
+    .icon-event::before { content: '🚨'; }
+    .icon-opinion::before { content: '📢'; }
+    .icon-trend::before { content: '📈'; }
+    .icon-focus::before { content: '🎯'; }
+    
+    /* 移动端适配样式 - 重要：请勿删除或覆盖 */
+    @media (max-width: 768px) {
+      .container {
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
+      }
+      
+      .header {
+        padding: 20px 15px;
+        border-radius: 0;
+      }
+      
+      .logo {
+        width: 150px;
+        margin-bottom: 15px;
+      }
+      
+      .title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      
+      .subtitle {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      
+      .content {
+        padding: 20px 15px;
+      }
+      
+      .summary-section {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+      
+      .summary-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      
+      .summary-content {
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: pre-line;
+      }
+      
+      .stats-section {
+        margin-bottom: 20px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      
+      .stat-card {
+        padding: 15px;
+        border-radius: 8px;
+      }
+      
+      .stat-number {
+        font-size: 24px;
+        margin-bottom: 6px;
+      }
+      
+      .stat-label {
+        font-size: 12px;
+      }
+      
+      .stat-detail {
+        font-size: 10px;
+      }
+      
+      .enhancement-info {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+      
+      .enhancement-info h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      .enhancement-item {
+        padding: 6px 0;
+      }
+      
+      .enhancement-label,
+      .enhancement-value {
+        font-size: 12px;
+      }
+      
+      .source-list {
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+      
+      .source-list h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      
+      .source-tag {
+        padding: 4px 8px;
+        font-size: 10px;
+        margin: 2px;
+      }
+      
+      .category-section {
+        margin-bottom: 25px;
+        border-radius: 8px;
+      }
+      
+      .category-header {
+        padding: 15px 20px;
+      }
+      
+      .category-title {
+        font-size: 18px;
+      }
+      
+      .category-news {
+        padding: 15px;
+      }
+      
+      .news-item {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }
+      
+      .news-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      
+      .news-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 6px;
+      }
+      
+      .news-source,
+      .region-badge,
+      .impact-badge,
+      .content-quality-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+        margin: 2px 4px 2px 0;
+      }
+      
+      .news-summary {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+      
+      .key-points {
+        margin: 10px 0;
+        padding-left: 15px;
+        font-size: 12px;
+      }
+      
+      .key-points li {
+        margin-bottom: 3px;
+        line-height: 1.3;
+      }
+      
+      .footer {
+        padding: 15px;
+        border-radius: 0;
+        font-size: 12px;
+      }
+    }
+    
+    /* 超小屏幕适配 (iPhone SE等) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 5px;
+      }
+      
+      .header {
+        padding: 15px 10px;
+      }
+      
+      .logo {
+        width: 120px;
+      }
+      
+      .title {
+        font-size: 20px;
+      }
+      
+      .subtitle {
+        font-size: 12px;
+      }
+      
+      .content {
+        padding: 15px 10px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      
+      .stat-card {
+        padding: 12px;
+      }
+      
+      .stat-number {
+        font-size: 20px;
+      }
+      
+      .category-title {
+        font-size: 16px;
+      }
+      
+      .news-title {
+        font-size: 14px;
+      }
+      
+      .news-summary {
+        font-size: 12px;
+      }
+    }
+    
+    /* 横屏适配 */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .category-section {
+        margin-bottom: 20px;
+      }
+      
+      .news-item {
+        padding: 12px;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle cx="40" cy="60" r="25" fill="url(#logoGradient)" opacity="0.8"/>
+        <circle cx="25" cy="35" r="15" fill="url(#logoGradient)" opacity="0.9"/>
+        <circle cx="55" cy="35" r="12" fill="url(#logoGradient)" opacity="0.7"/>
+        <circle cx="35" cy="75" r="10" fill="url(#logoGradient)" opacity="0.6"/>
+        <circle cx="60" cy="75" r="8" fill="url(#logoGradient)" opacity="0.8"/>
+        <text x="90" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3b82f6">ocean security</text>
+        <text x="90" y="70" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">海之安，数字安全专家</text>
+      </svg>
+      <h1 class="title">海之安网络安全日报</h1>
+      <div class="subtitle">2025年09月08日 · AI智能生成</div>
+    </div>
+    
+    <div class="content">
+      <div class="summary-section">
+        <h2 class="summary-title">今日摘要</h2>
+        <div class="summary-content">今日全球网络安全态势摘要：
+
+1. **大规模网络钓鱼活动**：Wiz研究团队揭露，利用亚马逊云服务漏洞，每日产生5万封钓鱼邮件，云服务漏洞成为网络钓鱼活动的新助力。
+2. **高危JSON解析漏洞**：轻量级C语言JSON解析库cJSON存在CVSS评分9.8的高危漏洞（CVE-2025-57052），可能导致内存越界访问、段错误等攻击。
+3. **GitHub凭证泄露**：GitHub用户"Grommash9"发现，GhostAction攻击窃取3325个GitHub项目机密凭证。
+4. **Sitecore零日漏洞**：黑客利用Sitecore零日漏洞部署WeepSteel恶意软件，该漏洞编号为CVE-2025-53690，为ViewState反序列化漏洞。
+5. **SAP S/4HANA漏洞**：SAP S/4HANA的关键漏洞CVE-2025-42957正在被攻击，该漏洞允许攻击者执行命令注入攻击。
+
+此外，CISA要求联邦民用机构更新Sitecore实例以修补漏洞，Azure即将启动第二阶段强制多因素认证，新型APT组织“嘈杂熊”针对哈萨克斯坦能源部门发起网络间谍活动。全球网络安全形势严峻，需加强防护。</div>
+      </div>
+
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">精选新闻</div>
+            <div class="stat-detail">从15条中精选</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">增强内容</div>
+            <div class="stat-detail">深度抓取成功</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6,724</div>
+            <div class="stat-label">内容字符</div>
+            <div class="stat-detail">丰富可读</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">分析维度</div>
+            <div class="stat-detail">风险·事件·舆情·趋势</div>
+          </div>
+        </div>
+        <div class="enhancement-info">
+          <h3>🚀 内容增强效果</h3>
+          <div class="enhancement-stats">
+            <div class="enhancement-item">
+              <span class="enhancement-label">深度抓取成功率:</span>
+              <span class="enhancement-value">30.0%</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">平均内容长度:</span>
+              <span class="enhancement-value">672字符</span>
+            </div>
+            <div class="enhancement-item">
+              <span class="enhancement-label">内容质量:</span>
+              <span class="enhancement-value">良好</span>
+            </div>
+          </div>
+        </div>
+        <div class="source-list">
+          <h3>📰 全球新闻来源</h3>
+          <div class="source-tags">
+<span class="source-tag">安全客</span><span class="source-tag">Microsoft Security Blog</span><span class="source-tag">The Hacker News</span><span class="source-tag">Dark Reading</span><span class="source-tag">FreeBuf</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-header">
+          <h2 class="category-title icon-risk">安全风险</h2>
+        </div>
+        <div class="category-news">
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">每日5万封钓鱼邮件：云服务漏洞如何助长大规模网络钓鱼活动<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>Wiz研究团队近期披露，2025年5月一起大规模网络钓鱼活动利用了亚马逊简单邮件服务（Amazon Simple Email Service，简称SES）的漏洞。攻击者通过SES发送了约5万封钓鱼邮件，诱骗用户点击恶意链接。该漏洞允许攻击者绕过SES的安全限制，发送看似来自合法来源的邮件。攻击者利用这一漏洞，发送了包含恶意软件的链接，导致大量用户受害。该事件突显了云服务漏洞可能引发的严重网络安全风险。
+            </div>
+            <ul class='key-points'><li>亚马逊SES漏洞</li><li>大规模网络钓鱼活动</li><li>5万封钓鱼邮件</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">cJSON库存在CVSS 9.8高危JSON解析漏洞（含PoC）<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>安全研究员Salah Chafai披露了轻量级C语言JSON解析库cJSON的一个高危漏洞（CVE-2025-57052，CVSS评分9.8）。攻击者可构造畸形JSON指针绕过数组边界检查，导致内存越界访问、段错误、权限提升或拒绝服务攻击。该漏洞影响了cJSON版本1.8.0至1.8.6。Chafai提供了漏洞利用的PoC，提醒用户尽快升级到安全版本。
+            </div>
+            <ul class='key-points'><li>cJSON库漏洞</li><li>CVSS 9.8</li><li>内存越界</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">GhostAction攻击窃取GitHub项目中3325个机密凭证<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">FreeBuf</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>2025年9月2日，GitHub用户Grommash9向FastUUID项目提交了一个包含3325个GitHub项目机密凭证的文件。这些凭证可能被用于未经授权的访问和操作。这一事件表明，开发者必须加强代码审计和漏洞扫描，以防止敏感信息泄露。
+            </div>
+            <ul class='key-points'><li>GitHub项目</li><li>机密凭证泄露</li><li>GhostAction攻击</li></ul>
+          </div>
+          <div class="news-item">
+            <div class="news-header">
+              <div class="news-title">黑客利用Sitecore零日漏洞部署后门程序<span class="content-quality-badge quality-failed">简要内容</span></div>
+              <div class="news-meta">
+                <span class="news-source">安全客</span>
+                <span class="region-badge">中国</span>
+                <span class="impact-badge impact-high">影响: 高</span>
+              </div>
+            </div>
+            <div class="news-summary">
+              <strong>内容要素：</strong>Mandiant研究人员发现，攻击者利用Sitecore CMS的零日漏洞（CVE-2025-53690）部署WeepSteel侦察恶意软件。该漏洞允许攻击者以IIS NETWORK SERVICE账户权限执行远程代码执行。攻击者通过构造有效的恶意“ViewState”负载，诱骗服务器进行反序列化并执行，从而实现攻击。Mandiant建议受影响的客户尽快更新至安全版本。
+            </div>
+            <ul class='key-points'><li>Sitecore漏洞</li><li>CVE-2025-53690</li><li>远程代码执行</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>© 2025 海之安（中国）科技有限公司 | 基于智谱GLM AI生成</p>
+      <p>共分析 10 条安全新闻 | 官网：<a href="https://www.oceansecurity.cn" style="color: #3b82f6;">www.oceansecurity.cn</a></p>
+    </div>
+  </div>
+</body>
+</html>
