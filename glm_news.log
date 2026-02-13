@@ -4869,3 +4869,257 @@
 2025-09-15 14:13:30,275 - INFO - 成功使用GLM进行四维度新闻分类和要素总结
 2025-09-15 14:13:30,280 - INFO - ✅ 成功加载移动端样式保护模块
 2025-09-15 14:13:30,282 - INFO - ✅ 成功生成AI智能新闻快报: news20250914.html
+2026-02-13 21:55:23,082 - INFO - ✅ 成功加载新闻源配置: 30 个数据源
+2026-02-13 21:55:23,083 - INFO - 📰 获取到 29 个启用的新闻源
+2026-02-13 21:55:23,083 - INFO - ✅ 从配置文件加载了 29 个新闻源
+2026-02-13 21:55:23,083 - INFO - 开始抓取 2026-02-12 的网络安全新闻...
+2026-02-13 21:55:23,083 - INFO - 正在抓取 安全客 (中国) 的RSS源...
+2026-02-13 21:55:23,772 - INFO - 从 安全客 获取到 0 条安全新闻
+2026-02-13 21:55:25,777 - INFO - 正在抓取 FreeBuf (中国) 的RSS源...
+2026-02-13 21:55:26,007 - INFO - 从 FreeBuf 获取到 0 条安全新闻
+2026-02-13 21:55:28,008 - INFO - 正在抓取 嘶吼 (中国) 的RSS源...
+2026-02-13 21:55:31,247 - INFO - 正在使用增强爬虫抓取: 刷到的视频全是AI造的？Seedance2.0引爆争议，美亚鉴真一键辨真假...
+2026-02-13 21:55:31,252 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/6Mgz
+2026-02-13 21:55:32,637 - INFO - 成功提取内容: 刷到的视频全是AI造的？Seedance2.0引爆争议，美亚鉴真一键辨真假... (1520字符)
+2026-02-13 21:55:32,637 - INFO - 成功提取文章内容: 刷到的视频全是AI造的？Seedance2.0引爆争议，美亚鉴真一键辨真假... (1520字符)
+2026-02-13 21:55:32,638 - INFO - 正在使用增强爬虫抓取: 是伙伴，也是挑战：具身智能在医疗领域落地无法回避的安全必修课...
+2026-02-13 21:55:32,638 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/1MX0
+2026-02-13 21:55:34,007 - INFO - 成功提取内容: 是伙伴，也是挑战：具身智能在医疗领域落地无法回避的安全必修课... (2406字符)
+2026-02-13 21:55:34,007 - INFO - 成功提取文章内容: 是伙伴，也是挑战：具身智能在医疗领域落地无法回避的安全必修课... (2406字符)
+2026-02-13 21:55:34,008 - INFO - 正在使用增强爬虫抓取: 《中华人民共和国网络安全法》修改后有哪些变化...
+2026-02-13 21:55:34,008 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/421g
+2026-02-13 21:55:35,092 - INFO - 成功提取内容: 《中华人民共和国网络安全法》修改后有哪些变化... (596字符)
+2026-02-13 21:55:35,092 - INFO - 成功提取文章内容: 《中华人民共和国网络安全法》修改后有哪些变化... (596字符)
+2026-02-13 21:55:35,093 - INFO - 正在使用增强爬虫抓取: 从公安部典型案例，看无人机司法鉴定如何破局“黑飞”乱象...
+2026-02-13 21:55:35,093 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/3349
+2026-02-13 21:55:38,007 - INFO - 成功提取内容: 从公安部典型案例，看无人机司法鉴定如何破局“黑飞”乱象... (2390字符)
+2026-02-13 21:55:38,007 - INFO - 成功提取文章内容: 从公安部典型案例，看无人机司法鉴定如何破局“黑飞”乱象... (2390字符)
+2026-02-13 21:55:38,008 - INFO - 正在使用增强爬虫抓取: 如何在合规高压与攻击频发中保障赛事直播业务无间断？—— 全媒体传播APP“零泄露”安全实践揭秘...
+2026-02-13 21:55:38,008 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/Zg22
+2026-02-13 21:55:40,546 - INFO - 成功提取内容: 如何在合规高压与攻击频发中保障赛事直播业务无间断？—— 全媒体传播APP“零泄露”安全实践揭秘... (2248字符)
+2026-02-13 21:55:40,546 - INFO - 成功提取文章内容: 如何在合规高压与攻击频发中保障赛事直播业务无间断？—— 全媒体传播APP“零泄露”安全实践揭秘... (2248字符)
+2026-02-13 21:55:40,547 - INFO - 正在使用增强爬虫抓取: 当黑产发动“闪电战”：从快手事件看全渠道风险监测如何实现“防患于未然”？...
+2026-02-13 21:55:40,547 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/Eyzm
+2026-02-13 21:55:41,944 - INFO - 成功提取内容: 当黑产发动“闪电战”：从快手事件看全渠道风险监测如何实现“防患于未然”？... (1933字符)
+2026-02-13 21:55:41,944 - INFO - 成功提取文章内容: 当黑产发动“闪电战”：从快手事件看全渠道风险监测如何实现“防患于未然”？... (1933字符)
+2026-02-13 21:55:41,945 - INFO - 正在使用增强爬虫抓取: 专治“黑飞”！美亚柏科上新硬核无人机取证系统...
+2026-02-13 21:55:41,945 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/2X3W
+2026-02-13 21:55:43,297 - INFO - 成功提取内容: 专治“黑飞”！美亚柏科上新硬核无人机取证系统... (1031字符)
+2026-02-13 21:55:43,297 - INFO - 成功提取文章内容: 专治“黑飞”！美亚柏科上新硬核无人机取证系统... (1031字符)
+2026-02-13 21:55:43,298 - INFO - 正在使用增强爬虫抓取: AI真的能取代人类吗？提升效率利用AI辅助写代码，真的靠谱吗？...
+2026-02-13 21:55:43,298 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/1M2G
+2026-02-13 21:55:44,477 - INFO - 成功提取内容: AI真的能取代人类吗？提升效率利用AI辅助写代码，真的靠谱吗？... (3003字符)
+2026-02-13 21:55:44,477 - INFO - 成功提取文章内容: AI真的能取代人类吗？提升效率利用AI辅助写代码，真的靠谱吗？... (3003字符)
+2026-02-13 21:55:44,477 - INFO - 正在使用增强爬虫抓取: 黑客利用 React Native Metro 高危漏洞入侵开发者系统...
+2026-02-13 21:55:44,477 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/DxG5
+2026-02-13 21:55:45,621 - INFO - 成功提取内容: 黑客利用 React Native Metro 高危漏洞入侵开发者系统... (1855字符)
+2026-02-13 21:55:45,621 - INFO - 成功提取文章内容: 黑客利用 React Native Metro 高危漏洞入侵开发者系统... (1855字符)
+2026-02-13 21:55:45,621 - INFO - 正在使用增强爬虫抓取: 嘶吼快讯|网安厂商动态汇（第12期）...
+2026-02-13 21:55:45,621 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/Zg38
+2026-02-13 21:55:47,987 - INFO - 成功提取内容: 嘶吼快讯|网安厂商动态汇（第12期）... (1885字符)
+2026-02-13 21:55:47,987 - INFO - 成功提取文章内容: 嘶吼快讯|网安厂商动态汇（第12期）... (1885字符)
+2026-02-13 21:55:47,987 - INFO - 正在使用增强爬虫抓取: 2026年网络安全趋势预测：合规先行、攻防升级，AI时代格局彻底重塑...
+2026-02-13 21:55:47,987 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/XP1o
+2026-02-13 21:55:49,944 - INFO - 成功提取内容: 2026年网络安全趋势预测：合规先行、攻防升级，AI时代格局彻底重塑... (3003字符)
+2026-02-13 21:55:49,944 - INFO - 成功提取文章内容: 2026年网络安全趋势预测：合规先行、攻防升级，AI时代格局彻底重塑... (3003字符)
+2026-02-13 21:55:49,944 - INFO - 正在使用增强爬虫抓取: 双端应用加固+隐私合规检测：梆梆安全护航车企智能网联业务稳健运行...
+2026-02-13 21:55:49,945 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/Arv7
+2026-02-13 21:55:51,105 - INFO - 成功提取内容: 双端应用加固+隐私合规检测：梆梆安全护航车企智能网联业务稳健运行... (2137字符)
+2026-02-13 21:55:51,106 - INFO - 成功提取文章内容: 双端应用加固+隐私合规检测：梆梆安全护航车企智能网联业务稳健运行... (2137字符)
+2026-02-13 21:55:51,106 - INFO - 正在使用增强爬虫抓取: 春节前3类高发钓鱼邮件！管理员这样防，年终安全不“掉链子”...
+2026-02-13 21:55:51,106 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/QXYZ
+2026-02-13 21:55:52,501 - INFO - 成功提取内容: 春节前3类高发钓鱼邮件！管理员这样防，年终安全不“掉链子”... (1864字符)
+2026-02-13 21:55:52,501 - INFO - 成功提取文章内容: 春节前3类高发钓鱼邮件！管理员这样防，年终安全不“掉链子”... (1864字符)
+2026-02-13 21:55:52,502 - INFO - 正在使用增强爬虫抓取: 机器人变身“工友”：具身智能落地工业制造背后的技术与安全攻防思考...
+2026-02-13 21:55:52,502 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/DxyA
+2026-02-13 21:55:53,684 - INFO - 成功提取内容: 机器人变身“工友”：具身智能落地工业制造背后的技术与安全攻防思考... (3003字符)
+2026-02-13 21:55:53,684 - INFO - 成功提取文章内容: 机器人变身“工友”：具身智能落地工业制造背后的技术与安全攻防思考... (3003字符)
+2026-02-13 21:55:53,684 - INFO - 正在使用增强爬虫抓取: 解读网络安全法新规：安全合规、移动生态与AI治理三重挑战之下，企业如何构建“内生安全”...
+2026-02-13 21:55:53,684 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/33Z4
+2026-02-13 21:55:55,118 - INFO - 成功提取内容: 解读网络安全法新规：安全合规、移动生态与AI治理三重挑战之下，企业如何构建“内生安全”... (3003字符)
+2026-02-13 21:55:55,118 - INFO - 成功提取文章内容: 解读网络安全法新规：安全合规、移动生态与AI治理三重挑战之下，企业如何构建“内生安全”... (3003字符)
+2026-02-13 21:55:55,119 - INFO - 正在使用增强爬虫抓取: 2025年全球加密货币网络犯罪激增，黑客与勒索攻击事件持续高发...
+2026-02-13 21:55:55,119 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/EyJ4
+2026-02-13 21:55:56,250 - INFO - 成功提取内容: 2025年全球加密货币网络犯罪激增，黑客与勒索攻击事件持续高发... (1586字符)
+2026-02-13 21:55:56,251 - INFO - 成功提取文章内容: 2025年全球加密货币网络犯罪激增，黑客与勒索攻击事件持续高发... (1586字符)
+2026-02-13 21:55:56,252 - INFO - 正在使用增强爬虫抓取: 快快网络入选福州市网络与信息安全信息通报中心2026年度网络安全技术支撑单位...
+2026-02-13 21:55:56,252 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/8gG2
+2026-02-13 21:55:58,884 - INFO - 成功提取内容: 快快网络入选福州市网络与信息安全信息通报中心2026年度网络安全技术支撑单位... (656字符)
+2026-02-13 21:55:58,884 - INFO - 成功提取文章内容: 快快网络入选福州市网络与信息安全信息通报中心2026年度网络安全技术支撑单位... (656字符)
+2026-02-13 21:55:58,885 - INFO - 正在使用增强爬虫抓取: 顶级安全实验室成立 | 快快网络携手中科大、江苏移动、舜时云联合打造AI免疫防护体系...
+2026-02-13 21:55:58,885 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/RXRY
+2026-02-13 21:56:00,251 - INFO - 成功提取内容: 顶级安全实验室成立 | 快快网络携手中科大、江苏移动、舜时云联合打造AI免疫防护体系... (2289字符)
+2026-02-13 21:56:00,251 - INFO - 成功提取文章内容: 顶级安全实验室成立 | 快快网络携手中科大、江苏移动、舜时云联合打造AI免疫防护体系... (2289字符)
+2026-02-13 21:56:00,251 - INFO - 正在使用增强爬虫抓取: 嘶吼快讯|网安厂商动态汇（第11期）...
+2026-02-13 21:56:00,252 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/PG02
+2026-02-13 21:56:01,576 - INFO - 成功提取内容: 嘶吼快讯|网安厂商动态汇（第11期）... (1895字符)
+2026-02-13 21:56:01,576 - INFO - 成功提取文章内容: 嘶吼快讯|网安厂商动态汇（第11期）... (1895字符)
+2026-02-13 21:56:01,577 - INFO - 正在使用增强爬虫抓取: 黑客团伙滥用Hugging Face平台传播数千款安卓恶意软件变种...
+2026-02-13 21:56:01,577 - INFO - 正在抓取文章内容: https://www.4hou.com/posts/wxXz
+2026-02-13 21:56:02,692 - INFO - 成功提取内容: 黑客团伙滥用Hugging Face平台传播数千款安卓恶意软件变种... (1773字符)
+2026-02-13 21:56:02,692 - INFO - 成功提取文章内容: 黑客团伙滥用Hugging Face平台传播数千款安卓恶意软件变种... (1773字符)
+2026-02-13 21:56:02,693 - INFO - 从 嘶吼 获取到 20 条安全新闻
+2026-02-13 21:56:04,698 - INFO - 正在抓取 Krebs on Security (美国) 的RSS源...
+2026-02-13 21:56:08,233 - INFO - 从 Krebs on Security 获取到 0 条安全新闻
+2026-02-13 21:56:10,238 - INFO - 正在抓取 Schneier on Security (美国) 的RSS源...
+2026-02-13 21:56:14,904 - INFO - 从 Schneier on Security 获取到 1 条安全新闻
+2026-02-13 21:56:16,909 - INFO - 正在抓取 The Hacker News (国际) 的RSS源...
+2026-02-13 21:56:31,924 - ERROR - 抓取 The Hacker News 失败: HTTPSConnectionPool(host='feeds.feedburner.com', port=443): Max retries exceeded with url: /TheHackersNews (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x101d8c980>, 'Connection to feeds.feedburner.com timed out. (connect timeout=15)'))
+2026-02-13 21:56:31,925 - INFO - 正在抓取 Dark Reading (美国) 的RSS源...
+2026-02-13 21:56:33,304 - INFO - 正在使用增强爬虫抓取: Ivanti EPMM Zero-Day Bugs Spark Exploit Frenzy — A...
+2026-02-13 21:56:33,304 - INFO - 正在抓取文章内容: https://www.darkreading.com/endpoint-security/ivanti-epmm-zero-day-bugs-exploit
+2026-02-13 21:56:33,983 - ERROR - 抓取文章内容失败 https://www.darkreading.com/endpoint-security/ivanti-epmm-zero-day-bugs-exploit: 403 Client Error: Forbidden for url: https://www.darkreading.com/endpoint-security/ivanti-epmm-zero-day-bugs-exploit
+2026-02-13 21:56:33,983 - WARNING - 增强爬虫提取失败，使用备用方法: https://www.darkreading.com/endpoint-security/ivanti-epmm-zero-day-bugs-exploit
+2026-02-13 21:56:35,895 - WARNING - 备用方法也失败 https://www.darkreading.com/endpoint-security/ivanti-epmm-zero-day-bugs-exploit: 403 Client Error: Forbidden for url: https://www.darkreading.com/endpoint-security/ivanti-epmm-zero-day-bugs-exploit
+2026-02-13 21:56:35,900 - INFO - 从 Dark Reading 获取到 1 条安全新闻
+2026-02-13 21:56:37,902 - INFO - 正在抓取 Security Week (美国) 的RSS源...
+2026-02-13 21:56:39,376 - INFO - 从 Security Week 获取到 0 条安全新闻
+2026-02-13 21:56:41,378 - INFO - 正在抓取 Threatpost (美国) 的RSS源...
+2026-02-13 21:56:42,070 - INFO - 从 Threatpost 获取到 0 条安全新闻
+2026-02-13 21:56:44,071 - INFO - 正在抓取 SANS Internet Storm Center (美国) 的RSS源...
+2026-02-13 21:56:45,788 - INFO - 从 SANS Internet Storm Center 获取到 1 条安全新闻
+2026-02-13 21:56:47,793 - INFO - 正在抓取 CISA Alerts (美国) 的RSS源...
+2026-02-13 21:56:49,076 - INFO - 正在使用增强爬虫抓取: Siemens SINEC NMS...
+2026-02-13 21:56:49,076 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-01
+2026-02-13 21:56:50,013 - INFO - 成功提取内容: Siemens SINEC NMS... (3003字符)
+2026-02-13 21:56:50,013 - INFO - 成功提取文章内容: Siemens SINEC NMS... (3003字符)
+2026-02-13 21:56:50,014 - INFO - 正在使用增强爬虫抓取: CISA Adds Four Known Exploited Vulnerabilities to ...
+2026-02-13 21:56:50,014 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/alerts/2026/02/12/cisa-adds-four-known-exploited-vulnerabilities-catalog
+2026-02-13 21:56:50,816 - INFO - 成功提取内容: CISA Adds Four Known Exploited Vulnerabilities to ... (1678字符)
+2026-02-13 21:56:50,816 - INFO - 成功提取文章内容: CISA Adds Four Known Exploited Vulnerabilities to ... (1678字符)
+2026-02-13 21:56:50,817 - INFO - 正在使用增强爬虫抓取: Siemens Siveillance Video Management Servers...
+2026-02-13 21:56:50,817 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-07
+2026-02-13 21:56:51,796 - INFO - 成功提取内容: Siemens Siveillance Video Management Servers... (3003字符)
+2026-02-13 21:56:51,797 - INFO - 成功提取文章内容: Siemens Siveillance Video Management Servers... (3003字符)
+2026-02-13 21:56:51,797 - INFO - 正在使用增强爬虫抓取: Siemens Solid Edge...
+2026-02-13 21:56:51,797 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-05
+2026-02-13 21:56:52,594 - INFO - 成功提取内容: Siemens Solid Edge... (3003字符)
+2026-02-13 21:56:52,594 - INFO - 成功提取文章内容: Siemens Solid Edge... (3003字符)
+2026-02-13 21:56:52,595 - INFO - 正在使用增强爬虫抓取: Siemens Polarion...
+2026-02-13 21:56:52,595 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-02
+2026-02-13 21:56:53,379 - INFO - 成功提取内容: Siemens Polarion... (3003字符)
+2026-02-13 21:56:53,379 - INFO - 成功提取文章内容: Siemens Polarion... (3003字符)
+2026-02-13 21:56:53,380 - INFO - 正在使用增强爬虫抓取: Airleader Master...
+2026-02-13 21:56:53,380 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-10
+2026-02-13 21:56:54,237 - INFO - 成功提取内容: Airleader Master... (3003字符)
+2026-02-13 21:56:54,237 - INFO - 成功提取文章内容: Airleader Master... (3003字符)
+2026-02-13 21:56:54,237 - INFO - 正在使用增强爬虫抓取: Siemens NX...
+2026-02-13 21:56:54,238 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-08
+2026-02-13 21:56:55,114 - INFO - 成功提取内容: Siemens NX | CISA... (3003字符)
+2026-02-13 21:56:55,114 - INFO - 成功提取文章内容: Siemens NX | CISA... (3003字符)
+2026-02-13 21:56:55,115 - INFO - 正在使用增强爬虫抓取: Siemens Desigo CC Product Family and SENTRON Power...
+2026-02-13 21:56:55,115 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-04
+2026-02-13 21:56:55,834 - INFO - 成功提取内容: Siemens Desigo CC Product Family and SENTRON Power... (3003字符)
+2026-02-13 21:56:55,834 - INFO - 成功提取文章内容: Siemens Desigo CC Product Family and SENTRON Power... (3003字符)
+2026-02-13 21:56:55,837 - INFO - 正在使用增强爬虫抓取: Siemens SINEC OS...
+2026-02-13 21:56:55,837 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-06
+2026-02-13 21:56:56,965 - INFO - 成功提取内容: Siemens SINEC OS... (3003字符)
+2026-02-13 21:56:56,965 - INFO - 成功提取文章内容: Siemens SINEC OS... (3003字符)
+2026-02-13 21:56:56,966 - INFO - 正在使用增强爬虫抓取: Siemens COMOS...
+2026-02-13 21:56:56,966 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-03
+2026-02-13 21:56:57,958 - INFO - 成功提取内容: Siemens COMOS... (3003字符)
+2026-02-13 21:56:57,958 - INFO - 成功提取文章内容: Siemens COMOS... (3003字符)
+2026-02-13 21:56:57,959 - INFO - 正在使用增强爬虫抓取: Hitachi Energy SuprOS...
+2026-02-13 21:56:57,959 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-043-09
+2026-02-13 21:56:58,700 - INFO - 成功提取内容: Hitachi Energy SuprOS... (3003字符)
+2026-02-13 21:56:58,700 - INFO - 成功提取文章内容: Hitachi Energy SuprOS... (3003字符)
+2026-02-13 21:56:58,700 - INFO - 正在使用增强爬虫抓取: ZOLL ePCR IOS Mobile Application...
+2026-02-13 21:56:58,700 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-medical-advisories/icsma-26-041-01
+2026-02-13 21:56:59,508 - INFO - 成功提取内容: ZOLL ePCR IOS Mobile Application... (112字符)
+2026-02-13 21:56:59,508 - INFO - 成功提取文章内容: ZOLL ePCR IOS Mobile Application... (112字符)
+2026-02-13 21:56:59,508 - INFO - 正在使用增强爬虫抓取: CISA Adds Six Known Exploited Vulnerabilities to C...
+2026-02-13 21:56:59,508 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/alerts/2026/02/10/cisa-adds-six-known-exploited-vulnerabilities-catalog
+2026-02-13 21:57:00,378 - INFO - 成功提取内容: CISA Adds Six Known Exploited Vulnerabilities to C... (1866字符)
+2026-02-13 21:57:00,378 - INFO - 成功提取文章内容: CISA Adds Six Known Exploited Vulnerabilities to C... (1866字符)
+2026-02-13 21:57:00,379 - INFO - 正在使用增强爬虫抓取: AVEVA PI to CONNECT Agent...
+2026-02-13 21:57:00,379 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-041-04
+2026-02-13 21:57:01,314 - INFO - 成功提取内容: AVEVA PI to CONNECT Agent... (3003字符)
+2026-02-13 21:57:01,314 - INFO - 成功提取文章内容: AVEVA PI to CONNECT Agent... (3003字符)
+2026-02-13 21:57:01,315 - INFO - 正在使用增强爬虫抓取: ZLAN Information Technology Co. ZLAN5143D...
+2026-02-13 21:57:01,315 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-041-02
+2026-02-13 21:57:02,070 - INFO - 成功提取内容: ZLAN Information Technology Co. ZLAN5143D... (3003字符)
+2026-02-13 21:57:02,070 - INFO - 成功提取文章内容: ZLAN Information Technology Co. ZLAN5143D... (3003字符)
+2026-02-13 21:57:02,071 - INFO - 正在使用增强爬虫抓取: ​​Barriers to Secure OT Communication: Why Johnny ...
+2026-02-13 21:57:02,071 - INFO - 正在抓取文章内容: https://www.cisa.gov/resources-tools/resources/barriers-secure-ot-communication-why-johnny-cant-authenticate
+2026-02-13 21:57:02,952 - INFO - 成功提取内容: ​​Barriers to Secure OT Communication: Why Johnny ... (1861字符)
+2026-02-13 21:57:02,952 - INFO - 成功提取文章内容: ​​Barriers to Secure OT Communication: Why Johnny ... (1861字符)
+2026-02-13 21:57:02,952 - INFO - 正在使用增强爬虫抓取: AVEVA PI Data Archive...
+2026-02-13 21:57:02,952 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-041-03
+2026-02-13 21:57:03,728 - INFO - 成功提取内容: AVEVA PI Data Archive... (3003字符)
+2026-02-13 21:57:03,728 - INFO - 成功提取文章内容: AVEVA PI Data Archive... (3003字符)
+2026-02-13 21:57:03,728 - INFO - 正在使用增强爬虫抓取: Yokogawa FAST/TOOLS...
+2026-02-13 21:57:03,729 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/ics-advisories/icsa-26-041-01
+2026-02-13 21:57:04,592 - INFO - 成功提取内容: Yokogawa FAST/TOOLS... (3003字符)
+2026-02-13 21:57:04,592 - INFO - 成功提取文章内容: Yokogawa FAST/TOOLS... (3003字符)
+2026-02-13 21:57:04,593 - INFO - 正在使用增强爬虫抓取: Poland Energy Sector Cyber Incident Highlights OT ...
+2026-02-13 21:57:04,593 - INFO - 正在抓取文章内容: https://www.cisa.gov/news-events/alerts/2026/02/10/poland-energy-sector-cyber-incident-highlights-ot-and-ics-security-gaps
+2026-02-13 21:57:05,365 - INFO - 成功提取内容: Poland Energy Sector Cyber Incident Highlights OT ... (3003字符)
+2026-02-13 21:57:05,365 - INFO - 成功提取文章内容: Poland Energy Sector Cyber Incident Highlights OT ... (3003字符)
+2026-02-13 21:57:05,366 - INFO - 从 CISA Alerts 获取到 19 条安全新闻
+2026-02-13 21:57:07,371 - INFO - 正在抓取 US-CERT Alerts (美国) 的RSS源...
+2026-02-13 21:57:10,911 - INFO - 从 US-CERT Alerts 获取到 0 条安全新闻
+2026-02-13 21:57:12,916 - INFO - 正在抓取 NIST Cybersecurity (美国) 的RSS源...
+2026-02-13 21:57:13,826 - INFO - 从 NIST Cybersecurity 获取到 0 条安全新闻
+2026-02-13 21:57:15,827 - INFO - 正在抓取 ENISA (欧盟) 的RSS源...
+2026-02-13 21:57:17,218 - INFO - 从 ENISA 获取到 0 条安全新闻
+2026-02-13 21:57:19,223 - INFO - 正在抓取 NCSC UK (英国) 的RSS源...
+2026-02-13 21:57:20,063 - INFO - 从 NCSC UK 获取到 0 条安全新闻
+2026-02-13 21:57:22,068 - INFO - 正在抓取 ACSC Australia (澳大利亚) 的RSS源...
+2026-02-13 21:57:25,021 - INFO - 从 ACSC Australia 获取到 0 条安全新闻
+2026-02-13 21:57:27,027 - INFO - 正在抓取 Bleeping Computer (国际) 的RSS源...
+2026-02-13 21:57:27,860 - INFO - 从 Bleeping Computer 获取到 0 条安全新闻
+2026-02-13 21:57:29,865 - INFO - 正在抓取 Ars Technica Security (美国) 的RSS源...
+2026-02-13 21:57:30,723 - INFO - 从 Ars Technica Security 获取到 0 条安全新闻
+2026-02-13 21:57:32,728 - INFO - 正在抓取 ZDNet Security (国际) 的RSS源...
+2026-02-13 21:57:33,963 - INFO - 正在使用增强爬虫抓取: One of the best privacy upgrades you can give to y...
+2026-02-13 21:57:33,963 - INFO - 正在抓取文章内容: https://www.zdnet.com/article/startech-macbook-pro-privacy-screen-review/
+2026-02-13 21:57:53,209 - INFO - 成功提取内容: One of the best privacy upgrades you can give to y... (3003字符)
+2026-02-13 21:57:53,209 - INFO - 成功提取文章内容: One of the best privacy upgrades you can give to y... (3003字符)
+2026-02-13 21:57:53,210 - INFO - 正在使用增强爬虫抓取: I've been reviewing laptops for years - these olde...
+2026-02-13 21:57:53,210 - INFO - 正在抓取文章内容: https://www.zdnet.com/article/older-laptop-presidents-day-deals/
+2026-02-13 21:58:03,224 - INFO - 成功提取内容: I've been reviewing laptops for years - these olde... (3003字符)
+2026-02-13 21:58:03,224 - INFO - 成功提取文章内容: I've been reviewing laptops for years - these olde... (3003字符)
+2026-02-13 21:58:03,225 - INFO - 从 ZDNet Security 获取到 2 条安全新闻
+2026-02-13 21:58:05,225 - INFO - 正在抓取 CSO Online (美国) 的RSS源...
+2026-02-13 21:58:09,448 - INFO - 从 CSO Online 获取到 0 条安全新闻
+2026-02-13 21:58:11,449 - INFO - 正在抓取 InfoSecurity Magazine (英国) 的RSS源...
+2026-02-13 21:58:13,717 - INFO - 正在使用增强爬虫抓取: FIRST Forecasts Record-Breaking 50,000+ CVEs in 20...
+2026-02-13 21:58:13,717 - INFO - 正在抓取文章内容: https://www.infosecurity-magazine.com/news/first-forecasts-record-50000-cve/
+2026-02-13 21:58:14,557 - INFO - 成功提取内容: FIRST Forecasts Record-Breaking 50,000+ CVEs in 20... (2830字符)
+2026-02-13 21:58:14,557 - INFO - 成功提取文章内容: FIRST Forecasts Record-Breaking 50,000+ CVEs in 20... (2830字符)
+2026-02-13 21:58:14,558 - INFO - 正在使用增强爬虫抓取: Singapore Takes Down Chinese Hackers Targeting Tel...
+2026-02-13 21:58:14,558 - INFO - 正在抓取文章内容: https://www.infosecurity-magazine.com/news/singapore-takes-down-china-hackers/
+2026-02-13 21:58:16,568 - INFO - 成功提取内容: Singapore Takes Down Chinese Hackers Targeting Tel... (3003字符)
+2026-02-13 21:58:16,569 - INFO - 成功提取文章内容: Singapore Takes Down Chinese Hackers Targeting Tel... (3003字符)
+2026-02-13 21:58:16,570 - INFO - 从 InfoSecurity Magazine 获取到 2 条安全新闻
+2026-02-13 21:58:18,575 - INFO - 正在抓取 Security Affairs (意大利) 的RSS源...
+2026-02-13 21:58:24,309 - INFO - 从 Security Affairs 获取到 4 条安全新闻
+2026-02-13 21:58:26,314 - INFO - 正在抓取 Recorded Future (美国) 的RSS源...
+2026-02-13 21:58:41,333 - ERROR - 抓取 Recorded Future 失败: HTTPSConnectionPool(host='www.recordedfuture.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x108d5a930>, 'Connection to www.recordedfuture.com timed out. (connect timeout=15)'))
+2026-02-13 21:58:41,334 - INFO - 正在抓取 FireEye Threat Research (美国) 的RSS源...
+2026-02-13 21:58:42,288 - INFO - 从 FireEye Threat Research 获取到 0 条安全新闻
+2026-02-13 21:58:44,293 - INFO - 正在抓取 Kaspersky Securelist (俄罗斯) 的RSS源...
+2026-02-13 21:58:45,576 - INFO - 从 Kaspersky Securelist 获取到 0 条安全新闻
+2026-02-13 21:58:47,580 - INFO - 正在抓取 Trend Micro Security Intelligence (日本) 的RSS源...
+2026-02-13 21:58:50,441 - INFO - 从 Trend Micro Security Intelligence 获取到 0 条安全新闻
+2026-02-13 21:58:52,446 - INFO - 正在抓取 Microsoft Security Blog (美国) 的RSS源...
+2026-02-13 21:58:53,369 - INFO - 从 Microsoft Security Blog 获取到 0 条安全新闻
+2026-02-13 21:58:55,372 - INFO - 正在抓取 Google Security Blog (美国) 的RSS源...
+2026-02-13 21:59:06,521 - ERROR - 抓取 Google Security Blog 失败: HTTPSConnectionPool(host='security.googleblog.com', port=443): Max retries exceeded with url: /feeds/posts/default (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)')))
+2026-02-13 21:59:06,521 - INFO - 正在抓取 Apple Security Updates (美国) 的RSS源...
+2026-02-13 21:59:07,557 - INFO - 从 Apple Security Updates 获取到 0 条安全新闻
+2026-02-13 21:59:09,562 - INFO - 总共获取到 50 条不重复的安全新闻
+2026-02-13 21:59:09,562 - INFO - 正在使用GLM生成新闻分析...
+2026-02-13 21:59:09,563 - INFO - 正在使用GLM精选全球重要安全新闻...
+2026-02-13 21:59:09,567 - INFO - GLM API调用尝试 1/4
+2026-02-13 21:59:47,553 - INFO - GLM API调用成功
+2026-02-13 21:59:47,554 - WARNING - JSON解析失败，尝试提取JSON部分
+2026-02-13 21:59:47,555 - INFO - 成功精选出 10 篇全球安全新闻
+2026-02-13 21:59:47,555 - INFO - GLM API调用尝试 1/4
+2026-02-13 21:59:58,194 - INFO - GLM API调用成功
+2026-02-13 21:59:58,195 - INFO - GLM API调用尝试 1/4
+2026-02-13 22:00:18,452 - INFO - GLM API调用成功
+2026-02-13 22:00:18,453 - WARNING - JSON解析失败，尝试提取JSON部分
+2026-02-13 22:00:18,453 - INFO - 成功使用GLM进行四维度新闻分类和要素总结
+2026-02-13 22:00:18,456 - INFO - ✅ 成功加载移动端样式保护模块
+2026-02-13 22:00:18,457 - INFO - ✅ 成功生成AI智能新闻快报: news20260212.html
